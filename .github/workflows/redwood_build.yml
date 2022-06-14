@@ -1,4 +1,7 @@
-name: redwood
+name: redwood_build
+
+on: [push]
+
 
 jobs:
   nest_build:
@@ -11,7 +14,7 @@ jobs:
         with:
           node-version: '16'
       - name: install dependencies
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: redwood test
         run: yarn rw test
       - name: redwood test
