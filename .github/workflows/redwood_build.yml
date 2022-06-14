@@ -1,0 +1,20 @@
+name: redwood
+
+jobs:
+  nest_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: install dependencies
+        run: yarn
+      - name: redwood test
+        run: yarn rw test
+      - name: redwood test
+        run: yarn rw test
+      - name: redwood build
+        run: yarn rw build
