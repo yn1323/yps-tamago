@@ -1,0 +1,30 @@
+inputs:
+  gtoken:
+    description: 'github token'
+    required: true
+  chromatic:
+    description: 'chromatic token'
+    required: true
+runs:
+  runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache "node_modules"
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules_${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build Storybook
+        run: yarn rw storybook --build
+      - name: Move MSW to public/storybook
+        run: mv web/public/mockServiceWorker.js web/public/storybook
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.gtoken }}
+          projectToken: ${{ secrets.chromatic }}
+          storybookBuildDir: web/public/storybook
