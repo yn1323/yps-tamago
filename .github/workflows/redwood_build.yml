@@ -4,7 +4,7 @@ on: [push]
 
 
 jobs:
-  nest_build:
+  redwood_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,5 +17,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: redwood test
         run: yarn rw test
+        env:
+          TEST_DATABASE_URL: ${{ inputs.TEST_DATABASE_URL }}
       - name: redwood build
         run: yarn rw build
