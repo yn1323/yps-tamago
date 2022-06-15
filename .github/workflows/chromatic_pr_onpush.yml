@@ -1,4 +1,4 @@
-name: storybook_test_onpush
+name: chromatic_pr_onpush
 
 on:
   pull_request:
