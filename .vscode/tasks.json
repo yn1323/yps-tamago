@@ -25,6 +25,12 @@
       "label": "Redwood SDL作成",
       "detail": "yarn rw g sdl ${input:sdlName}"
     },
+    {
+      "type": "shell",
+      "command": "yarn rw prisma migrate dev",
+      "label": "Redwood Prisma migrate",
+      "detail": "yarn rw prisma migrate dev"
+    },
   ],
   "inputs": [
     {
