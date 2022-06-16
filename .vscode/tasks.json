@@ -3,20 +3,26 @@
   "tasks": [
     {
       "type": "shell",
+      "command": "yarn run scaffdog generate",
+      "label": "scaffdog版 scaffolding",
+      "detail": "Page, Component, Cell作成にオススメ！！",
+    },
+    {
+      "type": "shell",
       "command": "yarn rw g page ${input:pageName}",
-      "label": "Redwood ページの作成",
+      "label": "Redwood ページの作成(Scaffdogの方がいいかも)",
       "detail": "yarn rw g page ${input:pageName}",
     },
     {
       "type": "shell",
       "command": "yarn rw g component ${input:componentName}",
-      "label": "Redwood コンポーネントの作成",
+      "label": "Redwood コンポーネントの作成(Scaffdogの方がいいかも)",
       "detail": "yarn rw g component ${input:componentName}",
     },
     {
       "type": "shell",
       "command": "yarn rw g cell ${input:cellName}",
-      "label": "Redwood Cellの作成",
+      "label": "Redwood Cellの作成(Scaffdogの方がいいかも)",
       "detail": "yarn rw g cell ${input:cellName}",
     },
     {
