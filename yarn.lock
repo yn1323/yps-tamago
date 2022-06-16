@@ -22727,9 +22727,6 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": ^2.0.0-rc.117
-    "@storybook/addon-interactions": ^6.5.9
-    "@storybook/jest": ^0.0.10
-    "@storybook/testing-library": ^0.0.13
     chromatic: ^6.5.6
     scaffdog: ^1.2.0
   languageName: unknown
@@ -25878,6 +25875,9 @@ __metadata:
     "@redwoodjs/forms": ^2.0.0-rc.117
     "@redwoodjs/router": ^2.0.0-rc.117
     "@redwoodjs/web": ^2.0.0-rc.117
+    "@storybook/addon-interactions": ^6.5.9
+    "@storybook/jest": ^0.0.10
+    "@storybook/testing-library": ^0.0.13
     framer-motion: ^4
     prop-types: 15.8.1
     react: 17.0.2
