@@ -21,6 +21,6 @@ export const Basic: StoryObj = {
   parameters: { chromatic: { viewports: [414, 1080] } },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByTestId('cloe'))
+    await userEvent.click(canvas.getByTestId('close'))
   },
 }
