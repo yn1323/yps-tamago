@@ -2276,7 +2276,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/icons@npm:^2.0.2":
+"@chakra-ui/icons@npm:2.0.2, @chakra-ui/icons@npm:^2.0.2":
   version: 2.0.2
   resolution: "@chakra-ui/icons@npm:2.0.2"
   dependencies:
@@ -2541,7 +2541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/react@npm:^1":
+"@chakra-ui/react@npm:1.8.8":
   version: 1.8.8
   resolution: "@chakra-ui/react@npm:1.8.8"
   dependencies:
@@ -2673,7 +2673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/storybook-addon@npm:^4.0.1":
+"@chakra-ui/storybook-addon@npm:4.0.1":
   version: 4.0.1
   resolution: "@chakra-ui/storybook-addon@npm:4.0.1"
   dependencies:
@@ -3083,7 +3083,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11":
+"@emotion/react@npm:11.9.3":
   version: 11.9.3
   resolution: "@emotion/react@npm:11.9.3"
   dependencies:
@@ -3126,7 +3126,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11":
+"@emotion/styled@npm:11.9.3":
   version: 11.9.3
   resolution: "@emotion/styled@npm:11.9.3"
   dependencies:
@@ -5778,7 +5778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^6.5.9":
+"@storybook/addon-interactions@npm:6.5.9":
   version: 6.5.9
   resolution: "@storybook/addon-interactions@npm:6.5.9"
   dependencies:
@@ -6438,7 +6438,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/jest@npm:^0.0.10":
+"@storybook/jest@npm:0.0.10":
   version: 0.0.10
   resolution: "@storybook/jest@npm:0.0.10"
   dependencies:
@@ -6791,7 +6791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/testing-library@npm:^0.0.13":
+"@storybook/testing-library@npm:0.0.13":
   version: 0.0.13
   resolution: "@storybook/testing-library@npm:0.0.13"
   dependencies:
@@ -10616,7 +10616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^6.5.6":
+"chromatic@npm:6.5.6":
   version: 6.5.6
   resolution: "chromatic@npm:6.5.6"
   bin:
@@ -14417,7 +14417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^4":
+"framer-motion@npm:4.1.17":
   version: 4.1.17
   resolution: "framer-motion@npm:4.1.17"
   dependencies:
@@ -22629,8 +22629,8 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 2.2.0
-    chromatic: ^6.5.6
-    scaffdog: ^1.2.0
+    chromatic: 6.5.6
+    scaffdog: 1.2.0
   languageName: unknown
   linkType: soft
 
@@ -22795,7 +22795,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scaffdog@npm:^1.2.0":
+"scaffdog@npm:1.2.0":
   version: 1.2.0
   resolution: "scaffdog@npm:1.2.0"
   dependencies:
@@ -25821,18 +25821,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@chakra-ui/icons": ^2.0.2
-    "@chakra-ui/react": ^1
-    "@chakra-ui/storybook-addon": ^4.0.1
-    "@emotion/react": ^11
-    "@emotion/styled": ^11
+    "@chakra-ui/icons": 2.0.2
+    "@chakra-ui/react": 1.8.8
+    "@chakra-ui/storybook-addon": 4.0.1
+    "@emotion/react": 11.9.3
+    "@emotion/styled": 11.9.3
     "@redwoodjs/forms": 2.2.0
     "@redwoodjs/router": 2.2.0
     "@redwoodjs/web": 2.2.0
-    "@storybook/addon-interactions": ^6.5.9
-    "@storybook/jest": ^0.0.10
-    "@storybook/testing-library": ^0.0.13
-    framer-motion: ^4
+    "@storybook/addon-interactions": 6.5.9
+    "@storybook/jest": 0.0.10
+    "@storybook/testing-library": 0.0.13
+    framer-motion: 4.1.17
     prop-types: 15.8.1
     react: 18.2.0
     react-dom: 18.2.0
