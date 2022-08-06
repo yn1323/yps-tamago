@@ -3001,7 +3001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discoveryjs/json-ext@npm:^0.5.0, @discoveryjs/json-ext@npm:^0.5.3":
+"@discoveryjs/json-ext@npm:^0.5.0, @discoveryjs/json-ext@npm:^0.5.3, @discoveryjs/json-ext@npm:^0.5.7":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
   checksum: e10f1b02b78e4812646ddf289b7d9f2cb567d336c363b266bd50cd223cf3de7c2c74018d91cd2613041568397ef3a4a2b500aba588c6e5bd78c38374ba68f38c
@@ -7971,7 +7971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:^1.16.0":
+"@types/webpack-env@npm:^1.16.0, @types/webpack-env@npm:^1.17.0":
   version: 1.17.0
   resolution: "@types/webpack-env@npm:1.17.0"
   checksum: 306cd550d6f799322fe2be2dba90f587ecbf2b6a848025007e4507835ee0730597c61b2e1818b74d3f73c2e0eaefef95b7f67635cbac4b981108f84a8b826e9c
@@ -10824,14 +10824,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:6.5.6":
-  version: 6.5.6
-  resolution: "chromatic@npm:6.5.6"
+"chromatic@npm:6.7.3":
+  version: 6.7.3
+  resolution: "chromatic@npm:6.7.3"
+  dependencies:
+    "@discoveryjs/json-ext": ^0.5.7
+    "@types/webpack-env": ^1.17.0
   bin:
     chroma: bin/main.cjs
     chromatic: bin/main.cjs
     chromatic-cli: bin/main.cjs
-  checksum: 8382a76f2b5d66b6e354ac7c14260504f2ea674198bb56d71f22432917d0041a81c0719ac9025ee8273a24f139a7dab1f98ad9d674d18c6c8b1eab65e8695411
+  checksum: c0f7ed619bcc23780649ea8479847260efa7aad582fc71c3e2f7b28c1d6e2e34c4d7cf7878891e83b58e7314d1761616c3664f28b43c6a67de502dff1c54496d
   languageName: node
   linkType: hard
 
@@ -22837,7 +22840,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 2.2.0
-    chromatic: 6.5.6
+    chromatic: 6.7.3
     scaffdog: 1.5.0
   languageName: unknown
   linkType: soft
