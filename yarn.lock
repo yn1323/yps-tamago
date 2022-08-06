@@ -5458,59 +5458,59 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scaffdog/config@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@scaffdog/config@npm:1.2.0"
+"@scaffdog/config@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@scaffdog/config@npm:1.5.0"
   dependencies:
-    "@scaffdog/types": 1.2.0
+    "@scaffdog/types": 1.5.0
     zod: ^3.11.6
-  checksum: 1ce2c03ebe2644348b4bd55d2ff75a0949c593c42aee41722d57d3d79ada0b20639f63d245582946ad243facd1dbd4e48d9f3d72809e8367292e68ba513fc589
+  checksum: 3a7ce048eda70cacd613fbc05c089c8972dc55c9dad5c13799abd66082edb23de746f6f246803771ce1a1ba6b199b34f0d3200970d83ff9657cb79c50f2b03a8
   languageName: node
   linkType: hard
 
-"@scaffdog/core@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@scaffdog/core@npm:1.2.0"
+"@scaffdog/core@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@scaffdog/core@npm:1.5.0"
   dependencies:
-    "@scaffdog/engine": 1.2.0
-    "@scaffdog/types": 1.2.0
+    "@scaffdog/engine": 1.5.0
+    "@scaffdog/types": 1.5.0
     mdast-util-to-string: ^2.0.0
     remark-parse: ^9.0.0
     unified: ^9.2.1
     unist-util-visit-parents: ^3.1.1
-  checksum: 1a6c0b3a3e1f6b476d22c5f89ee368600cbb84941fd272f6ac52afb9af2fc7837288fe728710c971af9db41079224a16b1b688d04e7255144bf8bda2949fa033
+  checksum: 548e3b2ed70a0db6078019e42d16ff43f53c002d532d1bc89cc949025c58f9dd08a70a9ddc2b29120a81f8e82da514109c92412803e8d7fdbf051b82f9caef00
   languageName: node
   linkType: hard
 
-"@scaffdog/engine@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@scaffdog/engine@npm:1.2.0"
+"@scaffdog/engine@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@scaffdog/engine@npm:1.5.0"
   dependencies:
-    "@scaffdog/error": 1.2.0
-    "@scaffdog/types": 1.2.0
+    "@scaffdog/error": 1.5.0
+    "@scaffdog/types": 1.5.0
     change-case: ^4.1.2
     dayjs: ^1.10.4
     esprima: ^4.0.1
     is-plain-object: ^5.0.0
     safe-eval: ^0.4.1
-  checksum: df731de1fabcaa674b71b18800eaabf627bee03e0ee0fdddcc490e6aee4b73652cecc4f190ccdea599e8da2e0213fd2e9906abd4ec63367d26e006d74180060f
+  checksum: 26c55c4655a457759ff11519b81cad4cb49f1340ede3179096d887c29b0d312bc2adae158a51d2b790db495993ec2d4c89f095a27c865d820eb483a6909111be
   languageName: node
   linkType: hard
 
-"@scaffdog/error@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@scaffdog/error@npm:1.2.0"
+"@scaffdog/error@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@scaffdog/error@npm:1.5.0"
   dependencies:
-    "@scaffdog/types": 1.2.0
+    "@scaffdog/types": 1.5.0
     chalk: ^4.1.0
-  checksum: c038fe8cb88b5a576cf73fec8767410a607467127413da5004cb944ef0349b55c510cb9f25e9b124c14313b2c3f67d0c4c57a495e0146ac4bd4106f06283dfc6
+  checksum: 9be06f0bd353242ea061f7482ea387afd552a27630e427253046e58875da4bb5da897366b5697276e77736e98025ae90c57f13054698205e4184a0f9a2d0396e
   languageName: node
   linkType: hard
 
-"@scaffdog/types@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@scaffdog/types@npm:1.2.0"
-  checksum: d46c452cf470569629ae2409c16d8c4d7e9fb124784c7a5d587a8c9b2648c53ac39055012dc731ab2c36e60e6c2cc0068106d1e89e5c5306c4777cf4e9dd1c4d
+"@scaffdog/types@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@scaffdog/types@npm:1.5.0"
+  checksum: 34751e0fa134a2f2179d7bcfc66e43c0329523ee06eb4bac496c7d003f2a558ef7eac2e5a51a2efc8d79ce313fe0473f4c58a9fd6a37d05410770b0916b552d9
   languageName: node
   linkType: hard
 
@@ -16160,18 +16160,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer-autocomplete-prompt@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "inquirer-autocomplete-prompt@npm:1.4.0"
+"inquirer-autocomplete-prompt@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "inquirer-autocomplete-prompt@npm:2.0.0"
   dependencies:
-    ansi-escapes: ^4.3.1
-    chalk: ^4.0.0
+    ansi-escapes: ^4.3.2
     figures: ^3.2.0
-    run-async: ^2.4.0
-    rxjs: ^6.6.2
+    picocolors: ^1.0.0
+    run-async: ^2.4.1
+    rxjs: ^7.5.4
   peerDependencies:
-    inquirer: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 0a09e3410661fac54f24dfdc007149a9f79074670938a83c5f16cd9aef90c7702d5b74d7c0467f77dc166f66ca102e653e2835f08e96f6b9573d0365cf4a0f1c
+    inquirer: ^8.0.0
+  checksum: 188b80ece152f81e389001eaefab9e6f378e68d89cb1573eac0b78d4f4e281c656c9ad9279745bd361e00d5a196d471db9ca5ef0a65c3a8d2ff723facb4e382d
   languageName: node
   linkType: hard
 
@@ -22849,7 +22849,7 @@ __metadata:
   dependencies:
     "@redwoodjs/core": 2.2.0
     chromatic: 6.5.6
-    scaffdog: 1.2.0
+    scaffdog: 1.5.0
   languageName: unknown
   linkType: soft
 
@@ -22860,7 +22860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"run-async@npm:^2.4.0":
+"run-async@npm:^2.4.0, run-async@npm:^2.4.1":
   version: 2.4.1
   resolution: "run-async@npm:2.4.1"
   checksum: 35a68c8f1d9664f6c7c2e153877ca1d6e4f886e5ca067c25cdd895a6891ff3a1466ee07c63d6a9be306e9619ff7d509494e6d9c129516a36b9fd82263d579ee1
@@ -22892,7 +22892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.3.3, rxjs@npm:^6.6.2":
+"rxjs@npm:^6.3.3":
   version: 6.6.7
   resolution: "rxjs@npm:6.6.7"
   dependencies:
@@ -22901,7 +22901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.0.0":
+"rxjs@npm:^7.0.0, rxjs@npm:^7.5.4":
   version: 7.5.6
   resolution: "rxjs@npm:7.5.6"
   dependencies:
@@ -23014,15 +23014,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scaffdog@npm:1.2.0":
-  version: 1.2.0
-  resolution: "scaffdog@npm:1.2.0"
+"scaffdog@npm:1.5.0":
+  version: 1.5.0
+  resolution: "scaffdog@npm:1.5.0"
   dependencies:
-    "@scaffdog/config": 1.2.0
-    "@scaffdog/core": 1.2.0
-    "@scaffdog/engine": 1.2.0
-    "@scaffdog/error": 1.2.0
-    "@scaffdog/types": 1.2.0
+    "@scaffdog/config": 1.5.0
+    "@scaffdog/core": 1.5.0
+    "@scaffdog/engine": 1.5.0
+    "@scaffdog/error": 1.5.0
+    "@scaffdog/types": 1.5.0
     ansi-escapes: ^4.3.2
     chalk: ^4.1.0
     cli-truncate: ^2.1.0
@@ -23033,7 +23033,7 @@ __metadata:
     globby: ^11.0.3
     indent-string: ^4.0.0
     inquirer: ^8.2.0
-    inquirer-autocomplete-prompt: ^1.4.0
+    inquirer-autocomplete-prompt: ^2.0.0
     is-plain-object: ^5.0.0
     log-symbols: ^4.1.0
     micromatch: ^4.0.4
@@ -23047,7 +23047,7 @@ __metadata:
     zod: ^3.11.6
   bin:
     scaffdog: lib/bin.js
-  checksum: 1fac39f2bba7007df879ab7c8617fbe9ed71ebe58a78305676e59aa599b1119360224660f5252acf07f27d9fc34869811e8dbab59642348ceb88651f2e206f01
+  checksum: f910d9c77e645693f531c181616a3c7d8ba8376fcd080f722a14f8d8b6c61d4fd79b795452f6fb7bfcda66a4ecdc6bc8ac3158235c98f90e7df6a0faeb176c8b
   languageName: node
   linkType: hard
 
