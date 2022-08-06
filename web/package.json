@@ -15,8 +15,8 @@
   "dependencies": {
     "@chakra-ui/icons": "2.0.6",
     "@chakra-ui/react": "1.8.8",
-    "@emotion/react": "11.9.3",
-    "@emotion/styled": "11.9.3",
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.10.0",
     "@redwoodjs/forms": "2.2.0",
     "@redwoodjs/router": "2.2.0",
     "@redwoodjs/web": "2.2.0",
