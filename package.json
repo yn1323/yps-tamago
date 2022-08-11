@@ -26,9 +26,5 @@
   "packageManager": "yarn@3.2.2",
   "msw": {
     "workerDirectory": "web/public"
-  },
-  "scripts": {
-    "ci:build": "yarn rw test && yarn rw build",
-    "ci:migrate": "yarn rw deploy vercel --no-build"
   }
 }
