@@ -29,6 +29,6 @@
   },
   "scripts": {
     "ci:build": "yarn rw test && yarn rw build",
-    "ci:migrate": "DATABASE_URL=$MIGRATE_DATABASE yarn rw deploy vercel --no-build"
+    "ci:migrate": "yarn rw deploy vercel --no-build"
   }
 }
