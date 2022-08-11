@@ -1,7 +1,7 @@
 import { render } from '@redwoodjs/testing/web'
 
-import { Loading, Empty, Failure, Success } from './{{ inputs.component | pascal }}Cell'
-import { standard } from './{{ inputs.component | pascal }}Cell.mock'
+import { Loading, Empty, Failure, Success } from './ContactsCell'
+import { standard } from './ContactsCell.mock'
 
 // Generated boilerplate tests do not account for all circumstances
 // and can fail without adjustments, e.g. Float and DateTime types.
@@ -9,7 +9,7 @@ import { standard } from './{{ inputs.component | pascal }}Cell.mock'
 //        https://redwoodjs.com/docs/testing#testing-cells
 // https://redwoodjs.com/docs/testing#jest-expect-type-considerations
 
-describe('{{ inputs.component | pascal }}Cell', () => {
+describe('ContactsCell', () => {
   it('renders Loading successfully', () => {
     expect(() => {
       render(<Loading />)
@@ -36,7 +36,7 @@ describe('{{ inputs.component | pascal }}Cell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
+      render(<Success contacts={standard().contacts} />)
     }).not.toThrow()
   })
 })
