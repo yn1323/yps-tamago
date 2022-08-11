@@ -37,6 +37,12 @@
       "label": "Redwood Prisma migrate",
       "detail": "yarn rw prisma migrate dev"
     },
+    {
+      "type": "shell",
+      "command": "yarn rw g types",
+      "label": "型を手動で作成",
+      "detail": "yarn rw g types"
+    },
   ],
   "inputs": [
     {
