@@ -17,10 +17,11 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: redwood migrate
         run: yarn rw prisma migrate dev
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: redwood test
         run: yarn rw test
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
       - name: redwood build
         run: yarn rw build
