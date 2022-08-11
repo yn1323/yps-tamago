@@ -18,10 +18,7 @@ const args: ComponentProps = {
 
 export const Basic: StoryObj = {
   args: { ...args },
-  parameters: { chromatic: { viewports: [414, 1080] }, layout: 'fullscreen' },
-}
-
-export const Interactions: StoryObj = {
+  parameters: { chromatic: { viewports: [414, 1080] } },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByTestId('close'))

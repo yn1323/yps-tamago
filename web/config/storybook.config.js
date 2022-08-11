@@ -5,4 +5,7 @@ module.exports = {
   typescript: {
     reactDocgen: false,
   },
+  features: {
+    interactionsDebugger: true,
+  },
 }
