@@ -15,9 +15,12 @@ jobs:
           node-version: '16'
       - name: install dependencies
         run: yarn install --frozen-lockfile
+      - name: redwood migrate
+        run: yarn rw prisma migrate dev
       - name: redwood test
         run: yarn rw test
         env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
       - name: redwood build
         run: yarn rw build
