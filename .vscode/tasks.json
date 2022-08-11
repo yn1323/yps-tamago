@@ -27,9 +27,9 @@
     },
     {
       "type": "shell",
-      "command": "yarn rw g sdl ${input:sdlName}",
+      "command": "yarn rw g sdl ${input:sdlName} ${input:noCrud}",
       "label": "Redwood SDL作成",
-      "detail": "yarn rw g sdl ${input:sdlName}"
+      "detail": "yarn rw g sdl ${input:sdlName} ${input:noCrud}"
     },
     {
       "type": "shell",
@@ -60,6 +60,12 @@
     {
       "id": "sdlName",
       "description": "SDL名(事前にmodelを作成しておく必要があります)",
+      "default": "",
+      "type": "promptString"
+    },
+    {
+      "id": "noCrud",
+      "description": "READONLYの場合、--no-crudと入力。それ以外は空でOK",
       "default": "",
       "type": "promptString"
     },

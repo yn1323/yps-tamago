@@ -1,4 +1,4 @@
-import { render, screen } from '@redwoodjs/testing/web'
+import { render } from '@redwoodjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './{{ inputs.component | pascal }}Cell'
 import { standard } from './{{ inputs.component | pascal }}Cell.mock'
@@ -36,7 +36,7 @@ describe('{{ inputs.component | pascal }}Cell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success cell={standard().{{ inputs.component | camel }}} />)
+      render(<Success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
     }).not.toThrow()
   })
 })
