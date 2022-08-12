@@ -14623,16 +14623,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:7.0.1":
-  version: 7.0.1
-  resolution: "framer-motion@npm:7.0.1"
+"framer-motion@npm:7.1.0":
+  version: 7.1.0
+  resolution: "framer-motion@npm:7.1.0"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
-    framesync: 6.0.1
+    framesync: 6.1.1
     hey-listen: ^1.0.8
-    popmotion: 11.0.3
-    style-value-types: 5.1.0
+    popmotion: 11.0.4
+    style-value-types: 5.1.1
     tslib: ^2.1.0
   peerDependencies:
     react: ^18.0.0
@@ -14640,7 +14640,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: dfe26c2876a30a4dfee563eeb59f797f5d685cd8dca5bb2e5c2ecb9eb60f7f202fc8875ddee619a18ac7ebbf41d4556ac97fed37a193718a6bc839683362da86
+  checksum: 3367d7a92c5c96c354f01e763ce6d58d2fed57b6ac611ff53dd38873e5d1188a38e7b6d3a99db957371aa60ee27a08d3b0a42b354d263400d76d5cc38031b2fd
   languageName: node
   linkType: hard
 
@@ -14653,12 +14653,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framesync@npm:6.0.1":
-  version: 6.0.1
-  resolution: "framesync@npm:6.0.1"
+"framesync@npm:6.1.1":
+  version: 6.1.1
+  resolution: "framesync@npm:6.1.1"
   dependencies:
-    tslib: ^2.1.0
-  checksum: ce84ce548a8612be070204b9cf3ce7258acead2d51df05586995340e501d1439dfc1f9402ede921a9c0dde854d80fd46e97c699a3657f8d7abd5bc705553bf2b
+    tslib: ^2.3.1
+  checksum: 97422f3a59678dee8822aa9ff9c7be8d3f710c68bf25cd39289106a24a047ecfa3cd5d343446345908338717ec94830e37afe2b17981803c304f843b4615c7d0
   languageName: node
   linkType: hard
 
@@ -20867,15 +20867,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"popmotion@npm:11.0.3":
-  version: 11.0.3
-  resolution: "popmotion@npm:11.0.3"
+"popmotion@npm:11.0.4":
+  version: 11.0.4
+  resolution: "popmotion@npm:11.0.4"
   dependencies:
-    framesync: 6.0.1
+    framesync: 6.1.1
     hey-listen: ^1.0.8
-    style-value-types: 5.0.0
+    style-value-types: 5.1.1
     tslib: ^2.1.0
-  checksum: ed196cf034c199a2ab6095f047924b38e24f386c33a182970ad6e1769002b72adff34a72ba7ab2cf34ff5bbfd711ef4caf2e9843ebb7a5c9cafa27c50e525f70
+  checksum: e0ab1d529d5ed7d460bf8748b829c98bf200444a608811f15ca905479a7559ec5cdaa77fc162db47e62620f8d4e3762d53a157421401846c07d427302481f987
   languageName: node
   linkType: hard
 
@@ -24293,23 +24293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-value-types@npm:5.0.0":
-  version: 5.0.0
-  resolution: "style-value-types@npm:5.0.0"
-  dependencies:
-    hey-listen: ^1.0.8
-    tslib: ^2.1.0
-  checksum: a7b693269d48c0cab73da6c88eade845e71b5f330541a9ccb6a065468739d9bafdeb34f94fb89581931371275846da53e35989218cbc0c2d1a38f127e4d765fd
-  languageName: node
-  linkType: hard
-
-"style-value-types@npm:5.1.0":
-  version: 5.1.0
-  resolution: "style-value-types@npm:5.1.0"
+"style-value-types@npm:5.1.1":
+  version: 5.1.1
+  resolution: "style-value-types@npm:5.1.1"
   dependencies:
     hey-listen: ^1.0.8
     tslib: ^2.3.1
-  checksum: a3b950f40faa0c038380f952d9f8f117659375119004a80ffbacc2c73e46313923e9432e9f09d9e2875a20e9f93250871a1d25667179709ed37096ef96aac932
+  checksum: 5ea08072ae7a06ab3f3376d1b22199fe34bf73a0db8deb02dce24644fea137ea5822d1bd87a09bfe85b2a25b35fff66c1fb64be93e0841b5fdb7b1bee3dbd310
   languageName: node
   linkType: hard
 
@@ -26053,7 +26043,7 @@ __metadata:
     "@storybook/addon-interactions": 6.5.10
     "@storybook/jest": 0.0.10
     "@storybook/testing-library": 0.0.13
-    framer-motion: 7.0.1
+    framer-motion: 7.1.0
     prop-types: 15.8.1
     react: 18.2.0
     react-dom: 18.2.0
