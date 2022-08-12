@@ -26,8 +26,5 @@
   "packageManager": "yarn@3.2.2",
   "msw": {
     "workerDirectory": "web/public"
-  },
-  "scripts": {
-    "ci:migrate": "bash +x ./scripts/migrateIfRequired.sh"
   }
 }
