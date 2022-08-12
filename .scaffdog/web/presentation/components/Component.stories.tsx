@@ -1,5 +1,5 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { userEvent, within, screen } from '@storybook/testing-library'
 
 import {{ inputs.component | pascal }} from './{{ inputs.component | pascal }}'
 
@@ -18,12 +18,14 @@ const args: ComponentProps = {
 
 export const Basic: StoryObj = {
   args: { ...args },
-  parameters: { chromatic: { viewports: [414, 1080] }}
+  parameters: { chromatic: { viewports: [414, 1080] } },
 }
 
-export const Interactions: StoryObj = {
+export const Interaction: StoryObj = {
+  args: { ...args },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByTestId('close'))
+    await screen.findByText('マイページ')
   },
 }
