@@ -11,6 +11,7 @@ yarn-error.log
 web/public/mockServiceWorker.js
 web/public/storybook
 web/types/graphql.d.ts
+
 api/types/graphql.d.ts
 .pnp.*
 .yarn/*
@@ -23,3 +24,6 @@ api/types/graphql.d.ts
 # Supabase
 **/supabase/.branches
 **/supabase/.temp
+
+# test-storybook
+web/config/main.js
