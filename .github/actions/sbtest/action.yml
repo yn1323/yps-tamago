@@ -1,10 +1,10 @@
 inputs:
   SUPABASE_API_URL:
     description: 'SUPABASE_API_URL'
-    required: false
+    required: true
   SUPABASE_ANON_KEY:
     description: 'SUPABASE_ANON_KEY'
-    required: false
+    required: true
 runs:
   using: 'Composite'
   steps:
@@ -13,8 +13,10 @@ runs:
           node-version: '16'
       - name: install dependencies
         run: yarn install --frozen-lockfile
+        shell: bash
       - name: storybook build
         run: yarn rw storybook --build
+        shell: bash
       - name: storybook test
         run: |
           cd web
@@ -23,3 +25,4 @@ runs:
         env:
           SUPABASE_API_URL: ${{ inputs.SUPABASE_API_URL }}
           SUPABASE_ANON_KEY: ${{ inputs.SUPABASE_ANON_KEY }}
+        shell: bash
