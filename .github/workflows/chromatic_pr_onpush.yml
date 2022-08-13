@@ -1,7 +1,6 @@
 name: chromatic_pr_onpush
 
 on:
-  workflow_call:
   pull_request:
     paths:
       - 'web/src/**'
