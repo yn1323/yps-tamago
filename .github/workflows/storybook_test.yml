@@ -1,6 +1,8 @@
 name: storybook_test
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   redwood_build:
@@ -13,13 +15,15 @@ jobs:
         with:
           node-version: '16'
       - name: install dependencies
-        run: yarn install --frozen-lockfile
-      - name: storybook build
-        run: yarn rw storybook --build
-      - name: storybook test
-        run: |
-          cd web
-          yarn test-storybook:ci
-        env:
-          SUPABASE_API_URL: ${{ secrets.SUPABASE_API_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: echo OK
+  Reuse:
+    uses: ./.github/workflows/chromatic_pr_onpush.yml
+      # - name: storybook build
+      #   run: yarn rw storybook --build
+      # - name: storybook test
+      #   run: |
+      #     cd web
+      #     yarn test-storybook:ci
+      #   env:
+      #     SUPABASE_API_URL: ${{ secrets.SUPABASE_API_URL }}
+      #     SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
