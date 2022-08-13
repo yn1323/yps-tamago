@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import { AuthTemplate } from '.'
+import { TemplateAuth } from '.'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
@@ -8,7 +8,11 @@ import { AuthTemplate } from '.'
 describe('AuthTemplate', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<AuthTemplate />)
+      render(
+        <TemplateAuth>
+          <div>hoge</div>
+        </TemplateAuth>
+      )
     }).not.toThrow()
   })
 })
