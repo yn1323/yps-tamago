@@ -8,6 +8,7 @@ import {
   Spacer,
   useColorModeValue,
   VStack,
+  HStack,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FcNext, FcPrevious } from 'react-icons/fc'
@@ -49,68 +50,70 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
   }
 
   return (
-    <motion.div
-      initial={drawerAnimation}
-      animate={drawerAnimation}
-      data-testid="drawer"
-    >
-      <Flex>
-        <VStack
-          alignItems={'flex-start'}
-          borderRight="1px"
-          borderColor={useColorModeValue('gray.200', 'gray.600')}
-          h="100vh"
-          w="100%"
-          background={useColorModeValue('gray.50', undefined)}
-        >
-          {showLabel && (
-            <Button
-              onClick={showLabelHandler}
-              leftIcon={<FcPrevious />}
-              {...buttonProps({ showLabel })}
-              data-testid="closeButton"
-              display={{ base: 'none', md: 'flex' }}
-            />
-          )}
-          {!showLabel && (
-            <Button
-              onClick={showLabelHandler}
-              leftIcon={<FcNext />}
-              {...buttonProps({ showLabel })}
-              data-testid="openButton"
-              display={{ base: 'none', md: 'flex' }}
-            />
-          )}
-          <Divider display={{ base: 'none', md: 'flex' }} />
-          {tasks.map(({ icon, label, link }, i) => (
-            <Button
-              key={i}
-              leftIcon={icon}
-              {...buttonProps({ showLabel })}
-              as={Link}
-              to={link}
-            >
-              {showLabel ? label : ''}
-            </Button>
-          ))}
-          <Spacer />
-          <Divider />
-          {commons.map(({ icon, label, link }, i) => (
-            <Button
-              key={i}
-              leftIcon={icon}
-              {...buttonProps({ showLabel })}
-              as={Link}
-              to={link}
-            >
-              {showLabel ? label : ''}
-            </Button>
-          ))}
-        </VStack>
-        <Box w={`calc(100vw - ${drawerAnimation.width})`} p={4}>
-          {showElement}
-        </Box>
-      </Flex>
-    </motion.div>
+    <HStack>
+      <motion.div
+        initial={drawerAnimation}
+        animate={drawerAnimation}
+        data-testid="drawer"
+      >
+        <Flex>
+          <VStack
+            alignItems="flex-start"
+            borderRight="1px"
+            borderColor={useColorModeValue('gray.200', 'gray.600')}
+            h="100vh"
+            w="100%"
+            background={useColorModeValue('gray.50', undefined)}
+          >
+            {showLabel && (
+              <Button
+                onClick={showLabelHandler}
+                leftIcon={<FcPrevious />}
+                {...buttonProps({ showLabel })}
+                data-testid="closeButton"
+                display={{ base: 'none', md: 'flex' }}
+              />
+            )}
+            {!showLabel && (
+              <Button
+                onClick={showLabelHandler}
+                leftIcon={<FcNext />}
+                {...buttonProps({ showLabel })}
+                data-testid="openButton"
+                display={{ base: 'none', md: 'flex' }}
+              />
+            )}
+            <Divider display={{ base: 'none', md: 'flex' }} />
+            {tasks.map(({ icon, label, link }, i) => (
+              <Button
+                key={i}
+                leftIcon={icon}
+                {...buttonProps({ showLabel })}
+                as={Link}
+                to={link}
+              >
+                {showLabel ? label : ''}
+              </Button>
+            ))}
+            <Spacer />
+            <Divider />
+            {commons.map(({ icon, label, link }, i) => (
+              <Button
+                key={i}
+                leftIcon={icon}
+                {...buttonProps({ showLabel })}
+                as={Link}
+                to={link}
+              >
+                {showLabel ? label : ''}
+              </Button>
+            ))}
+          </VStack>
+        </Flex>
+      </motion.div>
+      <Box w={`calc(100vw - ${drawerAnimation.width})`} h="100vh" p={4} m={0}>
+        {showElement}
+      </Box>
+    </HStack>
   )
 }

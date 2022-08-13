@@ -9,6 +9,7 @@ import {
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags, useMutation } from '@redwoodjs/web'
 
+import { Animation } from 'src/components/Template/Animation'
 import ContactsCell from 'src/features/test/ContactsCell'
 
 type PropTypes = {
@@ -38,7 +39,7 @@ const AnotherPage: FC<PropTypes> = ({ show }) => {
   }
 
   return (
-    <>
+    <Animation>
       <MetaTags title="Top" description="Top page" />
       <h1>TopPage</h1>
       {show && <Button data-testid="close">aaaa</Button>}
@@ -53,9 +54,9 @@ const AnotherPage: FC<PropTypes> = ({ show }) => {
       <ContactsCell />
       <p>
         My default route is named <code>top</code>, link to me with `
-        <Link to={routes.top()}>Top</Link>`
+        <Link to={routes.sample()}>Top</Link>`
       </p>
-    </>
+    </Animation>
   )
 }
 

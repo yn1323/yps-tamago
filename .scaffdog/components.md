@@ -22,9 +22,3 @@ questions:
 ```tsx
 {{ 'web/presentation/components/Component.test.tsx' | read }}
 ```
-
-# `{{ inputs.path }}/{{ inputs.component | pascal }}/scripts.tsx`
-```tsx
-{{ 'web/presentation/components/scripts.tsx' | read }}
-```
-

@@ -1,14 +1,14 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
-import { AuthTemplate } from '.'
+import { TemplateAuth } from '.'
 
-type StoryObj = ComponentStoryObj<typeof AuthTemplate>
-type ComponentProps = Required<typeof AuthTemplate.defaultProps>
+type StoryObj = ComponentStoryObj<typeof TemplateAuth>
+type ComponentProps = Required<typeof TemplateAuth.defaultProps>
 
 export default {
-  title: 'components/Template/AuthTemplate',
-  component: AuthTemplate,
-} as ComponentMeta<typeof AuthTemplate>
+  title: 'components/Template/TemplateAuth',
+  component: TemplateAuth,
+} as ComponentMeta<typeof TemplateAuth>
 
 const args: ComponentProps = {
   children: <div>content</div>,

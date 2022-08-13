@@ -1,19 +1,18 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import { userEvent, within, screen } from '@storybook/testing-library'
 
-import { FormLogin } from '.'
+import { MailForm } from '.'
 
-type StoryObj = ComponentStoryObj<typeof FormLogin>
-type ComponentProps = Required<typeof FormLogin.defaultProps>
+type StoryObj = ComponentStoryObj<typeof MailForm>
+type ComponentProps = Required<typeof MailForm.defaultProps>
 
 export default {
-  title: 'features/Login',
-  component: FormLogin,
-} as ComponentMeta<typeof FormLogin>
+  title: 'features/LoginForm/MailForm',
+  component: MailForm,
+} as ComponentMeta<typeof MailForm>
 
 const args: ComponentProps = {
-  show: false,
-  hoge: '11',
+  mailFormType: 'login',
 }
 
 export const Basic: StoryObj = {

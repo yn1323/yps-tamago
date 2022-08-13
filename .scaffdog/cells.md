@@ -27,9 +27,3 @@ questions:
 ```tsx
 {{ 'web/presentation/cells/CellCell.test.tsx' | read }}
 ```
-
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/scripts.tsx`
-```tsx
-{{ 'web/presentation/cells/scripts.tsx' | read }}
-```
-

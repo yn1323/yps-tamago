@@ -9,6 +9,7 @@ import {
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags, useMutation } from '@redwoodjs/web'
 
+import { Animation } from 'src/components/Template/Animation'
 import { supabase } from 'src/config/supabase'
 import ContactsCell from 'src/features/test/ContactsCell'
 
@@ -41,7 +42,7 @@ const TopPage: FC<PropTypes> = ({ show }) => {
   }
 
   return (
-    <>
+    <Animation>
       <MetaTags title="Top" description="Top page" />
       <h1>TopPage</h1>
       {show && <Button data-testid="close">aaaa</Button>}
@@ -58,7 +59,7 @@ const TopPage: FC<PropTypes> = ({ show }) => {
         My default route is named <code>top</code>, link to me with `
         <Link to={routes.another()}>Link</Link>`
       </p>
-    </>
+    </Animation>
   )
 }
 

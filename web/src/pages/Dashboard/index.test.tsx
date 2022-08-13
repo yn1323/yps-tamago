@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing/web'
 
-import { FormLogin } from '.'
+import { Dashboard } from '.'
 
-describe('FormLogin', () => {
+describe('Dashboard', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<FormLogin />)
+      render(<Dashboard />)
     }).not.toThrow()
   })
 })

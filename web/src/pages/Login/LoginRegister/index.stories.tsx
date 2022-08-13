@@ -1,15 +1,15 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import { userEvent, within, screen } from '@storybook/testing-library'
 
-import { LoginButtons } from '.'
+import { LoginRegister } from '.'
 
-type StoryObj = ComponentStoryObj<typeof LoginButtons>
-type ComponentProps = Required<typeof LoginButtons.defaultProps>
+type StoryObj = ComponentStoryObj<typeof LoginRegister>
+type ComponentProps = Required<typeof LoginRegister.defaultProps>
 
 export default {
-  title: 'features/Login/LoginButtons',
-  component: LoginButtons,
-} as ComponentMeta<typeof LoginButtons>
+  title: 'pages/Login/LoginRegister',
+  component: LoginRegister,
+} as ComponentMeta<typeof LoginRegister>
 
 const args: ComponentProps = {
   show: false,

@@ -22,7 +22,7 @@ export const SUBMIT_LABELS = {
   signUp: '登録する',
 } as const
 
-export type MailFormType = keyof typeof SUBMIT_LABELS
+type MailFormType = keyof typeof SUBMIT_LABELS
 
 type PropTypes = {
   mailFormType: MailFormType
