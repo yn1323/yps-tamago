@@ -14,8 +14,8 @@ jobs:
           node-version: '16'
       - name: install dependencies
         run: yarn install --frozen-lockfile
-      - name: redwood build
-        run: yarn rw build
+      - name: storybook build
+        run: yarn rw storybook --build
       - name: storybook test
         run: |
           cd web

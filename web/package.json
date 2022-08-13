@@ -35,8 +35,7 @@
     "@storybook/testing-library": "0.0.13"
   },
   "scripts": {
-    "copy-storybook-main-file": "cp config/storybook.config.js config/main.js",
-    "test-storybook": "yarn copy-storybook-main-file && test-storybook --url http://localhost:7910 --config-dir config",
-    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server storybook-static --port 7910 --silent\" \"wait-on tcp:7910 && yarn test-storybook\""
+    "test-storybook": "test-storybook --url http://127.0.0.1:7910 --config-dir config",
+    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server public --port 7910 --silent\" \"npx wait-on tcp:7910 && test-storybook --url http://127.0.0.1:7910/storybook --config-dir config\""
   }
 }
