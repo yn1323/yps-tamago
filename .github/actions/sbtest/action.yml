@@ -1,10 +1,10 @@
 inputs:
   SUPABASE_API_URL:
     description: 'SUPABASE_API_URL'
-    required: true
+    required: false
   SUPABASE_ANON_KEY:
     description: 'SUPABASE_ANON_KEY'
-    required: true
+    required: false
 runs:
   using: 'Composite'
   steps:
