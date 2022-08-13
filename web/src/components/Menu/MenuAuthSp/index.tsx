@@ -54,7 +54,7 @@ type PropTypes = {
   children: JSX.Element | JSX.Element[]
 }
 
-const AuthLayoutSp: FC<PropTypes> = ({ children }) => {
+export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const showElement = Array.isArray(children) ? children : [children]
   const uiProps = {
@@ -156,5 +156,3 @@ const AuthLayoutSp: FC<PropTypes> = ({ children }) => {
     </Box>
   )
 }
-
-export default AuthLayoutSp

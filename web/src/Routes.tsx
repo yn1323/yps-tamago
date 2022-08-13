@@ -9,10 +9,14 @@
 
 import { Router, Route } from '@redwoodjs/router'
 
+import AnotherPage from 'src/pages/AnotherPage/AnotherPage'
+
 const Routes = () => {
   return (
     <Router>
       <Route path="/" page={TopPage} name="top" />
+      <Route path="/mog" page={AnotherPage} name="another" />
+
       <Route notfound page={NotFoundPage} />
     </Router>
   )

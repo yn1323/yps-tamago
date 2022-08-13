@@ -1,15 +1,15 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import { userEvent, within, screen } from '@storybook/testing-library'
 
-import { {{ inputs.component | pascal }} } from '.'
+import { FormLogin } from '.'
 
-type StoryObj = ComponentStoryObj<typeof {{ inputs.component | pascal }}>
-type ComponentProps = Required<typeof {{ inputs.component | pascal }}.defaultProps>
+type StoryObj = ComponentStoryObj<typeof FormLogin>
+type ComponentProps = Required<typeof FormLogin.defaultProps>
 
 export default {
-  title: '{{ inputs.path }}/{{ inputs.component | pascal }}',
-  component: {{ inputs.component | pascal }},
-} as ComponentMeta<typeof {{ inputs.component | pascal }}>
+  title: 'features/Login',
+  component: FormLogin,
+} as ComponentMeta<typeof FormLogin>
 
 const args: ComponentProps = {
   show: false,

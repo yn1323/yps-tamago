@@ -20,7 +20,7 @@ type PropTypes = {
   children: JSX.Element | JSX.Element[]
 }
 
-const MenuAuthPc: FC<PropTypes> = ({ children }) => {
+export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
   const showElement = Array.isArray(children) ? children : [children]
   const tasks = [MENU.TOP, MENU.SHIFT, MENU.ATTENDANCE, MENU.TIMECARD]
   const commons = [MENU.CONFIG, MENU.HOWTO, MENU.LOGOUT]
@@ -114,5 +114,3 @@ const MenuAuthPc: FC<PropTypes> = ({ children }) => {
     </motion.div>
   )
 }
-
-export default MenuAuthPc

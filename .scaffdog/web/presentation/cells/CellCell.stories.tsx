@@ -1,5 +1,5 @@
-import { Loading, Empty, Failure, Success } from './{{ inputs.component | pascal }}Cell'
-import { standard } from './{{ inputs.component | pascal }}Cell.mock'
+import { Loading, Empty, Failure, Success } from '.'
+import { standard } from './index.mocks'
 
 export const loading = () => {
   return Loading ? <Loading /> : null

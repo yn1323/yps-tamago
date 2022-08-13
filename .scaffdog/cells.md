@@ -8,22 +8,22 @@ questions:
   path: 'What is path??(i.e. features/Timeline)'
 ---
 
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/{{ inputs.component | pascal }}Cell.mock.ts`
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/index.mock.ts`
 ```tsx
 {{ 'web/presentation/cells/CellCell.mock.ts' | read }}
 ```
 
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/{{ inputs.component | pascal }}Cell.stories.tsx`
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/index.stories.tsx`
 ```tsx
 {{ 'web/presentation/cells/CellCell.stories.tsx' | read }}
 ```
 
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/{{ inputs.component | pascal }}Cell.tsx`
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/index.tsx`
 ```tsx
 {{ 'web/presentation/cells/CellCell.tsx' | read }}
 ```
 
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/{{ inputs.component | pascal }}Cell.test.tsx`
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/index.test.tsx`
 ```tsx
 {{ 'web/presentation/cells/CellCell.test.tsx' | read }}
 ```

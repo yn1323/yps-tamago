@@ -1,14 +1,18 @@
 import { render } from '@redwoodjs/testing/web'
 
-import AuthTemplate from './AuthTemplate'
+import { MenuAuthSp } from '.'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('AuthTemplate', () => {
+describe('MenuAuthSp', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<AuthTemplate />)
+      render(
+        <MenuAuthSp>
+          <div>content</div>
+        </MenuAuthSp>
+      )
     }).not.toThrow()
   })
 })

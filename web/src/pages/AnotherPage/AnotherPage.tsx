@@ -9,7 +9,6 @@ import {
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags, useMutation } from '@redwoodjs/web'
 
-import { supabase } from 'src/config/supabase'
 import ContactsCell from 'src/features/test/ContactsCell'
 
 type PropTypes = {
@@ -25,9 +24,7 @@ const CREATE_CONTACT = gql`
   }
 `
 
-console.log(supabase)
-
-const TopPage: FC<PropTypes> = ({ show }) => {
+const AnotherPage: FC<PropTypes> = ({ show }) => {
   const [create] = useMutation<
     CreateContactMutation,
     CreateContactMutationVariables
@@ -56,10 +53,10 @@ const TopPage: FC<PropTypes> = ({ show }) => {
       <ContactsCell />
       <p>
         My default route is named <code>top</code>, link to me with `
-        <Link to={routes.another()}>Link</Link>`
+        <Link to={routes.top()}>Top</Link>`
       </p>
     </>
   )
 }
 
-export default TopPage
+export default AnotherPage

@@ -1,13 +1,7 @@
 import { render } from '@redwoodjs/testing/web'
 
-import { Loading, Empty, Failure, Success } from './{{ inputs.component | pascal }}Cell'
-import { standard } from './{{ inputs.component | pascal }}Cell.mock'
-
-// Generated boilerplate tests do not account for all circumstances
-// and can fail without adjustments, e.g. Float and DateTime types.
-//           Please refer to the RedwoodJS Testing Docs:
-//        https://redwoodjs.com/docs/testing#testing-cells
-// https://redwoodjs.com/docs/testing#jest-expect-type-considerations
+import { Loading, Empty, Failure, Success } from '.'
+import { standard } from './index.mocks'
 
 describe('{{ inputs.component | pascal }}Cell', () => {
   it('renders Loading successfully', () => {

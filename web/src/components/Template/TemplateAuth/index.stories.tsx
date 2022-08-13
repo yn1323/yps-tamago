@@ -1,6 +1,6 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
-import AuthTemplate from './AuthTemplate'
+import { AuthTemplate } from '.'
 
 type StoryObj = ComponentStoryObj<typeof AuthTemplate>
 type ComponentProps = Required<typeof AuthTemplate.defaultProps>

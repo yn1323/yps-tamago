@@ -8,7 +8,7 @@
       "type": "node-terminal"
     },
     {
-      "command": "supabase start && yarn rw prisma migrate dev",
+      "command": "supabase stop && supabase start && yarn rw prisma migrate dev",
       "name": "Supabase",
       "request": "launch",
       "type": "node-terminal"

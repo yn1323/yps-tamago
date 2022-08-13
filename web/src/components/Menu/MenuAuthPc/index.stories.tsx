@@ -1,7 +1,7 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
 
-import MenuAuthPc from './MenuAuthPc'
+import { MenuAuthPc } from '.'
 
 type StoryObj = ComponentStoryObj<typeof MenuAuthPc>
 type ComponentProps = Required<typeof MenuAuthPc.defaultProps>
