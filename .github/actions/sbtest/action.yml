@@ -20,6 +20,6 @@ runs:
           cd web
           yarn test-storybook:ci
           cd ..
-        with:
+        env:
           SUPABASE_API_URL: ${{ inputs.SUPABASE_API_URL }}
           SUPABASE_ANON_KEY: ${{ inputs.SUPABASE_ANON_KEY }}
