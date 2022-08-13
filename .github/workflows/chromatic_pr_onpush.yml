@@ -13,6 +13,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: StorybookTest
+        uses: ./.github/actions/sbtest
+        with:
+          SUPABASE_API_URL: ${{ secrets.SUPABASE_API_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       - name: Chromatic
         uses: ./.github/actions/chromatic
         with:
