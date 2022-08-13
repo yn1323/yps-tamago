@@ -5460,59 +5460,59 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scaffdog/config@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@scaffdog/config@npm:1.5.0"
+"@scaffdog/config@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@scaffdog/config@npm:2.0.1"
   dependencies:
-    "@scaffdog/types": 1.5.0
+    "@scaffdog/types": 2.0.1
     zod: ^3.11.6
-  checksum: 3a7ce048eda70cacd613fbc05c089c8972dc55c9dad5c13799abd66082edb23de746f6f246803771ce1a1ba6b199b34f0d3200970d83ff9657cb79c50f2b03a8
+  checksum: 59ba70c7b350948da6e21e7eb12703ed96c875a99d3fd3874d359e1ea021efecdc92543603fa0f49c6fbba9c15491d561cf2ea372ddf6826f871c517225bbd34
   languageName: node
   linkType: hard
 
-"@scaffdog/core@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@scaffdog/core@npm:1.5.0"
+"@scaffdog/core@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@scaffdog/core@npm:2.0.1"
   dependencies:
-    "@scaffdog/engine": 1.5.0
-    "@scaffdog/types": 1.5.0
+    "@scaffdog/engine": 2.0.1
+    "@scaffdog/types": 2.0.1
     mdast-util-to-string: ^2.0.0
     remark-parse: ^9.0.0
     unified: ^9.2.1
     unist-util-visit-parents: ^3.1.1
-  checksum: 548e3b2ed70a0db6078019e42d16ff43f53c002d532d1bc89cc949025c58f9dd08a70a9ddc2b29120a81f8e82da514109c92412803e8d7fdbf051b82f9caef00
+  checksum: 9694d3a87f26cb948f3a87f63325f3d14593099686ea5440c8c12a9994283716f21da4a76fa153fb1ac14c68e4bc93942f189eb9c7c5e96773475e1a23040eee
   languageName: node
   linkType: hard
 
-"@scaffdog/engine@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@scaffdog/engine@npm:1.5.0"
+"@scaffdog/engine@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@scaffdog/engine@npm:2.0.1"
   dependencies:
-    "@scaffdog/error": 1.5.0
-    "@scaffdog/types": 1.5.0
+    "@scaffdog/error": 2.0.1
+    "@scaffdog/types": 2.0.1
     change-case: ^4.1.2
     dayjs: ^1.10.4
-    esprima: ^4.0.1
     is-plain-object: ^5.0.0
     safe-eval: ^0.4.1
-  checksum: 26c55c4655a457759ff11519b81cad4cb49f1340ede3179096d887c29b0d312bc2adae158a51d2b790db495993ec2d4c89f095a27c865d820eb483a6909111be
+  checksum: ea5c23f328f2fe1ff00cb5fc1e03f141f66e6dd3d5f31e5ffef97c12ed06cb0c74183e1e4a13dea4545c2ce4cefccdec99a9c2a8096334d90c4e3b1ce0482bfc
   languageName: node
   linkType: hard
 
-"@scaffdog/error@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@scaffdog/error@npm:1.5.0"
+"@scaffdog/error@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@scaffdog/error@npm:2.0.1"
   dependencies:
-    "@scaffdog/types": 1.5.0
+    "@scaffdog/types": 2.0.1
     chalk: ^4.1.0
-  checksum: 9be06f0bd353242ea061f7482ea387afd552a27630e427253046e58875da4bb5da897366b5697276e77736e98025ae90c57f13054698205e4184a0f9a2d0396e
+    string-length: 4.0.2
+  checksum: 09ddf8e3930a4a745d48858b547a7406f1338cce5907c8e86dd0f705979dcb2bf732cf9ddcc450c2f2f9112eaed4a4b556f3520f15de01f693fa635c59274a3d
   languageName: node
   linkType: hard
 
-"@scaffdog/types@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@scaffdog/types@npm:1.5.0"
-  checksum: 34751e0fa134a2f2179d7bcfc66e43c0329523ee06eb4bac496c7d003f2a558ef7eac2e5a51a2efc8d79ce313fe0473f4c58a9fd6a37d05410770b0916b552d9
+"@scaffdog/types@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@scaffdog/types@npm:2.0.1"
+  checksum: 989fbede87bd2dd6141d023e267a4ba93b026842f1e80f3b3f6104ca93240d1c830dee3aa1cd6c308aa0b21effb20d0f25c6635c563a2536f673ca7a465efeb2
   languageName: node
   linkType: hard
 
@@ -22850,7 +22850,7 @@ __metadata:
   dependencies:
     "@redwoodjs/core": 2.2.0
     chromatic: 6.7.4
-    scaffdog: 1.5.0
+    scaffdog: 2.0.1
   languageName: unknown
   linkType: soft
 
@@ -23015,15 +23015,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scaffdog@npm:1.5.0":
-  version: 1.5.0
-  resolution: "scaffdog@npm:1.5.0"
+"scaffdog@npm:2.0.1":
+  version: 2.0.1
+  resolution: "scaffdog@npm:2.0.1"
   dependencies:
-    "@scaffdog/config": 1.5.0
-    "@scaffdog/core": 1.5.0
-    "@scaffdog/engine": 1.5.0
-    "@scaffdog/error": 1.5.0
-    "@scaffdog/types": 1.5.0
+    "@scaffdog/config": 2.0.1
+    "@scaffdog/core": 2.0.1
+    "@scaffdog/engine": 2.0.1
+    "@scaffdog/error": 2.0.1
+    "@scaffdog/types": 2.0.1
     ansi-escapes: ^4.3.2
     chalk: ^4.1.0
     cli-truncate: ^2.1.0
@@ -23047,8 +23047,8 @@ __metadata:
     yargs: ^17.0.0
     zod: ^3.11.6
   bin:
-    scaffdog: lib/bin.js
-  checksum: f910d9c77e645693f531c181616a3c7d8ba8376fcd080f722a14f8d8b6c61d4fd79b795452f6fb7bfcda66a4ecdc6bc8ac3158235c98f90e7df6a0faeb176c8b
+    scaffdog: lib/bin.cjs
+  checksum: 68edc66bc166710620f3f7d23b1ce5546065b235355d45b0063d6d8c8f7c0eb3eb93f7a7653887fe794e5d9da394a6f5bce592af176c77f0b928d34aa2b86c11
   languageName: node
   linkType: hard
 
@@ -24007,7 +24007,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-length@npm:^4.0.1":
+"string-length@npm:4.0.2, string-length@npm:^4.0.1":
   version: 4.0.2
   resolution: "string-length@npm:4.0.2"
   dependencies:
