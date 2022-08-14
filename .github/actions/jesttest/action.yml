@@ -15,4 +15,4 @@ runs:
         run: yarn rw test
         shell: bash
         env:
-          SUPABASE_API_URL: ${{ inputs.TEST_DATABASE_URL }}
+          TEST_DATABASE_URL: ${{ inputs.TEST_DATABASE_URL }}
