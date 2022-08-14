@@ -24,7 +24,6 @@ export const LabelShow: StoryObj = {
 export const LabelHidden: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [1080] } },
-
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
