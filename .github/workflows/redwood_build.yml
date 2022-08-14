@@ -16,8 +16,8 @@ jobs:
       - name: install dependencies
         run: yarn install --frozen-lockfile
       - name: redwood test
-        run: yarn rw test
-        env:
+        uses: ./.github/actions/jesttest
+        with:
           TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
       - name: redwood build
         run: yarn rw build
