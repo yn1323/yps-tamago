@@ -80,6 +80,7 @@ export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
       <Box
         height={`calc(100vh - ${HEIGHTS.HEADER / 4}rem - ${HEIGHTS.FOOTER}rem)`}
         overflow="scroll"
+        role="main"
       >
         {showElement}
       </Box>
