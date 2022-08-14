@@ -1,10 +1,9 @@
-name: redwood_build
+name: redwood_test
 
 on: [push]
 
-
 jobs:
-  redwood_build:
+  redwood_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,5 +14,9 @@ jobs:
           node-version: '16'
       - name: install dependencies
         run: yarn install --frozen-lockfile
+      - name: redwood test
+        uses: ./.github/actions/jesttest
+        with:
+          TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
       - name: redwood build
         run: yarn rw build
