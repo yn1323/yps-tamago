@@ -7,11 +7,6 @@ import * as stories from './index.stories'
 const { Basic } = composeStories(stories)
 
 describe('{{ inputs.component | pascal }}', () => {
-  it('コンポーネントが描画される', () => {
-    expect(() => {
-      render(<Basic />)
-    }).not.toThrow()
-  })
   it('ランドマークロールが存在する', () => {
     render(<Basic />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()

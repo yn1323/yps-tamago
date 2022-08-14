@@ -7,11 +7,6 @@ import * as stories from './index.stories'
 const { LabelShow, LabelHidden } = composeStories(stories)
 
 describe('AuthMenuPc', () => {
-  it('コンポーネントが描画される', () => {
-    expect(() => {
-      render(<LabelShow />)
-    }).not.toThrow()
-  })
   it('ランドマークロールが存在する', () => {
     render(<LabelShow />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
