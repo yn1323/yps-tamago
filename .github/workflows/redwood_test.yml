@@ -18,5 +18,3 @@ jobs:
         uses: ./.github/actions/jesttest
         with:
           TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
-      - name: redwood build
-        run: yarn rw build
