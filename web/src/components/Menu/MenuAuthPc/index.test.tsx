@@ -6,7 +6,7 @@ import * as stories from './index.stories'
 
 const { LabelShow, LabelHidden } = composeStories(stories)
 
-describe('AuthMenuPc-ラベル表示', () => {
+describe('AuthMenuPc > ラベル表示', () => {
   it('ランドマークロールが存在する', () => {
     render(<LabelShow />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
@@ -37,7 +37,7 @@ describe('AuthMenuPc-ラベル表示', () => {
   })
 })
 
-describe('AuthMenuPc-ラベル非表示', () => {
+describe('AuthMenuPc > ラベル非表示', () => {
   it('メニューが閉じているときにボタンのラベルが非表示', async () => {
     const { container } = render(<LabelHidden />)
     await LabelHidden.play({ canvasElement: container })
@@ -60,7 +60,7 @@ describe('AuthMenuPc-ラベル非表示', () => {
   })
 })
 
-describe('AuthMenuPc-メニュー開閉', () => {
+describe('AuthMenuPc > メニュー開閉', () => {
   it('メニューが開いているときの開閉ボタン表示', () => {
     render(<LabelShow />)
     expect(
