@@ -1,11 +1,15 @@
-import { render } from '@redwoodjs/testing/web'
+import { composeStories } from '@storybook/testing-react'
 
-import { Login } from '.'
+import { render } from 'src/config/jest-utils'
+
+import * as stories from './index.stories'
+
+const { Basic } = composeStories(stories)
 
 describe('Login', () => {
-  it('renders successfully', () => {
+  it('コンポーネントを正常に描画', () => {
     expect(() => {
-      render(<Login />)
+      render(<Basic />)
     }).not.toThrow()
   })
 })

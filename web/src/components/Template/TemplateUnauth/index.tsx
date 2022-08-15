@@ -25,7 +25,9 @@ export const TemplateUnauth: FC<PropTypes> = ({
   showLoginButton = true,
   showLogoutButton = false,
 }) => {
-  const showElement = Array.isArray(children) ? children : [children]
+  if (showLoginButton && showLogoutButton) {
+    throw 'ログインボタンとログアウトボタンは同時に使用できません'
+  }
   const { isPC } = useScreenSize()
   const { breakpoints } = useTheme()
   // useOnAuthStateChanged()
@@ -45,12 +47,14 @@ export const TemplateUnauth: FC<PropTypes> = ({
 
   return (
     <Box>
-      <VStack p={2}>
+      <VStack p={2} role="navigation">
         <HStack w={styles.header.width} h={styles.header.height}>
           <Box>
             <HStack as={Link} to="/">
               <div>IMG...</div>
-              <Text fontSize="2xl">YPS</Text>
+              <Text fontSize="2xl" as="h1">
+                YPS
+              </Text>
             </HStack>
           </Box>
           <Spacer />
@@ -81,8 +85,8 @@ export const TemplateUnauth: FC<PropTypes> = ({
         </HStack>
       </VStack>
       <HStack justifyContent="center">
-        <Box w={styles.header.width} p={2}>
-          {showElement}
+        <Box w={styles.header.width} p={2} as="main">
+          {children}
         </Box>
       </HStack>
     </Box>

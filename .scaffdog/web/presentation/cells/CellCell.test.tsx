@@ -1,6 +1,8 @@
 import { composeStories } from '@storybook/testing-react'
 
-import { render, screen } from '@redwoodjs/testing/web'
+import { screen } from '@redwoodjs/testing/web'
+
+import { render } from 'src/config/jest-utils'
 
 import { Loading, Empty, Failure, Success } from '.'
 import { standard } from './index.mocks'

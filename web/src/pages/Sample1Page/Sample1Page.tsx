@@ -26,8 +26,6 @@ const CREATE_CONTACT = gql`
   }
 `
 
-console.log(supabase)
-
 const TopPage: FC<PropTypes> = ({ show }) => {
   const [create] = useMutation<
     CreateContactMutation,
@@ -35,7 +33,6 @@ const TopPage: FC<PropTypes> = ({ show }) => {
   >(CREATE_CONTACT)
 
   const clickHandler = () => {
-    console.log('OK')
     create({
       variables: { input: { name: 'hogehogeman', message: 'this is message' } },
     })

@@ -1,5 +1,4 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { userEvent, within, screen } from '@storybook/testing-library'
 
 import { TemplateUnauth } from '.'
 
@@ -17,18 +16,12 @@ const args: ComponentProps = {
   showLogoutButton: false,
 }
 
-console.log('AAAAA')
-
-export const Basic: StoryObj = {
+export const LoginButtonShow: StoryObj = {
   args: { ...args },
-  parameters: { chromatic: { viewports: [414, 1080] } },
+  parameters: { chromatic: { viewports: [414] } },
 }
 
-export const Test: StoryObj = {
-  args: { ...args },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    // await userEvent.click(canvas.getByTestId('close'))
-    // await screen.findByText('マイページ')
-  },
+export const LogoutButtonShow: StoryObj = {
+  args: { ...args, showLoginButton: false, showLogoutButton: true },
+  parameters: { chromatic: { viewports: [1080] } },
 }

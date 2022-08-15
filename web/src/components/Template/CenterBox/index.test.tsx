@@ -1,15 +1,15 @@
-import { render } from '@redwoodjs/testing/web'
+import { composeStories } from '@storybook/testing-react'
 
-import { CenterBox } from '.'
+import { render } from 'src/config/jest-utils'
+
+import * as stories from './index.stories'
+
+const { Basic } = composeStories(stories)
 
 describe('CenterBox', () => {
-  it('renders successfully', () => {
+  it('コンポーネントを正常に描画', () => {
     expect(() => {
-      render(
-        <CenterBox>
-          <div>ChildComponent</div>
-        </CenterBox>
-      )
+      render(<Basic />)
     }).not.toThrow()
   })
 })

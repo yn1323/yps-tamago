@@ -9,15 +9,14 @@ type PropTypes = {
 }
 
 export const TemplateAuth: FC<PropTypes> = ({ children }) => {
-  const showElement = Array.isArray(children) ? children : [children]
   const { isPC } = useScreenSize()
 
   return (
     <Fragment>
       {isPC ? (
-        <MenuAuthPc>{showElement}</MenuAuthPc>
+        <MenuAuthPc>{children}</MenuAuthPc>
       ) : (
-        <MenuAuthSp>{showElement}</MenuAuthSp>
+        <MenuAuthSp>{children}</MenuAuthSp>
       )}
     </Fragment>
   )

@@ -32,7 +32,6 @@ const AnotherPage: FC<PropTypes> = ({ show }) => {
   >(CREATE_CONTACT)
 
   const clickHandler = () => {
-    console.log('OK')
     create({
       variables: { input: { name: 'hogehogeman', message: 'this is message' } },
     })

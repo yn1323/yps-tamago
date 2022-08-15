@@ -9,8 +9,6 @@ type PropTypes = {
 }
 
 export const CenterBox: FC<PropTypes> = ({ children }) => {
-  const showElement = Array.isArray(children) ? children : [children]
-
   const { isPC } = useScreenSize()
   return (
     <VStack h="calc(100vh - 100px)" justifyContent="center">
@@ -24,10 +22,10 @@ export const CenterBox: FC<PropTypes> = ({ children }) => {
           px={4}
           w="400px"
         >
-          {showElement}
+          {children}
         </VStack>
       ) : (
-        showElement
+        children
       )}
     </VStack>
   )

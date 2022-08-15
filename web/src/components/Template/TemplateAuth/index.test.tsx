@@ -1,18 +1,15 @@
-import { render } from '@redwoodjs/testing/web'
+import { composeStories } from '@storybook/testing-react'
 
-import { TemplateAuth } from '.'
+import { render } from 'src/config/jest-utils'
 
-//   Improve this test with help from the Redwood Testing Doc:
-//    https://redwoodjs.com/docs/testing#testing-components
+import * as stories from './index.stories'
 
-describe('AuthTemplate', () => {
-  it('renders successfully', () => {
+const { Basic } = composeStories(stories)
+
+describe('TemplateAuth', () => {
+  it('コンポーネントを正常に描画', () => {
     expect(() => {
-      render(
-        <TemplateAuth>
-          <div>hoge</div>
-        </TemplateAuth>
-      )
+      render(<Basic />)
     }).not.toThrow()
   })
 })
