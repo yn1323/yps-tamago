@@ -56,7 +56,6 @@ type PropTypes = {
 
 export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const showElement = Array.isArray(children) ? children : [children]
   const uiProps = {
     icon: {
       color: useColorModeValue('gray.600', 'gray.300'),
@@ -74,7 +73,9 @@ export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
         px={3}
         background={useColorModeValue('gray.50', undefined)}
       >
-        <Text fontSize="xl">Screen Title</Text>
+        <Text as="h1" fontSize="xl">
+          Screen Title
+        </Text>
         <Spacer />
       </HStack>
       <Box
@@ -82,7 +83,7 @@ export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
         overflow="scroll"
         role="main"
       >
-        {showElement}
+        {children}
       </Box>
       <Box
         position="absolute"
@@ -126,13 +127,20 @@ export const MenuAuthSp: FC<PropTypes> = ({ children }) => {
             variant="ghost"
             color={uiProps.icon.color}
             onClick={onOpen}
-            data-testid="ellipsis"
+            aria-label="メニューを開く"
+            aria-controls="menuDrawer"
+            aria-haspopup="menu"
           >
             <Icon mt={1} w={4} h={4} as={FaEllipsisV} />
           </Button>
         </HStack>
       </Box>
-      <Drawer placement={'bottom'} onClose={onClose} isOpen={isOpen}>
+      <Drawer
+        placement={'bottom'}
+        onClose={onClose}
+        isOpen={isOpen}
+        id="menuDrawer"
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerBody>
