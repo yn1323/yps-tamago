@@ -10,6 +10,7 @@ const config = {
       {
         publicPath: './jest-report',
         filename: 'index.html',
+        expand: true,
       },
     ],
   ],
