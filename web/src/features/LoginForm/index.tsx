@@ -11,7 +11,7 @@ type PropTypes = {
 
 export const LoginForm: FC<PropTypes> = ({ mailFormType }) => {
   return (
-    <VStack w="360px" spacing={4} role="form">
+    <VStack w="360px" spacing={4}>
       <LoginButtons />
       <HStack h={10} w="100%" spacing={4}>
         <Divider />

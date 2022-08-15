@@ -3,6 +3,8 @@ import { FC } from 'react'
 import {
   Box,
   Button,
+  FormControl,
+  FormLabel,
   Input,
   InputGroup,
   InputLeftElement,
@@ -17,7 +19,7 @@ import { RiLockPasswordLine } from 'react-icons/ri'
 import { Link } from '@redwoodjs/router'
 
 export const SUBMIT_LABELS = {
-  login: 'ログイン',
+  login: 'メールアドレスでログイン',
   reset: 'パスワードリセット',
   signUp: '登録する',
 } as const
@@ -71,36 +73,40 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={4} w="300px">
-        <InputGroup>
-          <InputLeftElement color="gray.300" pointerEvents="none">
-            <FiMail />
-          </InputLeftElement>
-          <Input
-            type="email"
-            placeholder="Eメールアドレス"
-            maxLength={64}
-            required
-            {...register('email', {
-              required: true,
-            })}
-          />
-        </InputGroup>
-        {!isReset && (
+      <Stack spacing={4} w="300px" role="form">
+        <FormControl>
+          <FormLabel>メールアドレス</FormLabel>
           <InputGroup>
             <InputLeftElement color="gray.300" pointerEvents="none">
-              <RiLockPasswordLine />
+              <FiMail />
             </InputLeftElement>
             <Input
-              type="password"
-              placeholder="パスワード"
+              type="email"
               maxLength={64}
               required
-              {...register('password', {
+              {...register('email', {
                 required: true,
               })}
             />
           </InputGroup>
+        </FormControl>
+        {!isReset && (
+          <FormControl>
+            <FormLabel>パスワード</FormLabel>
+            <InputGroup>
+              <InputLeftElement color="gray.300" pointerEvents="none">
+                <RiLockPasswordLine />
+              </InputLeftElement>
+              <Input
+                type="password"
+                maxLength={16}
+                required
+                {...register('password', {
+                  required: true,
+                })}
+              />
+            </InputGroup>
+          </FormControl>
         )}
         <Box pt={2} w="100%">
           <Button
@@ -116,9 +122,11 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
           {mailOptionButtons
             .filter(({ show }) => show)
             .map(({ label, url }, i) => (
-              <Button as={Link} to={url} key={i} variant="ghost" size="sm">
-                <Text as="u">{label}</Text>
-              </Button>
+              <Text as="u" key={i}>
+                <Button as={Link} to={url} variant="ghost" size="sm">
+                  {label}
+                </Button>
+              </Text>
             ))}
         </VStack>
       </Stack>

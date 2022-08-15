@@ -1,5 +1,4 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { userEvent, within, screen } from '@storybook/testing-library'
 
 import { MailForm } from '.'
 
@@ -15,16 +14,15 @@ const args: ComponentProps = {
   mailFormType: 'login',
 }
 
-export const Basic: StoryObj = {
+export const Login: StoryObj = {
   args: { ...args },
-  parameters: { chromatic: { viewports: [414, 1080] } },
+  parameters: { chromatic: { viewports: [1080] } },
 }
-
-export const Test: StoryObj = {
-  args: { ...args },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByTestId('close'))
-    await screen.findByText('マイページ')
-  },
+export const Register: StoryObj = {
+  args: { ...args, mailFormType: 'signUp' },
+  parameters: { chromatic: { viewports: [1080] } },
+}
+export const PasswordReset: StoryObj = {
+  args: { ...args, mailFormType: 'reset' },
+  parameters: { chromatic: { viewports: [1080] } },
 }
