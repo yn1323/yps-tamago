@@ -3,6 +3,16 @@
 const config = {
   rootDir: '../',
   preset: '@redwoodjs/testing/config/jest/web',
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './jest-report',
+        filename: 'index.html',
+      },
+    ],
+  ],
 }
 
 module.exports = config

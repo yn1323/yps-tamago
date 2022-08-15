@@ -24,3 +24,6 @@ api/types/graphql.d.ts
 # Supabase
 **/supabase/.branches
 **/supabase/.temp
+
+# Jest Report
+/jest-report
