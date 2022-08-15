@@ -32,9 +32,9 @@ export const Basic: StoryObj = {
 
 export const Test: StoryObj = {
   args: { ...args },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByTestId('close'))
-    await screen.findByText('マイページ')
-  },
+  // play: async ({ canvasElement }) => {
+  //   const canvas = within(canvasElement)
+  //   await userEvent.click(canvas.getByTestId('close'))
+  //   await screen.findByText('マイページ')
+  // },
 }
