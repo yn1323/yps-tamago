@@ -6,7 +6,7 @@ import * as stories from './index.stories'
 
 const { LabelShow, LabelHidden } = composeStories(stories)
 
-describe('AuthMenuPc', () => {
+describe('AuthMenuPc-ラベル表示', () => {
   it('ランドマークロールが存在する', () => {
     render(<LabelShow />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
@@ -35,25 +35,9 @@ describe('AuthMenuPc', () => {
     expect(screen.getByText('使い方')).toHaveAttribute('href', '/help')
     expect(screen.getByText('ログアウト')).toHaveAttribute('href', '/logout')
   })
-  it('メニューが開いているときの開閉ボタン表示', () => {
-    render(<LabelShow />)
-    expect(
-      screen.getByLabelText('ナビゲーションのラベルを非表示')
-    ).toBeInTheDocument()
-    expect(
-      screen.queryByLabelText('ナビゲーションのラベルを表示')
-    ).not.toBeInTheDocument()
-  })
-  it('メニューが閉じているときの開閉ボタン表示', async () => {
-    const { container } = render(<LabelHidden />)
-    await LabelHidden.play({ canvasElement: container })
-    expect(
-      screen.queryByLabelText('ナビゲーションのラベルを非表示')
-    ).not.toBeInTheDocument()
-    expect(
-      screen.getByLabelText('ナビゲーションのラベルを表示')
-    ).toBeInTheDocument()
-  })
+})
+
+describe('AuthMenuPc-ラベル非表示', () => {
   it('メニューが閉じているときにボタンのラベルが非表示', async () => {
     const { container } = render(<LabelHidden />)
     await LabelHidden.play({ canvasElement: container })
@@ -73,5 +57,28 @@ describe('AuthMenuPc', () => {
     expect(screen.getByLabelText('設定')).toBeInTheDocument()
     expect(screen.getByLabelText('使い方')).toBeInTheDocument()
     expect(screen.getByLabelText('ログアウト')).toBeInTheDocument()
+  })
+})
+
+describe('AuthMenuPc-メニュー開閉', () => {
+  it('メニューが開いているときの開閉ボタン表示', () => {
+    render(<LabelShow />)
+    expect(
+      screen.getByLabelText('ナビゲーションのラベルを非表示')
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByLabelText('ナビゲーションのラベルを表示')
+    ).not.toBeInTheDocument()
+  })
+
+  it('メニューが閉じているときの開閉ボタン表示', async () => {
+    const { container } = render(<LabelHidden />)
+    await LabelHidden.play({ canvasElement: container })
+    expect(
+      screen.queryByLabelText('ナビゲーションのラベルを非表示')
+    ).not.toBeInTheDocument()
+    expect(
+      screen.getByLabelText('ナビゲーションのラベルを表示')
+    ).toBeInTheDocument()
   })
 })
