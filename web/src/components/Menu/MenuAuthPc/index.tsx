@@ -15,7 +15,7 @@ import { FcNext, FcPrevious } from 'react-icons/fc'
 import { Link } from '@redwoodjs/router'
 
 import { useExpandButton } from 'src/components/Menu/MenuAuthPc/script'
-import { MENU } from 'src/utils/ui/menu'
+import { MENU } from 'src/constants/ui/menu'
 
 type PropTypes = {
   children: JSX.Element | JSX.Element[]

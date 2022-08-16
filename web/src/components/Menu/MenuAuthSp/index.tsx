@@ -29,7 +29,7 @@ import {
 
 import { Link } from '@redwoodjs/router'
 
-import { MENU } from 'src/utils/ui/menu'
+import { MENU } from 'src/constants/ui/menu'
 
 const HEIGHTS = {
   HEADER: 10,
