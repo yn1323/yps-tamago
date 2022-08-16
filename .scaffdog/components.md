@@ -22,3 +22,13 @@ questions:
 ```tsx
 {{ 'web/presentation/components/Component.test.tsx' | read }}
 ```
+
+# `{{ inputs.path }}/{{ inputs.component | pascal }}/script.ts`
+```tsx
+{{ 'web/presentation/components/script.ts' | read }}
+```
+
+# `{{ inputs.path }}/{{ inputs.component | pascal }}/script.test.ts`
+```tsx
+{{ 'web/presentation/components/script.test.ts' | read }}
+```

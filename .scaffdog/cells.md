@@ -27,3 +27,13 @@ questions:
 ```tsx
 {{ 'web/presentation/cells/CellCell.test.tsx' | read }}
 ```
+
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/script.ts`
+```tsx
+{{ 'web/presentation/cells/script.ts' | read }}
+```
+
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/script.test.ts`
+```tsx
+{{ 'web/presentation/cells/script.test.ts' | read }}
+```

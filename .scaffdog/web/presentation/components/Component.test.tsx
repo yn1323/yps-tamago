@@ -8,7 +8,7 @@ import * as stories from './index.stories'
 
 const { Basic } = composeStories(stories)
 
-describe('{{ inputs.component | pascal }}', () => {
+describe('コンポーネント', () => {
   it('ランドマークロールが存在する', () => {
     render(<Basic />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
@@ -21,4 +21,11 @@ describe('{{ inputs.component | pascal }}', () => {
   //   const { container } = render(<LabelHidden />)
   //   await LabelHidden.play({ canvasElement: container })
   // })
+})
+
+describe('ロジック', () => {
+  it('ランドマークロールが存在する', () => {
+    render(<Basic />)
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
+  })
 })
