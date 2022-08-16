@@ -20,7 +20,7 @@
       "type": "node-terminal"
     },
     {
-      "command": "yarn rw test",
+      "command": "yarn rw test --coverage",
       "name": "Jest",
       "request": "launch",
       "type": "node-terminal"

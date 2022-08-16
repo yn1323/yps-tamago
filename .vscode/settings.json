@@ -8,5 +8,5 @@
   "[prisma]": {
     "editor.formatOnSave": true
   },
-  "jest.jestCommandLine": "yarn rw test"
+  "jest.jestCommandLine": "yarn rw test --coverage"
 }
