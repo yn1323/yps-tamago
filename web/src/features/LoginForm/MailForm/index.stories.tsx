@@ -20,9 +20,6 @@ export const Login = {
   parameters: { chromatic: { viewports: [1080] } },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    console.log(<MailForm />)
-    console.log(MailForm())
-
     await userEvent.type(canvas.getByTestId('email'), 'supersecret')
     await userEvent.type(canvas.getByTestId('password'), 'supersecret')
     await userEvent.click(canvas.getByText('メールアドレスでログイン'))
