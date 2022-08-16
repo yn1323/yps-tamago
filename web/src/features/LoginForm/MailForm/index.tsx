@@ -74,13 +74,15 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={4} w="300px" role="form">
-        <FormControl>
-          <FormLabel>メールアドレス</FormLabel>
+        <FormControl id="email">
+          <FormLabel aria-hidden>メールアドレス</FormLabel>
           <InputGroup>
             <InputLeftElement color="gray.300" pointerEvents="none">
               <FiMail />
             </InputLeftElement>
             <Input
+              data-testid="email"
+              role="textbox"
               type="email"
               maxLength={64}
               required
@@ -91,13 +93,15 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
           </InputGroup>
         </FormControl>
         {!isReset && (
-          <FormControl>
+          <FormControl id="password">
             <FormLabel>パスワード</FormLabel>
             <InputGroup>
               <InputLeftElement color="gray.300" pointerEvents="none">
                 <RiLockPasswordLine />
               </InputLeftElement>
               <Input
+                data-testid="password"
+                role="textbox"
                 type="password"
                 maxLength={16}
                 required

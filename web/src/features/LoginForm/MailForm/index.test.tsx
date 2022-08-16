@@ -8,10 +8,20 @@ import * as stories from './index.stories'
 
 const { Login, Register, PasswordReset } = composeStories(stories)
 
-describe('MailForm > ログイン', () => {
+describe('ログイン', () => {
   it('ランドマークロールが存在する', () => {
     render(<Login />)
     expect(screen.getByRole('form')).toBeInTheDocument()
+  })
+  it('input表示', () => {
+    render(<Login />)
+    const textboxes = screen.queryAllByRole('textbox')
+    expect(textboxes.length).toEqual(2)
+
+    const email = textboxes.find(elem => elem.id === 'email')
+    const password = textboxes.find(elem => elem.id === 'password')
+    expect(email).toHaveAttribute('type', 'email')
+    expect(password).toHaveAttribute('type', 'password')
   })
   it('ボタン表示', () => {
     render(<Login />)
@@ -22,11 +32,8 @@ describe('MailForm > ログイン', () => {
     expect(screen.getByText('新規登録')).toBeInTheDocument()
     expect(screen.getByText('パスワードを忘れた方')).toBeInTheDocument()
     expect(
-      screen
-        .getByText('新規登録')
-        .getAttribute('href')
-        .includes('/login/register?')
-    )
+      screen.getByText('新規登録').getAttribute('href').split('?')[0]
+    ).toEqual('/login/register')
     expect(screen.getByText('パスワードを忘れた方')).toHaveAttribute(
       'href',
       '/login/reset'
@@ -34,17 +41,25 @@ describe('MailForm > ログイン', () => {
   })
 })
 
-describe('MailForm > 新規登録', () => {
+describe('新規登録', () => {
   it('renders successfully', () => {
     expect(() => {
       render(<Register />)
     }).not.toThrow()
   })
+  it('input表示', () => {
+    render(<Register />)
+    const textboxes = screen.queryAllByRole('textbox')
+    expect(textboxes.length).toEqual(2)
+    const email = textboxes.find(elem => elem.id === 'email')
+    const password = textboxes.find(elem => elem.id === 'password')
+    expect(email).toHaveAttribute('type', 'email')
+    expect(password).toHaveAttribute('type', 'password')
+  })
   it('ボタン表示', () => {
     render(<Register />)
     expect(screen.getByText('登録する')).toBeInTheDocument()
   })
-
   it('別formへのリンク', () => {
     render(<Register />)
 
@@ -61,20 +76,26 @@ describe('MailForm > 新規登録', () => {
   })
 })
 
-describe('MailForm > パスワードリセット', () => {
+describe('パスワードリセット', () => {
   it('renders successfully', () => {
     expect(() => {
       render(<PasswordReset />)
     }).not.toThrow()
   })
+  it('input表示', () => {
+    render(<PasswordReset />)
+    const textboxes = screen.queryAllByRole('textbox')
+    expect(textboxes.length).toEqual(1)
+    expect(textboxes.find(elem => elem.id === 'email').id).toEqual('email')
+    const email = textboxes.find(elem => elem.id === 'email')
+    expect(email).toHaveAttribute('type', 'email')
+  })
   it('ボタン表示', () => {
     render(<PasswordReset />)
     expect(screen.getByText('パスワードリセット')).toBeInTheDocument()
   })
-
   it('別formへのリンク', () => {
     render(<PasswordReset />)
-
     expect(screen.getByText('ログイン画面に戻る')).toBeInTheDocument()
     expect(screen.getByText('ログイン画面に戻る')).toHaveAttribute(
       'href',
