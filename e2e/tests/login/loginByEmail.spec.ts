@@ -9,9 +9,6 @@ test('test', async ({ page }) => {
   await page.locator('[data-testid="email"]').click()
   // Fill [data-testid="email"]
   await page.locator('[data-testid="email"]').fill('somemailAddress@hoge.com')
-  expect(page.locator('[data-testid="email"]')).toHaveTextContent(
-    'somemailAddress@hoge.com'
-  )
   // Click [data-testid="password"]
   await page.locator('[data-testid="password"]').click()
   // Fill [data-testid="password"]

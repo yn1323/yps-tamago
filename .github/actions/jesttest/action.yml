@@ -12,7 +12,9 @@ runs:
         run: yarn install --frozen-lockfile
         shell: bash
       - name: redwood test
-        run: yarn rw test
+        run:  |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          yarn rw test
         shell: bash
         env:
           TEST_DATABASE_URL: ${{ inputs.TEST_DATABASE_URL }}
