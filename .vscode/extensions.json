@@ -10,6 +10,7 @@
     "prisma.prisma",
     "graphql.vscode-graphql",
     "orta.vscode-jest",
+    "ms-playwright.playwright"
   ],
   "unwantedRecommendations": []
 }

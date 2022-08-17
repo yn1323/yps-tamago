@@ -43,6 +43,12 @@
       "label": "型を手動で作成",
       "detail": "yarn rw g types"
     },
+    {
+      "type": "shell",
+      "command": "yarn playwright codegen localhost:8910",
+      "label": "Playwright codegen",
+      "detail": "Playwright codegen"
+    },
   ],
   "inputs": [
     {
