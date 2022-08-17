@@ -92,8 +92,8 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
             />
           </InputGroup>
         </FormControl>
-        {
-          <FormControl id="password" isDisabled={isReset}>
+        {!isReset && (
+          <FormControl id="password">
             <FormLabel>パスワード</FormLabel>
             <InputGroup>
               <InputLeftElement color="gray.300" pointerEvents="none">
@@ -111,7 +111,7 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
               />
             </InputGroup>
           </FormControl>
-        }
+        )}
         <Box pt={2} w="100%">
           <Button
             colorScheme="primary"

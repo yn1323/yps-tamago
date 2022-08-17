@@ -79,13 +79,10 @@ describe('パスワードリセット', () => {
   it('input表示', () => {
     render(<PasswordReset />)
     const textboxes = screen.queryAllByRole('textbox')
-    expect(textboxes.length).toEqual(2)
+    expect(textboxes.length).toEqual(1)
     expect(textboxes.find(elem => elem.id === 'email').id).toEqual('email')
     const email = textboxes.find(elem => elem.id === 'email')
-    const password = textboxes.find(elem => elem.id === 'password')
     expect(email).toHaveAttribute('type', 'email')
-    expect(password).toHaveAttribute('type', 'password')
-    expect(password).toBeDisabled()
   })
   it('ボタン表示', () => {
     render(<PasswordReset />)
