@@ -8,6 +8,7 @@ describe('ロジック', () => {
   })
   it('hooks', () => {
     const { result } = renderHook(() => useMoge())
+    act(() => {})
     expect(result.current).toEqual(500)
   })
   it('spyOn', () => {

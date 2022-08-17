@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { ChakraProvider } from '@chakra-ui/react'
 
-import { themeChakra } from '../src/utils/ui/theme'
+import { themeChakra } from '../src/constants/ui/theme'
 
 export const parameters = {
   options: {

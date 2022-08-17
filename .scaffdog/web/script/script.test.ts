@@ -1,6 +1,6 @@
 import { renderHook } from '@redwoodjs/testing/web'
 
-import { normal, useMoge } from '.'
+import { normal, useMoge } from './script'
 
 describe('ロジック', () => {
   it('normal', () => {
@@ -8,6 +8,7 @@ describe('ロジック', () => {
   })
   it('hooks', () => {
     const { result } = renderHook(() => useMoge())
+    act(() => {})
     expect(result.current).toEqual(500)
   })
   it('spyOn', () => {

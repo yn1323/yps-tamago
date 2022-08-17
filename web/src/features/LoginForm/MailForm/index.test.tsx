@@ -21,7 +21,10 @@ describe('ログイン', () => {
     const email = textboxes.find(elem => elem.id === 'email')
     const password = textboxes.find(elem => elem.id === 'password')
     expect(email).toHaveAttribute('type', 'email')
+    expect(email).toHaveAttribute('maxLength', '64')
     expect(password).toHaveAttribute('type', 'password')
+    expect(password).toHaveAttribute('maxLength', '16')
+    expect(password).toBeEnabled()
   })
   it('ボタン表示', () => {
     render(<Login />)
@@ -42,11 +45,6 @@ describe('ログイン', () => {
 })
 
 describe('新規登録', () => {
-  it('renders successfully', () => {
-    expect(() => {
-      render(<Register />)
-    }).not.toThrow()
-  })
   it('input表示', () => {
     render(<Register />)
     const textboxes = screen.queryAllByRole('textbox')
@@ -55,6 +53,7 @@ describe('新規登録', () => {
     const password = textboxes.find(elem => elem.id === 'password')
     expect(email).toHaveAttribute('type', 'email')
     expect(password).toHaveAttribute('type', 'password')
+    expect(password).toBeEnabled()
   })
   it('ボタン表示', () => {
     render(<Register />)
@@ -77,18 +76,16 @@ describe('新規登録', () => {
 })
 
 describe('パスワードリセット', () => {
-  it('renders successfully', () => {
-    expect(() => {
-      render(<PasswordReset />)
-    }).not.toThrow()
-  })
   it('input表示', () => {
     render(<PasswordReset />)
     const textboxes = screen.queryAllByRole('textbox')
-    expect(textboxes.length).toEqual(1)
+    expect(textboxes.length).toEqual(2)
     expect(textboxes.find(elem => elem.id === 'email').id).toEqual('email')
     const email = textboxes.find(elem => elem.id === 'email')
+    const password = textboxes.find(elem => elem.id === 'password')
     expect(email).toHaveAttribute('type', 'email')
+    expect(password).toHaveAttribute('type', 'password')
+    expect(password).toBeDisabled()
   })
   it('ボタン表示', () => {
     render(<PasswordReset />)
