@@ -10,7 +10,7 @@ describe('ロジック', () => {
     const { result } = renderHook(() => useMoge())
     expect(result.current).toEqual(500)
   })
-  test('spyOn', () => {
+  it('spyOn', () => {
     const spy = jest.spyOn(video, 'play')
     const isPlaying = video.play()
 
