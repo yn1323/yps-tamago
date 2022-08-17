@@ -28,3 +28,9 @@ api/types/graphql.d.ts
 # Jest Report
 /jest-report
 /coverage
+/test-results/
+
+# playwrights
+/playwright-report/
+/playwright/.cache/
+/e2e/screnenshots

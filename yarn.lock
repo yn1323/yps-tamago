@@ -4765,6 +4765,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:^1.25.0":
+  version: 1.25.0
+  resolution: "@playwright/test@npm:1.25.0"
+  dependencies:
+    "@types/node": "*"
+    playwright-core: 1.25.0
+  bin:
+    playwright: cli.js
+  checksum: 3092d5824aa200a6ab68748bbb1a629a4091bd0ba848598d0ab9d904a7b702b86f74c6d0ea31771f96d1fb3c160514fd83169efc7bc60b82630f92fdcc0aeb1e
+  languageName: node
+  linkType: hard
+
 "@pmmmwh/react-refresh-webpack-plugin@npm:0.5.7, @pmmmwh/react-refresh-webpack-plugin@npm:^0.5.3":
   version: 0.5.7
   resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.5.7"
@@ -21595,7 +21607,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.14.0":
+"playwright@npm:^1.14.0, playwright@npm:^1.25.0":
   version: 1.25.0
   resolution: "playwright@npm:1.25.0"
   dependencies:
@@ -23656,8 +23668,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@playwright/test": ^1.25.0
     "@redwoodjs/core": 2.2.0
     chromatic: 6.7.3
+    playwright: ^1.25.0
     scaffdog: 1.5.0
   languageName: unknown
   linkType: soft
