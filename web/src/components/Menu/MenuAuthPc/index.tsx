@@ -25,17 +25,15 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
   const tasks = [MENU.TOP, MENU.SHIFT, MENU.ATTENDANCE, MENU.TIMECARD]
   const commons = [MENU.CONFIG, MENU.HOWTO, MENU.LOGOUT]
   const { isExpand, setIsExpand } = useExpandButton()
-
   const buttonHoverColor = useColorModeValue('gray.100', 'gray.700')
 
-  const buttonProps = ({ isExpand }: { isExpand: boolean }) => ({
+  const buttonProps = {
     variant: 'ghost',
-    w: isExpand ? '100%' : '100%',
+    w: '100%',
     justifyContent: 'flex-start',
     _hover: { bg: buttonHoverColor },
     rounded: 0,
-  })
-
+  }
   const drawerAnimation = {
     width: isExpand ? '200px' : '50px',
   }
@@ -59,7 +57,7 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
             <Button
               onClick={() => setIsExpand(false)}
               leftIcon={<FcPrevious />}
-              {...buttonProps({ isExpand })}
+              {...buttonProps}
               aria-label="ナビゲーションのラベルを非表示"
               display={{ base: 'none', md: 'flex' }}
             />
@@ -68,7 +66,7 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
             <Button
               onClick={() => setIsExpand(true)}
               leftIcon={<FcNext />}
-              {...buttonProps({ isExpand })}
+              {...buttonProps}
               aria-label="ナビゲーションのラベルを表示"
               data-testid="openButton"
               display={{ base: 'none', md: 'flex' }}
@@ -79,7 +77,7 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
             <Button
               key={i}
               leftIcon={icon}
-              {...buttonProps({ isExpand })}
+              {...buttonProps}
               as={Link}
               to={link}
               aria-label={label}
@@ -93,7 +91,7 @@ export const MenuAuthPc: FC<PropTypes> = ({ children }) => {
             <Button
               key={i}
               leftIcon={icon}
-              {...buttonProps({ isExpand })}
+              {...buttonProps}
               as={Link}
               to={link}
               aria-label={label}
