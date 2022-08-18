@@ -39,7 +39,7 @@
     },
     {
       "command": "yarn playwright test --debug",
-      "name": "Playwright",
+      "name": "Playwright Debug",
       "request": "launch",
       "type": "node-terminal"
     },

@@ -9,6 +9,11 @@ import * as stories from './index.stories'
 const { LabelShow, LabelHidden } = composeStories(stories)
 
 describe('AuthMenuPc > ラベル表示', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<LabelShow />)
+    }).not.toThrow()
+  })
   it('ランドマークロールが存在する', () => {
     render(<LabelShow />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
@@ -40,6 +45,11 @@ describe('AuthMenuPc > ラベル表示', () => {
 })
 
 describe('AuthMenuPc > ラベル非表示', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<LabelHidden />)
+    }).not.toThrow()
+  })
   it('メニューが閉じているときにボタンのラベルが非表示', async () => {
     const { container } = render(<LabelHidden />)
     await LabelHidden.play({ canvasElement: container })

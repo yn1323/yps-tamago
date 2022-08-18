@@ -9,6 +9,11 @@ import * as stories from './index.stories'
 const { Basic } = composeStories(stories)
 
 describe('コンポーネント', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<Basic />)
+    }).not.toThrow()
+  })
   it('ランドマークロールが存在する', () => {
     render(<Basic />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()

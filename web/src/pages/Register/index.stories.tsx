@@ -11,10 +11,7 @@ export default {
   component: Register,
 } as ComponentMeta<typeof Register>
 
-const args: ComponentProps = {
-  show: false,
-  hoge: '11',
-}
+const args: ComponentProps = {}
 
 export const Basic: StoryObj = {
   args: { ...args },

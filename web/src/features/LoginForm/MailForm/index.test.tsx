@@ -9,6 +9,11 @@ import * as stories from './index.stories'
 const { Login, Register, PasswordReset } = composeStories(stories)
 
 describe('ログイン', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<Login />)
+    }).not.toThrow()
+  })
   it('ランドマークロールが存在する', () => {
     render(<Login />)
     expect(screen.getByRole('form')).toBeInTheDocument()
@@ -45,6 +50,11 @@ describe('ログイン', () => {
 })
 
 describe('新規登録', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<Register />)
+    }).not.toThrow()
+  })
   it('input表示', () => {
     render(<Register />)
     const textboxes = screen.queryAllByRole('textbox')
@@ -76,6 +86,11 @@ describe('新規登録', () => {
 })
 
 describe('パスワードリセット', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<PasswordReset />)
+    }).not.toThrow()
+  })
   it('input表示', () => {
     render(<PasswordReset />)
     const textboxes = screen.queryAllByRole('textbox')

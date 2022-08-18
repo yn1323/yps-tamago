@@ -9,6 +9,11 @@ import * as stories from './index.stories'
 const { MenuShow, MenuHidden } = composeStories(stories)
 
 describe('AuthMenuPc > ダイアログ非表示', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<MenuShow />)
+    }).not.toThrow()
+  })
   it('ランドマークロールが存在する', () => {
     render(<MenuHidden />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
@@ -43,6 +48,11 @@ describe('AuthMenuPc > ダイアログ非表示', () => {
 })
 
 describe('AuthMenuSp > ダイアログ表示', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<MenuShow />)
+    }).not.toThrow()
+  })
   it('ボタンが存在する', async () => {
     const { container } = render(<MenuShow />)
     await MenuShow.play({ canvasElement: container })
