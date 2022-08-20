@@ -8,12 +8,6 @@
       "type": "node-terminal"
     },
     {
-      "command": "supabase stop && supabase start && yarn rw prisma migrate dev",
-      "name": "Supabase",
-      "request": "launch",
-      "type": "node-terminal"
-    },
-    {
       "command": "yarn rw storybook",
       "name": "Storybook",
       "request": "launch",

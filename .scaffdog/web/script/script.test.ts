@@ -1,6 +1,6 @@
 import { renderHook } from '@redwoodjs/testing/web'
 
-import { normal, useMoge } from './script'
+import { normal, useMoge } from '.'
 
 describe('ロジック', () => {
   it('normal', () => {
