@@ -1,14 +1,39 @@
-import { render } from '@redwoodjs/testing/web'
+import { waitFor } from '@storybook/testing-library'
+import { composeStories } from '@storybook/testing-react'
 
-import {{ inputs.component | pascal }} from './{{ inputs.component | pascal }}'
+import { screen } from '@redwoodjs/testing/web'
 
-//   Improve this test with help from the Redwood Testing Doc:
-//    https://redwoodjs.com/docs/testing#testing-components
+import { render } from 'src/config/jest-utils'
 
-describe('{{ inputs.component | pascal }}', () => {
-  it('renders successfully', () => {
-    expect(() => {
-      render(<{{ inputs.component | pascal }} />)
-    }).not.toThrow()
+import * as stories from './index.stories'
+
+const { Basic } = composeStories(stories)
+
+describe('コンポーネント', () => {
+  it('コンポーネントを正常に描画', async () => {
+    await waitFor(() => {
+      expect(() => {
+        render(<Basic />)
+      }).not.toThrow()
+    })
+  })
+  it('ランドマークロールが存在する', () => {
+    render(<Basic />)
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
+  })
+  it('ボタンが存在する', () => {
+    render(<Basic />)
+    expect(screen.getByText('マイページ')).toBeInTheDocument()
+  })
+  // it('メニューが閉じているときにボタンのラベルが非表示', async () => {
+  //   const { container } = render(<LabelHidden />)
+  //   await LabelHidden.play({ canvasElement: container })
+  // })
+})
+
+describe('ロジック', () => {
+  it('ランドマークロールが存在する', () => {
+    render(<Basic />)
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 })

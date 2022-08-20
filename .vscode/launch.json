@@ -8,20 +8,38 @@
       "type": "node-terminal"
     },
     {
-      "command": "supabase start && yarn rw prisma migrate dev",
-      "name": "Supabase",
-      "request": "launch",
-      "type": "node-terminal"
-    },
-    {
       "command": "yarn rw storybook",
       "name": "Storybook",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "command": "yarn rw test",
+      "command": "yarn rw test --coverage",
       "name": "Jest",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npx live-server jest-report --port 8081 -o",
+      "name": "Jest Report",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "yarn playwright test",
+      "name": "Playwright",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "yarn playwright test --debug",
+      "name": "Playwright Debug",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "cd web && yarn test-storybook",
+      "name": "Storybook Test",
       "request": "launch",
       "type": "node-terminal"
     },

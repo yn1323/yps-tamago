@@ -4,6 +4,14 @@
   "labels": ["renovate"],
   "baseBranches": ["chore/renovate"],
   "schedule": ["every weekend"],
+  "ignoreDeps": [
+    "@chakra-ui/react",
+    "@emotion/react",
+    "@emotion/styled",
+    "framer-motion",
+    "react",
+    "react-dom"
+  ],
   "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
