@@ -30,6 +30,10 @@ describe('ログイン', () => {
     expect(password).toHaveAttribute('type', 'password')
     expect(password).toHaveAttribute('maxLength', '16')
     expect(password).toBeEnabled()
+    expect(password).toHaveAttribute('aria-describedby', 'password-helptext')
+    expect(
+      screen.getByText('8文字以上16文字以内で入力してください')
+    ).toBeInTheDocument()
   })
   it('ボタン表示', () => {
     render(<Login />)
