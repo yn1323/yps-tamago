@@ -17,7 +17,6 @@ describe('LoginButtons', () => {
   it('ログインボタン表示', () => {
     render(<Basic />)
     expect(screen.getByText('Googleでログイン')).toBeInTheDocument()
-    expect(screen.getByText('Twitterでログイン')).toBeInTheDocument()
-    expect(screen.getByText('ゲストでログイン')).toBeInTheDocument()
+    // expect(screen.getByText('Twitterでログイン')).toBeInTheDocument()
   })
 })
