@@ -6,7 +6,7 @@ import { render } from 'src/config/jest-utils'
 
 import * as stories from './index.stories'
 
-const { Login, Register, PasswordReset } = composeStories(stories)
+const { Login, Register, PasswordReset, PasswordSet } = composeStories(stories)
 
 describe('ログイン', () => {
   it('コンポーネントを正常に描画', () => {
@@ -85,7 +85,7 @@ describe('新規登録', () => {
   })
 })
 
-describe('パスワードリセット', () => {
+describe('パスワードリセットURLの送信', () => {
   it('コンポーネントを正常に描画', () => {
     expect(() => {
       render(<PasswordReset />)
@@ -110,5 +110,27 @@ describe('パスワードリセット', () => {
       'href',
       '/login'
     )
+  })
+})
+
+describe('パスワード再登録', () => {
+  it('コンポーネントを正常に描画', () => {
+    expect(() => {
+      render(<PasswordSet />)
+    }).not.toThrow()
+  })
+  it('input表示', () => {
+    render(<PasswordSet />)
+    const textboxes = screen.queryAllByRole('textbox')
+    expect(textboxes.length).toEqual(1)
+    expect(textboxes.find(elem => elem.id === 'password').id).toEqual(
+      'password'
+    )
+    const password = textboxes.find(elem => elem.id === 'password')
+    expect(password).toHaveAttribute('type', 'password')
+  })
+  it('ボタン表示', () => {
+    render(<PasswordSet />)
+    expect(screen.getByText('パスワードを再設定')).toBeInTheDocument()
   })
 })

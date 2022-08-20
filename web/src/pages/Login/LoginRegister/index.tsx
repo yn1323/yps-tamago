@@ -6,7 +6,7 @@ import { MailForm } from 'src/features/LoginForm/MailForm'
 
 export const LoginRegister: FC = () => {
   return (
-    <Animation data-testid="login">
+    <Animation>
       <CenterBox>
         <MailForm mailFormType="signUp" />
       </CenterBox>

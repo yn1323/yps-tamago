@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof MailForm>
 
 const args: ComponentProps = {
-  mailFormType: 'login',
+  mailFormType: 'signIn',
 }
 
 export const Login = {
@@ -23,6 +23,10 @@ export const Register: StoryObj = {
   parameters: { chromatic: { viewports: [1080] } },
 }
 export const PasswordReset: StoryObj = {
-  args: { ...args, mailFormType: 'reset' },
+  args: { ...args, mailFormType: 'resetPassword' },
+  parameters: { chromatic: { viewports: [1080] } },
+}
+export const PasswordSet: StoryObj = {
+  args: { ...args, mailFormType: 'setPassword' },
   parameters: { chromatic: { viewports: [1080] } },
 }

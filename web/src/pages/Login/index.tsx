@@ -6,9 +6,9 @@ import { LoginForm } from 'src/features/LoginForm'
 
 export const Login: FC = () => {
   return (
-    <Animation data-testid="login">
+    <Animation>
       <CenterBox>
-        <LoginForm mailFormType="login" />
+        <LoginForm mailFormType="signIn" />
       </CenterBox>
     </Animation>
   )
