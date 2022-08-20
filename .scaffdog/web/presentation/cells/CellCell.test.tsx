@@ -1,30 +1,31 @@
-import { render } from '@redwoodjs/testing/web'
+import { composeStories } from '@storybook/testing-react'
 
-import { Loading, Empty, Failure, Success } from './{{ inputs.component | pascal }}Cell'
-import { standard } from './{{ inputs.component | pascal }}Cell.mock'
+import { screen } from '@redwoodjs/testing/web'
 
-// Generated boilerplate tests do not account for all circumstances
-// and can fail without adjustments, e.g. Float and DateTime types.
-//           Please refer to the RedwoodJS Testing Docs:
-//        https://redwoodjs.com/docs/testing#testing-cells
-// https://redwoodjs.com/docs/testing#jest-expect-type-considerations
+import { render } from 'src/config/jest-utils'
+
+import { Loading, Empty, Failure, Success } from '.'
+import { standard } from './index.mocks'
+import * as stories from './index.stories'
+
+const { loading, empty, failure, success } = composeStories(stories)
 
 describe('{{ inputs.component | pascal }}Cell', () => {
-  it('renders Loading successfully', () => {
+  it('ローディングが描画される', () => {
     expect(() => {
-      render(<Loading />)
+      render(<loading />)
     }).not.toThrow()
   })
 
-  it('renders Empty successfully', async () => {
+  it('空の結果が描画される', async () => {
     expect(() => {
-      render(<Empty />)
+      render(<empty />)
     }).not.toThrow()
   })
 
-  it('renders Failure successfully', async () => {
+  it('失敗時に描画される', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<failure error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
@@ -34,9 +35,18 @@ describe('{{ inputs.component | pascal }}Cell', () => {
   // 1. import { screen } from '@redwoodjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
-  it('renders Success successfully', async () => {
+  it('成功時に描画される', async () => {
     expect(() => {
-      render(<Success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
+      render(<success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
     }).not.toThrow()
+    expect(screen.getByText('Foobar')).toBeInTheDocument()
   })
+  it('ボタンが存在する', () => {
+    render(<success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
+    expect(screen.getByText('マイページ')).toBeInTheDocument()
+  })
+  // it('メニューが閉じているときにボタンのラベルが非表示', async () => {
+  //   const { container } = render(<success {{ inputs.component | camel }}={standard().{{ inputs.component | camel }}} />)
+  //   await LabelHidden.play({ canvasElement: container })
+  // })
 })
