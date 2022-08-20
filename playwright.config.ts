@@ -100,9 +100,17 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn rw dev ',
+    command: 'yarn rw dev',
     port: 8910,
     reuseExistingServer: !process.env.CI,
+    env: {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      DATABASE_URL: process.env.DATABASE_URL!,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      SUPABASE_API_URL: process.env.SUPABASE_API_URL!,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY!,
+    },
   },
 }
 
