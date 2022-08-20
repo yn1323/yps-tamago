@@ -16,13 +16,13 @@ runs:
         shell: bash
       - name: storybook build
         run: yarn rw storybook --build
+        env:
+          SUPABASE_API_URL: ${{ inputs.SUPABASE_API_URL }}
+          SUPABASE_ANON_KEY: ${{ inputs.SUPABASE_ANON_KEY }}
         shell: bash
       - name: storybook test
         run: |
           cd web
           yarn test-storybook:ci
           cd ..
-        env:
-          SUPABASE_API_URL: ${{ inputs.SUPABASE_API_URL }}
-          SUPABASE_ANON_KEY: ${{ inputs.SUPABASE_ANON_KEY }}
         shell: bash
