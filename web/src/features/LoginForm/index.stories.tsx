@@ -17,7 +17,7 @@ export default {
 } as ComponentMeta<typeof LoginForm>
 
 const args: ComponentProps = {
-  mailFormType: 'login',
+  mailFormType: 'signIn',
 }
 
 export const Basic: StoryObj = {
