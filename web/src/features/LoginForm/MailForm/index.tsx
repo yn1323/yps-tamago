@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   FormControl,
+  FormHelperText,
   FormLabel,
   Input,
   InputGroup,
@@ -39,7 +40,11 @@ type FormTypes = {
 
 export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
   const shopId = 'hoge'
-  const { handleSubmit, register } = useForm<FormTypes>()
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<FormTypes>()
   const show = {
     emailInput: ['signUp', 'signIn', 'resetPassword'].includes(mailFormType),
     passwordInput: ['signUp', 'signIn', 'setPassword'].includes(mailFormType),
@@ -93,7 +98,7 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
           </FormControl>
         )}
         {show.passwordInput && (
-          <FormControl id="password">
+          <FormControl id="password" isInvalid={!!errors.password}>
             <FormLabel>パスワード</FormLabel>
             <InputGroup>
               <InputLeftElement color="gray.300" pointerEvents="none">
@@ -107,9 +112,13 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
                 required
                 {...register('password', {
                   required: true,
+                  minLength: 8,
                 })}
               />
             </InputGroup>
+            <FormHelperText color={errors.password ? 'crimson' : undefined}>
+              8文字以上16文字以内で入力してください
+            </FormHelperText>
           </FormControl>
         )}
         <Box pt={2} w="100%">
