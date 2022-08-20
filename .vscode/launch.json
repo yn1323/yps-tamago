@@ -38,6 +38,12 @@
       "type": "node-terminal"
     },
     {
+      "command": "cd web && yarn test-storybook",
+      "name": "Storybook Test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "name": "Attach API debugger",
       "port": 18911, // you can change this port, see https://redwoodjs.com/docs/project-configuration-dev-test-build#debugger-configuration
       "request": "attach",
