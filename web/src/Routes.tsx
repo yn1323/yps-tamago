@@ -7,6 +7,7 @@ import { Login } from 'src/pages/Login'
 import { LoginRegister } from 'src/pages/Login/LoginRegister'
 import { LoginReset } from 'src/pages/Login/LoginReset'
 import { SetPassword } from 'src/pages/Login/SetPassword'
+import { Logout } from 'src/pages/Logout'
 import { Register } from 'src/pages/Register'
 import { Top } from 'src/pages/Top'
 
@@ -19,6 +20,7 @@ const Routes = () => {
         <Route path="/login/register" page={LoginRegister} name="loginRegister" />
         <Route path="/login/reset" page={LoginReset} name="loginReset" />
         <Route path="/login/setPassword" page={SetPassword} name="setPassword" />
+        <Route path="/logout" page={Logout} name="logout" />
         <Route path="/register" page={Register} name="register" />
       </TemplateUnauth>
 

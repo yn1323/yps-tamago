@@ -1,5 +1,4 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { userEvent, within, screen } from '@storybook/testing-library'
 
 import { Logout } from '.'
 
@@ -11,19 +10,9 @@ export default {
   component: Logout,
 } as ComponentMeta<typeof Logout>
 
-const args: ComponentProps = {
-  show: false,
-  hoge: '11',
-}
+const args: ComponentProps = {}
 
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [414, 1080] } },
-}
-
-export const Test: StoryObj = {
-  args: { ...args },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-  },
 }
