@@ -30,3 +30,5 @@ jobs:
         with:
           G_TOKEN: ${{ secrets.G_TOKEN }}
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          SUPABASE_API_URL: ${{ secrets.SUPABASE_API_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
