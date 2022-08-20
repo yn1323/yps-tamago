@@ -8,10 +8,10 @@
     ]
   },
   "devDependencies": {
-    "@playwright/test": "^1.25.0",
+    "@playwright/test": "1.25.0",
     "@redwoodjs/core": "2.2.0",
     "chromatic": "6.7.3",
-    "playwright": "^1.25.0",
+    "playwright": "1.25.0",
     "scaffdog": "1.5.0"
   },
   "eslintConfig": {
