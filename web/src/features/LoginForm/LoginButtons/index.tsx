@@ -3,11 +3,11 @@ import { FC } from 'react'
 import { Button, VStack } from '@chakra-ui/react'
 import { FcGoogle } from 'react-icons/fc'
 
+import { useAuth } from '@redwoodjs/auth'
 import { navigate, routes } from '@redwoodjs/router'
 
-import { supabase } from 'src/config/supabase'
-
 export const LoginButtons: FC = () => {
+  const { logIn } = useAuth()
   const props = {
     button: {
       w: 300,
@@ -20,14 +20,10 @@ export const LoginButtons: FC = () => {
   }
 
   const login = async () => {
-    const { error } = await supabase.auth.signIn(
-      {
-        provider: 'google',
-      },
-      {
-        redirectTo: `${window.location.origin}/dashboard`,
-      }
-    )
+    const { error } = await logIn({
+      provider: 'google',
+      redirectTo: `${window.location.origin}/dashboard`,
+    })
     if (error) {
       navigate(routes.login())
     }

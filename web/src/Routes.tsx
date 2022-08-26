@@ -1,4 +1,4 @@
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route, Private } from '@redwoodjs/router'
 
 import { TemplateAuth } from 'src/components/Template/TemplateAuth'
 import { TemplateUnauth } from 'src/components/Template/TemplateUnauth'
@@ -24,10 +24,11 @@ const Routes = () => {
         <Route path="/register" page={Register} name="register" />
       </TemplateUnauth>
 
-      <TemplateAuth>
-        <Route path="/dashboard" page={Dashboard} name="dashboard" />
-      </TemplateAuth>
-
+      <Private unauthenticated="login">
+        <TemplateAuth>
+          <Route path="/dashboard" page={Dashboard} name="dashboard" />
+        </TemplateAuth>
+      </Private>
       {/* <Route notfound page={NotFoundPage} /> */}
     </Router>
   )

@@ -23,3 +23,11 @@ model Contact {
   message   String
   createdAt DateTime @default(now())
 }
+
+model User {
+  id Int @id @default(autoincrement())
+  userId String @unique
+  name String
+  avatar String
+  createdAt DateTime @default(now())
+}
