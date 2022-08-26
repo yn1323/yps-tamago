@@ -4,6 +4,7 @@ export const schema = gql`
     userId: String!
     name: String!
     avatar: String!
+    role: String!
     createdAt: DateTime!
   }
 
@@ -16,12 +17,14 @@ export const schema = gql`
     userId: String!
     name: String!
     avatar: String!
+    role: String!
   }
 
   input UpdateUserInput {
     userId: String
     name: String
     avatar: String
+    role: String
   }
 
   type Mutation {

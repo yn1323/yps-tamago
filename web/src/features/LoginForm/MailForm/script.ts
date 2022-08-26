@@ -82,6 +82,7 @@ export const useSignIn = () => {
     const info = await supabaseSignIn({
       email,
       password,
+      redirectTo: `${window.location.host}/dashboard`,
     })
     setSignInResult(info)
     setIsLoading(false)

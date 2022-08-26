@@ -1,6 +1,8 @@
 import { parseJWT } from '@redwoodjs/api'
 import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
 
+import { db } from 'src/lib/db'
+
 /**
  * Represents the user attributes returned by the decoding the
  * Authentication provider's JWT together with an optional list of roles.
@@ -38,7 +40,19 @@ export const getCurrentUser = async (
     return null
   }
 
-  const { roles } = parseJWT({ decoded })
+  const userId = decoded.sub
+
+  const userRole = await db.user.findUnique({
+    where: { userId: userId },
+    select: { role: true },
+  })
+
+  const newDecoded = {
+    ...decoded,
+    roles: userRole.role ? [userRole.role] : ['new'],
+  }
+
+  const { roles } = parseJWT({ decoded: newDecoded })
 
   if (roles) {
     return { ...decoded, roles }

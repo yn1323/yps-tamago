@@ -8,6 +8,7 @@ import { LoginRegister } from 'src/pages/Login/LoginRegister'
 import { LoginReset } from 'src/pages/Login/LoginReset'
 import { SetPassword } from 'src/pages/Login/SetPassword'
 import { Logout } from 'src/pages/Logout'
+import { New } from 'src/pages/New'
 import { Register } from 'src/pages/Register'
 import { Top } from 'src/pages/Top'
 
@@ -24,11 +25,14 @@ const Routes = () => {
         <Route path="/register" page={Register} name="register" />
       </TemplateUnauth>
 
-      <Private unauthenticated="login">
-        <TemplateAuth>
+      <TemplateAuth>
+        <Private unauthenticated="login" roles={['new']}>
+          <Route path="/new" page={New} name="new" />
+        </Private>
+        <Private unauthenticated="new" roles={['owner', 'member']}>
           <Route path="/dashboard" page={Dashboard} name="dashboard" />
-        </TemplateAuth>
-      </Private>
+        </Private>
+      </TemplateAuth>
       {/* <Route notfound page={NotFoundPage} /> */}
     </Router>
   )

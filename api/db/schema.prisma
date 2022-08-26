@@ -29,5 +29,6 @@ model User {
   userId String @unique
   name String
   avatar String
+  role String
   createdAt DateTime @default(now())
 }
