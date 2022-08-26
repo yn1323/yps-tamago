@@ -2264,27 +2264,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/icon@npm:3.0.8":
-  version: 3.0.8
-  resolution: "@chakra-ui/icon@npm:3.0.8"
+"@chakra-ui/icon@npm:3.0.9":
+  version: 3.0.9
+  resolution: "@chakra-ui/icon@npm:3.0.9"
   dependencies:
-    "@chakra-ui/utils": 2.0.8
+    "@chakra-ui/shared-utils": 2.0.1
   peerDependencies:
     "@chakra-ui/system": ">=2.0.0"
     react: ">=18"
-  checksum: 8f86bec365493a7761a87cd0ef7522da5c19c861d8d0b848751aa2479aff93b0157205c7634f05ce0573617da075ed9a0bcaed6fa0b4b5922f8ebf777db893af
+  checksum: 3944a836c3c7136da108f8f4fe40db1a31652df1b7dab193c6a50776a8e7ef326af1a159754cf08cdec1503e81579c6bfe518ce7d002a0393faaa774a7f35c43
   languageName: node
   linkType: hard
 
-"@chakra-ui/icons@npm:2.0.8":
-  version: 2.0.8
-  resolution: "@chakra-ui/icons@npm:2.0.8"
+"@chakra-ui/icons@npm:2.0.9":
+  version: 2.0.9
+  resolution: "@chakra-ui/icons@npm:2.0.9"
   dependencies:
-    "@chakra-ui/icon": 3.0.8
+    "@chakra-ui/icon": 3.0.9
   peerDependencies:
     "@chakra-ui/system": ">=2.0.0"
     react: ">=18"
-  checksum: 250c16ee4e87986504b98f78fcedcdc406b3650aedf459ef98242bc1061cdbd46198a71a2d0a0016896542dc44ac9982874062fe0c06506e2ac9aeb20efa7dbb
+  checksum: 778b239a3a3ba595320043db6ab89f52a5c44eec3292ea74aacc9012c0104e341f725c47c325f4262d441ffdafe133c7ad5b5870f7b4d0ea45db9cccb92ada3f
   languageName: node
   linkType: hard
 
@@ -2614,6 +2614,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/shared-utils@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@chakra-ui/shared-utils@npm:2.0.1"
+  checksum: 66c76a6b7ac8e2a089ed484bc0c53cd2c83733582e1ee34a9dca3b3684208fbfe493cd4a0f288a5139ab218b1e1da412d334cd12a69e56d264118602f80124de
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/skeleton@npm:1.2.14":
   version: 1.2.14
   resolution: "@chakra-ui/skeleton@npm:1.2.14"
@@ -2672,11 +2679,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/storybook-addon@npm:4.0.8":
-  version: 4.0.8
-  resolution: "@chakra-ui/storybook-addon@npm:4.0.8"
+"@chakra-ui/storybook-addon@npm:4.0.9":
+  version: 4.0.9
+  resolution: "@chakra-ui/storybook-addon@npm:4.0.9"
   dependencies:
-    "@chakra-ui/icons": 2.0.8
+    "@chakra-ui/icons": 2.0.9
     webpack-merge: ^5.0.0
   peerDependencies:
     "@chakra-ui/react": ">=2.0.0"
@@ -2689,7 +2696,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 05dc2ab00918e12ed5715ee363adb5a84aaa5c4800ac6663490eba041358ecdbd3b4df850335ff203b5ebb233efb1fa6f8529d8b69e02540cff656905c53bb1d
+  checksum: a2ba901b75b7e4657e2cbb2b49289de11cda53effdcdf23e08ee428389d00e8d225d30e774d3186aa303650e432f3e0d95e387cb1637e4bc1f44826a398695de
   languageName: node
   linkType: hard
 
@@ -2873,18 +2880,6 @@ __metadata:
     framesync: 5.3.0
     lodash.mergewith: 4.6.2
   checksum: 16d830bac30dceee2845cdd264eb86d4a4348da2d88a309187c8856409c7ba9f691d0fad00f7fe8b8b49553ac77611cce6786a4c127c5949afc2e1b04b1629ed
-  languageName: node
-  linkType: hard
-
-"@chakra-ui/utils@npm:2.0.8":
-  version: 2.0.8
-  resolution: "@chakra-ui/utils@npm:2.0.8"
-  dependencies:
-    "@types/lodash.mergewith": 4.6.6
-    css-box-model: 1.2.1
-    framesync: 5.3.0
-    lodash.mergewith: 4.6.2
-  checksum: 5b4dabf11c20e3cdb93f373a55d45d259d1b0717de67956c9f2da381ce2f78d1ecc11f23ab238b56bbfd2886c667abfa6c88acbfb9c391f78ef2bf7276d43853
   languageName: node
   linkType: hard
 
@@ -26943,7 +26938,7 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@chakra-ui/react": 1.8.8
-    "@chakra-ui/storybook-addon": 4.0.8
+    "@chakra-ui/storybook-addon": 4.0.9
     "@emotion/react": 11.10.0
     "@emotion/styled": 11.10.0
     "@redwoodjs/forms": 2.2.0
