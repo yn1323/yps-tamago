@@ -17,23 +17,16 @@ describe('コンポーネント', () => {
       }).not.toThrow()
     })
   })
-  it('ランドマークロールが存在する', () => {
-    render(<Basic />)
-    expect(screen.getByRole('navigation')).toBeInTheDocument()
-  })
-  it('ボタンが存在する', () => {
-    render(<Basic />)
-    expect(screen.getByText('マイページ')).toBeInTheDocument()
-  })
+  // it('ランドマークロールが存在する', () => {
+  //   render(<Basic />)
+  //   expect(screen.getByRole('navigation')).toBeInTheDocument()
+  // })
+  // it('ボタンが存在する', () => {
+  //   render(<Basic />)
+  //   expect(screen.getByText('マイページ')).toBeInTheDocument()
+  // })
   // it('メニューが閉じているときにボタンのラベルが非表示', async () => {
   //   const { container } = render(<LabelHidden />)
   //   await LabelHidden.play({ canvasElement: container })
   // })
-})
-
-describe('ロジック', () => {
-  it('ランドマークロールが存在する', () => {
-    render(<Basic />)
-    expect(screen.getByRole('navigation')).toBeInTheDocument()
-  })
 })
