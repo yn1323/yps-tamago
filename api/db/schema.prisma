@@ -30,5 +30,6 @@ model User {
   name String
   avatar String
   role String
+  email String
   createdAt DateTime @default(now())
 }

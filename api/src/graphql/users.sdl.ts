@@ -5,6 +5,7 @@ export const schema = gql`
     name: String!
     avatar: String!
     role: String!
+    email: String!
     createdAt: DateTime!
   }
 
@@ -18,6 +19,7 @@ export const schema = gql`
     name: String!
     avatar: String!
     role: String!
+    email: String!
   }
 
   input UpdateUserInput {
@@ -25,6 +27,7 @@ export const schema = gql`
     name: String
     avatar: String
     role: String
+    email: String
   }
 
   type Mutation {
