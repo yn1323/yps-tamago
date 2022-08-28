@@ -108,6 +108,7 @@ export const MailForm: FC<PropTypes> = ({ mailFormType }) => {
                 data-testid="password"
                 role="textbox"
                 type="password"
+                autoComplete="current-password"
                 maxLength={16}
                 required
                 {...register('password', {
