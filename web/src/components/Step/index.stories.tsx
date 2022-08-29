@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
 
@@ -11,7 +13,7 @@ export default {
   component: Step,
 } as ComponentMeta<typeof Step>
 
-const args: ComponentProps = {
+const args: Pick<ComponentProps, 'labels' | 'children'> = {
   labels: ['One', 'Two', 'Three'],
   children: [
     <div key={1}>First</div>,
@@ -19,10 +21,16 @@ const args: ComponentProps = {
     <div key={3}>Third</div>,
   ],
 }
+const render = args => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [tabIndex, setTabIndex] = useState(0)
+  return <Step {...args} tabIndex={tabIndex} setTabIndex={setTabIndex} />
+}
 
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [414, 1080] } },
+  render,
 }
 
 export const Test: StoryObj = {
@@ -31,4 +39,5 @@ export const Test: StoryObj = {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByLabelText('Two'))
   },
+  render,
 }

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 
 import {
   Tabs,
@@ -16,11 +16,17 @@ import { useScreenSize } from 'src/hooks/useScreenSize'
 
 type PropTypes = {
   labels: string[]
+  tabIndex: number
+  setTabIndex: Dispatch<SetStateAction<number>>
   children: JSX.Element[]
 }
 
-export const Step: FC<PropTypes> = ({ labels, children }) => {
-  const [tabIndex, setTabIndex] = useState(0)
+export const Step: FC<PropTypes> = ({
+  labels,
+  tabIndex,
+  setTabIndex,
+  children,
+}) => {
   const { isPC } = useScreenSize()
   const buttonProp = {
     size: isPC ? 'md' : 'sm',
