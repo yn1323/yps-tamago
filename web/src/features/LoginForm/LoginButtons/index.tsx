@@ -4,7 +4,7 @@ import { Button, VStack } from '@chakra-ui/react'
 import { FcGoogle } from 'react-icons/fc'
 
 import { useAuth } from '@redwoodjs/auth'
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes, useParams } from '@redwoodjs/router'
 
 export const LoginButtons: FC = () => {
   const { logIn } = useAuth()
@@ -20,9 +20,12 @@ export const LoginButtons: FC = () => {
   }
 
   const login = async () => {
+    const { shopId } = useParams()
     const { error } = await logIn({
       provider: 'google',
-      redirectTo: `${window.location.origin}/dashboard`,
+      redirectTo: `${window.location.origin}/dashboard${
+        shopId ? `?shopId=${shopId}` : ''
+      }`,
     })
     if (error) {
       navigate(routes.login())

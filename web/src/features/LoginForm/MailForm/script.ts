@@ -4,7 +4,7 @@ import { useToast, UseToastOptions } from '@chakra-ui/react'
 import { Session, User, ApiError, Provider } from '@supabase/supabase-js'
 
 import { useAuth } from '@redwoodjs/auth'
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes, useParams } from '@redwoodjs/router'
 
 import { supabase } from 'src/config/supabase'
 import { MailForm } from 'src/features/LoginForm/MailForm'
@@ -76,13 +76,16 @@ export const useSignIn = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [signInResult, setSignInResult] = useState<SignInResult>({})
   const { logIn: supabaseSignIn } = useAuth()
+  const { shopId } = useParams()
 
   const signIn = async ({ email, password }: FormInput) => {
     setIsLoading(true)
     const info = await supabaseSignIn({
       email,
       password,
-      redirectTo: `${window.location.host}/dashboard`,
+      redirectTo: `${window.location.host}/dashboard${
+        shopId ? `?shopId=${shopId}` : ''
+      }`,
     })
     setSignInResult(info)
     setIsLoading(false)
