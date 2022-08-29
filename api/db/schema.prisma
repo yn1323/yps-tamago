@@ -24,12 +24,159 @@ model Contact {
   createdAt DateTime @default(now())
 }
 
+model ShopUserBelonging{
+  id String @id @unique
+  shopId String
+  userId String
+  shop Shop @relation(fields: [shopId], references: [shopId])
+  user User @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model OrganizationShopBelonging{
+  id String @id @unique
+  organizationId String
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [shopId])
+  organization Organization @relation(fields: [organizationId], references: [organizationId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+
+model Organization {
+  organizationId String  @id @unique
+  organizationName String
+  shop OrganizationShopBelonging[]
+  temporaryClosed TemporaryClosed[]
+  announce Announce[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Shop {
+  shopId String  @id @unique
+  shopName String
+  openTime DateTime
+  closeTime DateTime
+  timeUnit Int
+  submitFrequency String
+  avatar String
+  useTimeCard Boolean
+  organization OrganizationShopBelonging[]
+  user ShopUserBelonging[]
+  operation Operation[]
+  stableShift StableShift[]
+  unstableShift UnstableShift[]
+  request Request[]
+  timeCard TimeCard[]
+  temporaryClosed TemporaryClosed[]
+  announce Announce[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+
 model User {
-  id Int @id @default(autoincrement())
-  userId String @unique
-  name String
+  userId String  @id @unique
+  userName String
   avatar String
   role String
   email String
+  shop ShopUserBelonging[]
+  stableShift StableShift[]
+  unstableShift UnstableShift[]
+  request Request[]
+  timeCard TimeCard[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Operation {
+  operationId String  @id @unique
+  shopId String
+  operationName String
+  icon String
+  color String
+  shop Shop  @relation(fields: [shopId], references: [shopId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model StableShift {
+  stableShiftId String  @id @unique
+  shopId String
+  userId String
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [shopId])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model UnstableShift {
+  unstableShiftId String  @id @unique
+  shopId String
+  userId String
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [shopId])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Request{
+  requestId String  @id @unique
+  shopId String
+  userId String
+  dateFrom String
+  dateTo String
+  done Boolean
+  shop Shop  @relation(fields: [shopId], references: [shopId])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model TimeCard{
+  timeCardId String  @id @unique
+  shopId String
+  userId String
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [shopId])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model TemporaryClosed {
+  temporaryClosedId String  @id @unique
+  organizationId String
+  shopId String
+  date DateTime
+  organization Organization @relation(fields: [organizationId], references: [organizationId])
+  shop Shop @relation(fields: [shopId], references: [shopId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Announce {
+  announceId String  @id @unique
+  organizationId String
+  shopId String
+  message String
+  organization Organization @relation(fields: [organizationId], references: [organizationId])
+  shop Shop @relation(fields: [shopId], references: [shopId])
+  isDeleted Boolean
   createdAt DateTime @default(now())
 }
