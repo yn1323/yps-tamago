@@ -47,9 +47,12 @@ export const getCurrentUser = async (
     select: { role: true },
   })
 
+  const userExist = !!userRole
+  const role = userExist ? userRole.role : 'new'
+
   const newDecoded = {
     ...decoded,
-    roles: userRole.role ? [userRole.role] : ['new'],
+    roles: [role],
   }
 
   const { roles } = parseJWT({ decoded: newDecoded })
