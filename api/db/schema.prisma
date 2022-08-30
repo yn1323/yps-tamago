@@ -28,8 +28,8 @@ model ShopUserBelonging{
   id String @id @unique
   shopId String
   userId String
-  shop Shop @relation(fields: [shopId], references: [shopId])
-  user User @relation(fields: [userId], references: [userId])
+  shop Shop @relation(fields: [shopId], references: [id])
+  user User @relation(fields: [userId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
@@ -38,15 +38,15 @@ model OrganizationShopBelonging{
   id String @id @unique
   organizationId String
   shopId String
-  shop Shop @relation(fields: [shopId], references: [shopId])
-  organization Organization @relation(fields: [organizationId], references: [organizationId])
+  shop Shop @relation(fields: [shopId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 
 model Organization {
-  organizationId String  @id @unique
+  id String  @id @unique
   organizationName String
   shop OrganizationShopBelonging[]
   temporaryClosed TemporaryClosed[]
@@ -56,7 +56,7 @@ model Organization {
 }
 
 model Shop {
-  shopId String  @id @unique
+  id String  @id @unique
   shopName String
   openTime DateTime
   closeTime DateTime
@@ -79,7 +79,7 @@ model Shop {
 
 
 model User {
-  userId String  @id @unique
+  id String  @id @unique
   userName String
   avatar String
   role String
@@ -94,89 +94,89 @@ model User {
 }
 
 model Operation {
-  operationId String  @id @unique
+  id String  @id @unique
   shopId String
   operationName String
   icon String
   color String
-  shop Shop  @relation(fields: [shopId], references: [shopId])
+  shop Shop  @relation(fields: [shopId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model StableShift {
-  stableShiftId String  @id @unique
+  id String  @id @unique
   shopId String
   userId String
   workFrom DateTime
   workTo DateTime
   breakFrom DateTime
   breakTo DateTime
-  shop Shop  @relation(fields: [shopId], references: [shopId])
-  user User  @relation(fields: [userId], references: [userId])
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model UnstableShift {
-  unstableShiftId String  @id @unique
+  id String  @id @unique
   shopId String
   userId String
   workFrom DateTime
   workTo DateTime
   breakFrom DateTime
   breakTo DateTime
-  shop Shop  @relation(fields: [shopId], references: [shopId])
-  user User  @relation(fields: [userId], references: [userId])
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model Request{
-  requestId String  @id @unique
+  id String  @id @unique
   shopId String
   userId String
-  dateFrom String
-  dateTo String
+  dateFrom DateTime
+  dateTo DateTime
   done Boolean
-  shop Shop  @relation(fields: [shopId], references: [shopId])
-  user User  @relation(fields: [userId], references: [userId])
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model TimeCard{
-  timeCardId String  @id @unique
+  id String  @id @unique
   shopId String
   userId String
   workFrom DateTime
   workTo DateTime
   breakFrom DateTime
   breakTo DateTime
-  shop Shop  @relation(fields: [shopId], references: [shopId])
-  user User  @relation(fields: [userId], references: [userId])
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model TemporaryClosed {
-  temporaryClosedId String  @id @unique
+  id String  @id @unique
   organizationId String
   shopId String
   date DateTime
-  organization Organization @relation(fields: [organizationId], references: [organizationId])
-  shop Shop @relation(fields: [shopId], references: [shopId])
+  organization Organization @relation(fields: [organizationId], references: [id])
+  shop Shop @relation(fields: [shopId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
 
 model Announce {
-  announceId String  @id @unique
+  id String  @id @unique
   organizationId String
   shopId String
   message String
-  organization Organization @relation(fields: [organizationId], references: [organizationId])
-  shop Shop @relation(fields: [shopId], references: [shopId])
+  organization Organization @relation(fields: [organizationId], references: [id])
+  shop Shop @relation(fields: [shopId], references: [id])
   isDeleted Boolean
   createdAt DateTime @default(now())
 }
