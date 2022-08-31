@@ -8,6 +8,7 @@ import { navigate, routes, useParams } from '@redwoodjs/router'
 
 export const LoginButtons: FC = () => {
   const { logIn } = useAuth()
+  const { shopId } = useParams()
   const props = {
     button: {
       w: 300,
@@ -20,7 +21,6 @@ export const LoginButtons: FC = () => {
   }
 
   const login = async () => {
-    const { shopId } = useParams()
     const { error } = await logIn({
       provider: 'google',
       redirectTo: `${window.location.origin}/dashboard${
