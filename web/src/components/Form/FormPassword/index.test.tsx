@@ -29,5 +29,6 @@ describe('コンポーネント', () => {
     expect(
       screen.getByText('8文字以上16文字以内で入力してください')
     ).toBeInTheDocument()
+    expect(screen.getByLabelText('パスワード')).toBeInTheDocument()
   })
 })

@@ -13,15 +13,13 @@ export default {
   component: FormPassword,
 } as ComponentMeta<typeof FormPassword>
 
-const args: ComponentProps = {
-  show: false,
-  hoge: '11',
-}
+const args: ComponentProps = {}
+
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [1080] } },
   render: () => {
-    const methods = useForm<{ email: string }>()
+    const methods = useForm()
     return (
       <FormProvider {...methods}>
         <FormPassword {...args} />
