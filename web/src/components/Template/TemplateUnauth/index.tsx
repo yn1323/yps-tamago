@@ -10,7 +10,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { Link } from '@redwoodjs/router'
+import { Link, useParams } from '@redwoodjs/router'
 
 import { useScreenSize } from 'src/hooks/useScreenSize'
 
@@ -25,6 +25,7 @@ export const TemplateUnauth: FC<PropTypes> = ({
   showLoginButton = true,
   showLogoutButton = false,
 }) => {
+  const { shopId } = useParams()
   if (showLoginButton && showLogoutButton) {
     throw 'ログインボタンとログアウトボタンは同時に使用できません'
   }
@@ -65,7 +66,7 @@ export const TemplateUnauth: FC<PropTypes> = ({
                 colorScheme="primary"
                 size={styles.loginButon.size}
                 as={Link}
-                to="/login"
+                to={`/login${shopId ? `?shopId=${shopId}` : ''}`}
               >
                 ログイン
               </Button>
