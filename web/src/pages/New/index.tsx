@@ -1,23 +1,20 @@
 import { FC } from 'react'
 
-import { Box } from '@chakra-ui/react'
-
 import { useParams } from '@redwoodjs/router'
 
 import { Animation } from 'src/components/Template/Animation'
+import { RegisterForm } from 'src/features/RegisterForm'
 
 export const New: FC = () => {
   const { shopId } = useParams()
-  const isUserExist = false
   return (
     <Animation>
-      {/* {!shopId ? (
-        <FormRegisterAdmin />
-      ) : !isUserExist ? (
-        <FormRegisterUser shopInfo={shopInfo} />
+      {shopId ? (
+        <RegisterForm shopId={shopId} />
       ) : (
-        <FormRegisterAddShop shopInfo={shopInfo} userInfo={userInfo} />
-      )} */}
+        <div></div>
+        // <FormRegisterAdmin />
+      )}
     </Animation>
   )
 }

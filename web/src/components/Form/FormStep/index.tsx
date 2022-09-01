@@ -27,7 +27,7 @@ export const FormStep: FC<PropTypes> = ({
   return (
     <Step labels={labels} tabIndex={tabIndex} setTabIndex={setTabIndex}>
       {children.map((child, i) => (
-        <Box key={i}>
+        <Box key={i} as="form">
           {child}
           <HStack justifyContent={'space-between'}>
             <Button onClick={back} visibility={i > 0 ? 'visible' : 'hidden'}>
