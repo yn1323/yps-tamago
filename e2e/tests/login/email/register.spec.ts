@@ -10,9 +10,7 @@ test('test', async ({ page }) => {
 
   // Click text=新規登録
   await page.locator('text=新規登録').click()
-  await expect(page).toHaveURL(
-    'http://localhost:8910/login/register?shopId=hoge'
-  )
+  await expect(page).toHaveURL('http://localhost:8910/login/register')
 
   // Click [data-testid="email"]
   await page.locator('[data-testid="email"]').click()
