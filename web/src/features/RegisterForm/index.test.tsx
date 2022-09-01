@@ -27,6 +27,6 @@ describe('コンポーネント', () => {
     expect(textboxes.length).toEqual(3)
 
     const shopId = textboxes.find(elem => elem.id === 'shopId')
-    expect(shopId).toHaveTextContent('hasShopId')
+    expect(shopId).toHaveValue('hasShopId')
   })
 })
