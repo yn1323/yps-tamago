@@ -3,15 +3,15 @@ import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
 import { FormProvider, useForm } from '@redwoodjs/forms'
 
-import { FormEmail } from '.'
+import { FormShopId } from '.'
 
-type StoryObj = ComponentStoryObj<typeof FormEmail>
-type ComponentProps = Required<typeof FormEmail.defaultProps>
+type StoryObj = ComponentStoryObj<typeof FormShopId>
+type ComponentProps = Required<typeof FormShopId.defaultProps>
 
 export default {
-  title: 'components/Form/FormEmail',
-  component: FormEmail,
-} as ComponentMeta<typeof FormEmail>
+  title: 'components/form/FormShopId',
+  component: FormShopId,
+} as ComponentMeta<typeof FormShopId>
 
 const args: ComponentProps = {}
 
@@ -22,7 +22,7 @@ export const Basic: StoryObj = {
     const methods = useForm()
     return (
       <FormProvider {...methods}>
-        <FormEmail {...args} />
+        <FormShopId {...args} />
       </FormProvider>
     )
   },

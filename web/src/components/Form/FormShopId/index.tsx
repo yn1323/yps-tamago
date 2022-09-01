@@ -7,26 +7,25 @@ import {
   InputGroup,
   InputLeftElement,
 } from '@chakra-ui/react'
-import { FiMail } from 'react-icons/fi'
+import { FiCoffee } from 'react-icons/fi'
 
 import { useFormContext } from '@redwoodjs/forms'
 
-export const FormEmail: FC = () => {
+export const FormShopId: FC = () => {
   const { register } = useFormContext()
   return (
-    <FormControl id="email">
-      <FormLabel>メールアドレス</FormLabel>
+    <FormControl id="shopId">
+      <FormLabel>店舗ID</FormLabel>
       <InputGroup>
         <InputLeftElement color="gray.300" pointerEvents="none">
-          <FiMail />
+          <FiCoffee />
         </InputLeftElement>
         <Input
-          data-testid="email"
+          data-testid="shopId"
           role="textbox"
-          type="email"
           maxLength={64}
           required
-          {...register('email', {
+          {...register('shopId', {
             required: true,
           })}
         />
