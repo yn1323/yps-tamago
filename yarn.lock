@@ -2679,12 +2679,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/storybook-addon@npm:4.0.9":
-  version: 4.0.9
-  resolution: "@chakra-ui/storybook-addon@npm:4.0.9"
+"@chakra-ui/storybook-addon@npm:4.0.10":
+  version: 4.0.10
+  resolution: "@chakra-ui/storybook-addon@npm:4.0.10"
   dependencies:
     "@chakra-ui/icons": 2.0.9
-    webpack-merge: ^5.0.0
   peerDependencies:
     "@chakra-ui/react": ">=2.0.0"
     "@storybook/addons": ">=6.4"
@@ -2696,7 +2695,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: a2ba901b75b7e4657e2cbb2b49289de11cda53effdcdf23e08ee428389d00e8d225d30e774d3186aa303650e432f3e0d95e387cb1637e4bc1f44826a398695de
+  checksum: 81be8e4c22031ac46426f1cf985bc5716a878c47d23934b1ba19fd3fc295bbdf3dc4ab232fddf04cc2ca7e719060de5d149f7175e9dac6ba16a77c5bfa5ae134
   languageName: node
   linkType: hard
 
@@ -27016,7 +27015,7 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@chakra-ui/react": 1.8.8
-    "@chakra-ui/storybook-addon": 4.0.9
+    "@chakra-ui/storybook-addon": 4.0.10
     "@emotion/react": 11.10.0
     "@emotion/styled": 11.10.0
     "@redwoodjs/forms": 2.2.3
@@ -27256,7 +27255,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-merge@npm:5.8.0, webpack-merge@npm:^5.0.0, webpack-merge@npm:^5.7.3":
+"webpack-merge@npm:5.8.0, webpack-merge@npm:^5.7.3":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
   dependencies:
