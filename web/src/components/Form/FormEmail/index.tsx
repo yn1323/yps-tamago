@@ -11,7 +11,11 @@ import { FiMail } from 'react-icons/fi'
 
 import { useFormContext } from '@redwoodjs/forms'
 
-export const FormEmail: FC = () => {
+type PropTypes = {
+  disabled?: boolean
+}
+
+export const FormEmail: FC<PropTypes> = ({ disabled = false }) => {
   const { register } = useFormContext()
   return (
     <FormControl id="email">
@@ -21,6 +25,7 @@ export const FormEmail: FC = () => {
           <FiMail />
         </InputLeftElement>
         <Input
+          disabled={disabled}
           data-testid="email"
           role="textbox"
           type="email"

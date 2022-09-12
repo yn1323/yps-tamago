@@ -7,7 +7,7 @@ import { render } from 'src/config/jest-utils'
 
 import * as stories from './index.stories'
 
-const { Basic } = composeStories(stories)
+const { Basic, Disabled } = composeStories(stories)
 
 describe('コンポーネント', () => {
   it('コンポーネントを正常に描画', async () => {
@@ -24,5 +24,13 @@ describe('コンポーネント', () => {
     const shopId = textboxes.find(elem => elem.id === 'userName')
     expect(shopId).toHaveAttribute('maxLength', '64')
     expect(screen.getByLabelText('ユーザー名')).toBeInTheDocument()
+  })
+
+  it('input > disabled', () => {
+    render(<Disabled />)
+    const textboxes = screen.queryAllByRole('textbox')
+
+    const email = textboxes.find(elem => elem.id === 'userName')
+    expect(email).toBeDisabled()
   })
 })

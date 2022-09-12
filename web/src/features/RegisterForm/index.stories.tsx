@@ -12,6 +12,7 @@ export default {
 
 const args: ComponentProps = {
   shopId: 'hasShopId',
+  userName: 'someUserName',
 }
 
 export const Basic: StoryObj = {

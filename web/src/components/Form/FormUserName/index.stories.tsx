@@ -13,12 +13,27 @@ export default {
   component: FormUserName,
 } as ComponentMeta<typeof FormUserName>
 
-const args: ComponentProps = {}
+const args: ComponentProps = {
+  disabled: false,
+}
 
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [1080] } },
   render: () => {
+    const methods = useForm()
+    return (
+      <FormProvider {...methods}>
+        <FormUserName {...args} />
+      </FormProvider>
+    )
+  },
+}
+
+export const Disabled: StoryObj = {
+  args: { ...args, disabled: true },
+  parameters: { chromatic: { viewports: [1080] } },
+  render: args => {
     const methods = useForm()
     return (
       <FormProvider {...methods}>

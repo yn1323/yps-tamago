@@ -1,36 +1,36 @@
 import { FC } from 'react'
 
-import { useAuth } from '@redwoodjs/auth'
-import { FormProvider, useForm } from '@redwoodjs/forms'
+import { Button, VStack } from '@chakra-ui/react'
 
-import { FormEmail } from 'src/components/Form/FormEmail'
+import { FormProvider } from '@redwoodjs/forms'
+
 import { FormShopId } from 'src/components/Form/FormShopId'
 import { FormUserName } from 'src/components/Form/FormUserName'
+import { useRegisterForm } from 'src/features/RegisterForm/script'
 
 type PropTypes = {
   shopId: string
+  userName?: string
 }
 
-type FormValues = {
-  shopId: string
-  email: string
-  userName: string
-}
+export const RegisterForm: FC<PropTypes> = ({ shopId, userName = '' }) => {
+  const { methods, isLoading, register } = useRegisterForm({ shopId, userName })
 
-export const RegisterForm: FC<PropTypes> = ({ shopId }) => {
-  const { userMetadata } = useAuth()
-  const userName = userMetadata?.user_metadata.ful_name
-  const email = userMetadata?.user_metadata.email
-  const methods = useForm<FormValues>({
-    defaultValues: { shopId, email, userName },
-  })
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(aa => console.log(aa))}>
-        <FormShopId />
-        <FormEmail />
-        <FormUserName />
-      </form>
+      <VStack
+        as="form"
+        onSubmit={methods.handleSubmit(formData => register(formData))}
+        spacing={4}
+        alignItems="center"
+        justifyContent={'center'}
+      >
+        <FormShopId disabled={isLoading} />
+        <FormUserName disabled={isLoading} />
+        <Button type="submit" colorScheme="primary" isLoading={isLoading}>
+          登録する
+        </Button>
+      </VStack>
     </FormProvider>
   )
 }

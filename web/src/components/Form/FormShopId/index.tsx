@@ -11,16 +11,21 @@ import { FiCoffee } from 'react-icons/fi'
 
 import { useFormContext } from '@redwoodjs/forms'
 
-export const FormShopId: FC = () => {
+type PropTypes = {
+  disabled?: boolean
+}
+
+export const FormShopId: FC<PropTypes> = ({ disabled = false }) => {
   const { register } = useFormContext()
   return (
-    <FormControl id="shopId">
+    <FormControl id="shopId" maxW={500}>
       <FormLabel>店舗ID</FormLabel>
       <InputGroup>
         <InputLeftElement color="gray.300" pointerEvents="none">
           <FiCoffee />
         </InputLeftElement>
         <Input
+          disabled={disabled}
           data-testid="shopId"
           role="textbox"
           maxLength={64}

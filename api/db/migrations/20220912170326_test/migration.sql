@@ -1,27 +1,8 @@
 -- CreateTable
-CREATE TABLE "UserExample" (
-    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
-    "email" TEXT NOT NULL,
-    "name" TEXT,
-
-    CONSTRAINT "UserExample_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "Contact" (
-    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
-    "name" TEXT NOT NULL,
-    "message" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT "Contact_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "ShopUserBelonging" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "shopId" UUID NOT NULL,
-    "userId" UUID NOT NULL,
+    "userId" TEXT NOT NULL,
     "isDeleted" BOOLEAN NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -68,6 +49,7 @@ CREATE TABLE "Shop" (
 -- CreateTable
 CREATE TABLE "User" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
+    "userId" TEXT NOT NULL,
     "userName" TEXT NOT NULL,
     "avatar" TEXT NOT NULL,
     "role" TEXT NOT NULL,
@@ -95,7 +77,7 @@ CREATE TABLE "Operation" (
 CREATE TABLE "StableShift" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "shopId" UUID NOT NULL,
-    "userId" UUID NOT NULL,
+    "userId" TEXT NOT NULL,
     "workFrom" TIMESTAMP(3) NOT NULL,
     "workTo" TIMESTAMP(3) NOT NULL,
     "breakFrom" TIMESTAMP(3) NOT NULL,
@@ -110,7 +92,7 @@ CREATE TABLE "StableShift" (
 CREATE TABLE "UnstableShift" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "shopId" UUID NOT NULL,
-    "userId" UUID NOT NULL,
+    "userId" TEXT NOT NULL,
     "workFrom" TIMESTAMP(3) NOT NULL,
     "workTo" TIMESTAMP(3) NOT NULL,
     "breakFrom" TIMESTAMP(3) NOT NULL,
@@ -125,7 +107,7 @@ CREATE TABLE "UnstableShift" (
 CREATE TABLE "Request" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "shopId" UUID NOT NULL,
-    "userId" UUID NOT NULL,
+    "userId" TEXT NOT NULL,
     "dateFrom" TIMESTAMP(3) NOT NULL,
     "dateTo" TIMESTAMP(3) NOT NULL,
     "done" BOOLEAN NOT NULL,
@@ -139,7 +121,7 @@ CREATE TABLE "Request" (
 CREATE TABLE "TimeCard" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "shopId" UUID NOT NULL,
-    "userId" UUID NOT NULL,
+    "userId" TEXT NOT NULL,
     "workFrom" TIMESTAMP(3) NOT NULL,
     "workTo" TIMESTAMP(3) NOT NULL,
     "breakFrom" TIMESTAMP(3) NOT NULL,
@@ -174,11 +156,29 @@ CREATE TABLE "Announce" (
     CONSTRAINT "Announce_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateIndex
+CREATE UNIQUE INDEX "ShopUserBelonging_userId_key" ON "ShopUserBelonging"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_userId_key" ON "User"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "StableShift_userId_key" ON "StableShift"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "UnstableShift_userId_key" ON "UnstableShift"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Request_userId_key" ON "Request"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "TimeCard_userId_key" ON "TimeCard"("userId");
+
 -- AddForeignKey
 ALTER TABLE "ShopUserBelonging" ADD CONSTRAINT "ShopUserBelonging_shopId_fkey" FOREIGN KEY ("shopId") REFERENCES "Shop"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "ShopUserBelonging" ADD CONSTRAINT "ShopUserBelonging_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "ShopUserBelonging" ADD CONSTRAINT "ShopUserBelonging_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "OrganizationShopBelonging" ADD CONSTRAINT "OrganizationShopBelonging_organizationId_fkey" FOREIGN KEY ("organizationId") REFERENCES "Organization"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -193,25 +193,25 @@ ALTER TABLE "Operation" ADD CONSTRAINT "Operation_shopId_fkey" FOREIGN KEY ("sho
 ALTER TABLE "StableShift" ADD CONSTRAINT "StableShift_shopId_fkey" FOREIGN KEY ("shopId") REFERENCES "Shop"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "StableShift" ADD CONSTRAINT "StableShift_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "StableShift" ADD CONSTRAINT "StableShift_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "UnstableShift" ADD CONSTRAINT "UnstableShift_shopId_fkey" FOREIGN KEY ("shopId") REFERENCES "Shop"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "UnstableShift" ADD CONSTRAINT "UnstableShift_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "UnstableShift" ADD CONSTRAINT "UnstableShift_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Request" ADD CONSTRAINT "Request_shopId_fkey" FOREIGN KEY ("shopId") REFERENCES "Shop"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Request" ADD CONSTRAINT "Request_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Request" ADD CONSTRAINT "Request_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "TimeCard" ADD CONSTRAINT "TimeCard_shopId_fkey" FOREIGN KEY ("shopId") REFERENCES "Shop"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "TimeCard" ADD CONSTRAINT "TimeCard_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "TimeCard" ADD CONSTRAINT "TimeCard_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("userId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "TemporaryClosed" ADD CONSTRAINT "TemporaryClosed_organizationId_fkey" FOREIGN KEY ("organizationId") REFERENCES "Organization"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
