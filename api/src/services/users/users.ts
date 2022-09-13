@@ -2,7 +2,10 @@ import type {
   QueryResolvers,
   MutationResolvers,
   UserResolvers,
+  CreateUserInput,
 } from 'types/graphql'
+
+import { validateUniqueness } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
@@ -17,9 +20,12 @@ export const user: QueryResolvers['user'] = ({ id }) => {
 }
 
 export const createUser: MutationResolvers['createUser'] = ({ input }) => {
-  return db.user.create({
-    data: input,
-  })
+  return validateUniqueness(
+    'user',
+    { userId: input.userId },
+    { message: 'User Id already exist' },
+    db => db.user.create({ data: input })
+  )
 }
 
 export const updateUser: MutationResolvers['updateUser'] = ({ id, input }) => {

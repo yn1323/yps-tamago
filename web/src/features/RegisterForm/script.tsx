@@ -1,28 +1,9 @@
-import {
-  CreateMemberRegisterMutation,
-  CreateMemberRegisterMutationVariables,
-} from 'types/graphql'
-
 import { useForm } from '@redwoodjs/forms'
-import { useMutation } from '@redwoodjs/web'
 
+import { useCreateUserMutation } from 'src/gql/mutation/create/CreateUser'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
 import { RegisterForm } from '.'
-
-const CREATE_USER = gql`
-  mutation CreateMemberRegisterMutation(
-    $userInput: CreateUserInput!
-    $shopUserInput: CreateShopUserBelongingInput!
-  ) {
-    createUser(input: $userInput) {
-      userId
-    }
-    createShopUserBelonging(input: $shopUserInput) {
-      shopId
-    }
-  }
-`
 
 type FormValues = Required<typeof RegisterForm.defaultProps>
 
@@ -32,10 +13,9 @@ const useRegisterMutations = () => {
     user_metadata: { avatar_url: avatarUrl, email },
   } = useAuthMeta()
 
-  const [createUser, { loading, error }] = useMutation<
-    CreateMemberRegisterMutation,
-    CreateMemberRegisterMutationVariables
-  >(CREATE_USER)
+  const [createUser, { loading, error }] = useCreateUserMutation()
+
+  console.log(error?.message)
 
   const register = async ({ shopId, userName }) => {
     createUser({
