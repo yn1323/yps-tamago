@@ -18,20 +18,22 @@ const useRegisterMutations = () => {
   console.log(error?.message)
 
   const register = async ({ shopId, userName }) => {
-    createUser({
+    await createUser({
       variables: {
-        userInput: {
-          userId,
-          avatar: avatarUrl ?? '',
-          email: email ?? '',
-          role: 'member',
-          userName: userName,
-          isDeleted: false,
-        },
-        shopUserInput: {
-          shopId: 'c6decb9c-1552-4815-b940-a0eaaae7e6db',
-          userId,
-          isDeleted: false,
+        input: {
+          userInput: {
+            userId,
+            avatar: avatarUrl ?? '',
+            email: email ?? '',
+            role: 'member',
+            userName: userName,
+            isDeleted: false,
+          },
+          shopUserBelongingInput: {
+            shopId: '0e907025-7cbe-4558-b31a-d10a90fc5ea7',
+            userId,
+            isDeleted: false,
+          },
         },
       },
     })

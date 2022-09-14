@@ -6,15 +6,14 @@ import {
 import { useMutation } from '@redwoodjs/web'
 
 const CREATE_USER = gql`
-  mutation CreateMemberRegisterMutation(
-    $userInput: CreateUserInput!
-    $shopUserInput: CreateShopUserBelongingInput!
-  ) {
-    createUser(input: $userInput) {
-      userId
-    }
-    createShopUserBelonging(input: $shopUserInput) {
-      shopId
+  mutation CreateMemberRegisterMutation($input: CreateMemberUserInput!) {
+    createMemberUser(input: $input) {
+      user {
+        userId
+      }
+      shopUserBelonging {
+        shopId
+      }
     }
   }
 `
