@@ -53,7 +53,6 @@ export const createMemberUser: MutationResolvers['createMemberUser'] = async ({
       const shopInfo = await shop({
         id: shopUserBelongingInput.shopId,
       })
-      console.log(shopInfo)
       if (!shopInfo) {
         throw new ServiceValidationError('Shop does not exists')
       }

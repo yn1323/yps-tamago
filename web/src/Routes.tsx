@@ -1,4 +1,5 @@
-import { Router, Route, Private } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
+import { Router, Route, Private, navigate, routes } from '@redwoodjs/router'
 
 import { TemplateAuth } from 'src/components/Template/TemplateAuth'
 import { TemplateUnauth } from 'src/components/Template/TemplateUnauth'
@@ -12,6 +13,13 @@ import { New } from 'src/pages/New'
 import { Top } from 'src/pages/Top'
 
 const Routes = () => {
+  const { isAuthenticated, hasRole } = useAuth()
+
+  const showRegister = isAuthenticated && hasRole('new')
+  if (showRegister) {
+    navigate(routes.new())
+  }
+
   return (
     <Router>
       <TemplateUnauth>
@@ -23,17 +31,16 @@ const Routes = () => {
         <Route path="/logout" page={Logout} name="logout" />
       </TemplateUnauth>
 
-      <TemplateUnauth showLoginButton={false}>
-        <Private unauthenticated="login" roles={['new']}>
+      <Private unauthenticated="login">
+        <TemplateUnauth showLoginButton={false}>
           <Route path="/new" page={New} name="new" />
-        </Private>
-      </TemplateUnauth>
+        </TemplateUnauth>
 
-      <TemplateAuth>
-        <Private unauthenticated="new" roles={['owner', 'member']}>
+        <TemplateAuth>
           <Route path="/dashboard" page={Dashboard} name="dashboard" />
-        </Private>
-      </TemplateAuth>
+        </TemplateAuth>
+      </Private>
+
       {/* <Route notfound page={NotFoundPage} /> */}
     </Router>
   )

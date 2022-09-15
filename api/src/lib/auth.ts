@@ -43,7 +43,7 @@ export const getCurrentUser = async (
   const userId = decoded.sub
 
   const userRole = await db.user.findUnique({
-    where: { id: userId },
+    where: { userId },
     select: { role: true },
   })
 
@@ -56,7 +56,6 @@ export const getCurrentUser = async (
   }
 
   const { roles } = parseJWT({ decoded: newDecoded })
-
   if (roles) {
     return { ...decoded, roles }
   }

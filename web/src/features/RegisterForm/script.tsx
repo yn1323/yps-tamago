@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useToast } from '@chakra-ui/react'
 
 import { useForm } from '@redwoodjs/forms'
+import { navigate, routes } from '@redwoodjs/router'
 
 import { TOAST_PROPS } from 'src/constants/ui/toast'
 import { useCreateUserMutation } from 'src/hooks/gql/mutation/create/CreateUser'
@@ -38,6 +39,7 @@ const useRegisterMutations = () => {
       description: '登録が完了しました。',
       status: 'success',
     })
+    navigate(routes.dashboard())
   }, [isSuccess, toast])
 
   const register = async ({ shopId, userName }) => {
