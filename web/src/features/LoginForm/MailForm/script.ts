@@ -1,20 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { useToast, UseToastOptions } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
 import { Session, User, ApiError, Provider } from '@supabase/supabase-js'
 
 import { useAuth } from '@redwoodjs/auth'
 import { navigate, routes, useParams } from '@redwoodjs/router'
 
 import { supabase } from 'src/config/supabase'
+import { TOAST_PROPS } from 'src/constants/ui/toast'
 import { MailForm } from 'src/features/LoginForm/MailForm'
-
-const toastProps: UseToastOptions = {
-  duration: 5000,
-  isClosable: true,
-  variant: 'left-accent',
-  position: 'top-right',
-}
 
 type FormInput = {
   email: string
@@ -302,7 +296,7 @@ export const useSubmit = () => {
   useEffect(() => {
     if (!errorMessage) return
     toast({
-      ...toastProps,
+      ...TOAST_PROPS,
       description: errorMessage,
       status: 'error',
     })
@@ -311,7 +305,7 @@ export const useSubmit = () => {
   useEffect(() => {
     if (!succeedMessage) return
     toast({
-      ...toastProps,
+      ...TOAST_PROPS,
       description: succeedMessage,
       status: 'success',
     })

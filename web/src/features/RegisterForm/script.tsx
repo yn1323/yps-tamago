@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
+
+import { useToast } from '@chakra-ui/react'
+
 import { useForm } from '@redwoodjs/forms'
 
-import { useCreateUserMutation } from 'src/gql/mutation/create/CreateUser'
+import { TOAST_PROPS } from 'src/constants/ui/toast'
+import { useCreateUserMutation } from 'src/hooks/gql/mutation/create/CreateUser'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
 import { RegisterForm } from '.'
@@ -12,10 +17,28 @@ const useRegisterMutations = () => {
     id: userId,
     user_metadata: { avatar_url: avatarUrl, email },
   } = useAuthMeta()
+  const toast = useToast()
 
-  const [createUser, { loading, error }] = useCreateUserMutation()
+  const { createUser, loading, errorMessage, isSuccess } =
+    useCreateUserMutation()
 
-  console.log(error?.message)
+  useEffect(() => {
+    if (!errorMessage) return
+    toast({
+      ...TOAST_PROPS,
+      description: '店舗IDが誤っているか、ユーザーが既に登録されています。',
+      status: 'error',
+    })
+  }, [errorMessage, toast])
+  useEffect(() => {
+    // TODO: 画面遷移に変更する
+    if (!isSuccess) return
+    toast({
+      ...TOAST_PROPS,
+      description: '登録が完了しました。',
+      status: 'success',
+    })
+  }, [isSuccess, toast])
 
   const register = async ({ shopId, userName }) => {
     await createUser({
@@ -30,7 +53,7 @@ const useRegisterMutations = () => {
             isDeleted: false,
           },
           shopUserBelongingInput: {
-            shopId: '0e907025-7cbe-4558-b31a-d10a90fc5ea7',
+            shopId,
             userId,
             isDeleted: false,
           },
@@ -39,7 +62,7 @@ const useRegisterMutations = () => {
     })
   }
 
-  return { isLoading: loading, register }
+  return { isLoading: loading, register, errorMessage, isSuccess }
 }
 
 export const useRegisterForm = ({ shopId, userName }) => {

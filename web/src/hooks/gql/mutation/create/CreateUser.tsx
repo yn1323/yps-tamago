@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+
 import {
   CreateMemberRegisterMutation,
   CreateMemberRegisterMutationVariables,
@@ -19,8 +21,31 @@ const CREATE_USER = gql`
 `
 
 export const useCreateUserMutation = () => {
-  return useMutation<
+  const [createUser, { loading, error, data }] = useMutation<
     CreateMemberRegisterMutation,
     CreateMemberRegisterMutationVariables
   >(CREATE_USER)
+
+  const isError = useMemo(() => {
+    if (loading) return false
+    return !!error
+  }, [loading, error])
+
+  const errorMessage = useMemo(() => {
+    if (loading) return ''
+    return error?.message ?? ''
+  }, [loading, error])
+
+  const isSuccess = useMemo(() => {
+    if (loading) return false
+    return !!data
+  }, [loading, data])
+
+  return {
+    createUser,
+    loading,
+    isError,
+    errorMessage,
+    isSuccess,
+  }
 }
