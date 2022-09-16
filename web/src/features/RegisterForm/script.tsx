@@ -6,14 +6,14 @@ import { useForm } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 
 import { TOAST_PROPS } from 'src/constants/ui/toast'
-import { useCreateUserMutation } from 'src/hooks/gql/mutation/create/CreateUser'
+import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
 import { RegisterForm } from '.'
 
 type FormValues = Required<typeof RegisterForm.defaultProps>
 
-const useRegisterMutations = () => {
+export const useRegisterMutations = () => {
   const {
     id: userId,
     user_metadata: { avatar_url: avatarUrl, email },
