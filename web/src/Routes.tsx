@@ -1,5 +1,5 @@
 import { useAuth } from '@redwoodjs/auth'
-import { Router, Route, Private, navigate, routes, useParams } from '@redwoodjs/router'
+import { Router, Route, Private, navigate, routes } from '@redwoodjs/router'
 
 import { TemplateAuth } from 'src/components/Template/TemplateAuth'
 import { TemplateUnauth } from 'src/components/Template/TemplateUnauth'
