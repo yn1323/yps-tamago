@@ -1,5 +1,5 @@
 import { useAuth } from '@redwoodjs/auth'
-import { Router, Route, Private, navigate, routes } from '@redwoodjs/router'
+import { Router, Route, Private, navigate, routes, useParams } from '@redwoodjs/router'
 
 import { TemplateAuth } from 'src/components/Template/TemplateAuth'
 import { TemplateUnauth } from 'src/components/Template/TemplateUnauth'
@@ -14,10 +14,17 @@ import { Top } from 'src/pages/Top'
 
 const Routes = () => {
   const { isAuthenticated, hasRole } = useAuth()
+  const urlParams = new URLSearchParams(window.location.search)
+  const shopId = urlParams.get('shopId')
 
-  const showRegister = isAuthenticated && hasRole('new')
-  if (showRegister) {
-    navigate(routes.new())
+  const isInitialLogin = isAuthenticated && hasRole('new')
+  if (isInitialLogin) {
+    navigate(routes.new(shopId ? { shopId } : {}))
+  }
+
+  const isRegistered = isAuthenticated && !hasRole('new')
+  if (isRegistered) {
+    navigate(routes.dashboard())
   }
 
   return (
