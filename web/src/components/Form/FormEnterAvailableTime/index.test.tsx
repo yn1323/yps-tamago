@@ -20,21 +20,19 @@ describe('コンポーネント', () => {
   it('input', () => {
     render(<Basic />)
     const textboxes = screen.queryAllByRole('textbox')
+    expect(textboxes).toHaveLength(2)
 
-    const enterAvailableTime = textboxes.find(
-      elem => elem.id === 'enterAvailableTime'
-    )
-    expect(enterAvailableTime).toHaveAttribute('maxLength', '64')
-    expect(screen.getByLabelText('シフト入力可能時間')).toBeInTheDocument()
+    expect(screen.getByLabelText('入力時間(開始)')).toBeInTheDocument()
+    expect(screen.getByLabelText('入力時間(終了)')).toBeInTheDocument()
   })
 
   it('input > disabled', () => {
     render(<Disabled />)
     const textboxes = screen.queryAllByRole('textbox')
 
-    const enterAvailableTime = textboxes.find(
-      elem => elem.id === 'enterAvailableTime'
-    )
-    expect(enterAvailableTime).toBeDisabled()
+    const startTime = textboxes.find(elem => elem.id === 'startTime')
+    const endTime = textboxes.find(elem => elem.id === 'endTime')
+    expect(startTime).toBeDisabled()
+    expect(endTime).toBeDisabled()
   })
 })

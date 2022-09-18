@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { Button } from '@chakra-ui/react'
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
 import { FormProvider, useForm } from '@redwoodjs/forms'
@@ -22,9 +23,15 @@ export const Basic: StoryObj = {
   parameters: { chromatic: { viewports: [1080] } },
   render: () => {
     const methods = useForm()
+
     return (
       <FormProvider {...methods}>
-        <FormEnterAvailableTime {...args} />
+        <form
+          onSubmit={methods.handleSubmit(formData => console.log(formData))}
+        >
+          <FormEnterAvailableTime {...args} />
+          <Button type="submit">登録</Button>
+        </form>
       </FormProvider>
     )
   },
