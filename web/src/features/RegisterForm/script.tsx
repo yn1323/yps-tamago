@@ -9,9 +9,9 @@ import { TOAST_PROPS } from 'src/constants/ui/toast'
 import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
-import { RegisterForm } from '.'
+import { RegisterFormMember } from '.'
 
-type FormValues = Required<typeof RegisterForm.defaultProps>
+type FormValues = Required<typeof RegisterFormMember.defaultProps>
 
 export const useRegisterMutations = () => {
   const {
@@ -67,7 +67,7 @@ export const useRegisterMutations = () => {
   return { isLoading: loading, register, errorMessage, isSuccess }
 }
 
-export const useRegisterForm = ({ shopId, userName }) => {
+export const useRegisterFormMember = ({ shopId, userName }) => {
   const { register, isLoading } = useRegisterMutations()
   const methods = useForm<FormValues>({
     defaultValues: { shopId, userName },

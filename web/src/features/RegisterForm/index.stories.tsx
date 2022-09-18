@@ -1,14 +1,14 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
-import { RegisterForm } from '.'
+import { RegisterFormMember } from '.'
 
-type StoryObj = ComponentStoryObj<typeof RegisterForm>
-type ComponentProps = Required<typeof RegisterForm.defaultProps>
+type StoryObj = ComponentStoryObj<typeof RegisterFormMember>
+type ComponentProps = Required<typeof RegisterFormMember.defaultProps>
 
 export default {
-  title: 'features/RegisterForm',
-  component: RegisterForm,
-} as ComponentMeta<typeof RegisterForm>
+  title: 'features/RegisterFormMember',
+  component: RegisterFormMember,
+} as ComponentMeta<typeof RegisterFormMember>
 
 const args: ComponentProps = {
   shopId: 'hasShopId',

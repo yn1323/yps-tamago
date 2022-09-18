@@ -4,7 +4,7 @@ import { useAuth } from '@redwoodjs/auth'
 import { navigate, routes, useParams } from '@redwoodjs/router'
 
 import { Animation } from 'src/components/Template/Animation'
-import { RegisterForm } from 'src/features/RegisterForm'
+import { RegisterFormMember } from 'src/features/RegisterFormMember'
 
 export const New: FC = () => {
   const { userMetadata } = useAuth()
@@ -16,7 +16,7 @@ export const New: FC = () => {
   return (
     <Animation>
       {shopId ? (
-        <RegisterForm shopId={shopId} userName={userName} />
+        <RegisterFormMember shopId={shopId} userName={userName} />
       ) : (
         <button onClick={() => navigate(routes.dashboard())}>aa</button>
         // <FormRegisterAdmin />

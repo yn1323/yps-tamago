@@ -7,15 +7,15 @@ import { routes } from '@redwoodjs/router'
 
 import { FormShopId } from 'src/components/Form/FormShopId'
 import { FormUserName } from 'src/components/Form/FormUserName'
-import { useRegisterForm } from 'src/features/RegisterForm/script'
+import { useRegisterFormMember } from 'src/features/RegisterFormMember/script'
 
 type PropTypes = {
   shopId: string
   userName?: string
 }
 
-export const RegisterForm: FC<PropTypes> = ({ shopId, userName = '' }) => {
-  const { methods, isLoading, register } = useRegisterForm({ shopId, userName })
+export const RegisterFormMember: FC<PropTypes> = ({ shopId, userName = '' }) => {
+  const { methods, isLoading, register } = useRegisterFormMember({ shopId, userName })
 
   return (
     <FormProvider {...methods}>

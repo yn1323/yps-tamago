@@ -1,6 +1,6 @@
 import { renderHook } from '@redwoodjs/testing/web'
 
-import { useRegisterMutations } from "src/features/RegisterForm/script"
+import { useRegisterMutations } from "src/features/RegisterFormMember/script"
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
 // import { normal, useMoge } from './script'
