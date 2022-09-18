@@ -21,16 +21,16 @@ describe('コンポーネント', () => {
     render(<Basic />)
     const textboxes = screen.queryAllByRole('textbox')
 
-    const userName = textboxes.find(elem => elem.id === 'userName')
-    expect(userName).toHaveAttribute('maxLength', '64')
-    expect(screen.getByLabelText('ユーザー名')).toBeInTheDocument()
+    const shopName = textboxes.find(elem => elem.id === 'shopName')
+    expect(shopName).toHaveAttribute('maxLength', '64')
+    expect(screen.getByLabelText('店舗名')).toBeInTheDocument()
   })
 
   it('input > disabled', () => {
     render(<Disabled />)
     const textboxes = screen.queryAllByRole('textbox')
 
-    const userName = textboxes.find(elem => elem.id === 'userName')
-    expect(userName).toBeDisabled()
+    const shopName = textboxes.find(elem => elem.id === 'shopName')
+    expect(shopName).toBeDisabled()
   })
 })

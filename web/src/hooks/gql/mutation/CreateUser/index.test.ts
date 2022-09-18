@@ -4,20 +4,11 @@ import { renderHook } from '@redwoodjs/testing/web'
 
 import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
 
-describe('GraphQL', () => {
+import { success, failure } from './index.mock'
+
+describe('CreateMemberRegisterMutation', () => {
   it('Success', async () => {
-    mockGraphQLMutation('CreateMemberRegisterMutation', () => {
-      return {
-        createMemberUser: {
-          user: {
-            userId: 'userId',
-          },
-          shopUserBelonging: {
-            shopId: 'shopId',
-          },
-        },
-      }
-    })
+    success()
     const { result } = renderHook(() => useCreateUserMutation())
     expect(result.current.isError).toBeFalsy()
     expect(result.current.isSuccess).toBeFalsy()
@@ -47,12 +38,7 @@ describe('GraphQL', () => {
     })
   })
   it('Failure', async () => {
-    mockGraphQLMutation(
-      'CreateMemberRegisterMutation',
-      (variables, { ctx }) => {
-        ctx.errors([{ message: 'Error' }])
-      }
-    )
+    failure()
     const { result } = renderHook(() => useCreateUserMutation())
     expect(result.current.isSuccess).toBeFalsy()
     await act(async () => {

@@ -4,20 +4,11 @@ import { renderHook } from '@redwoodjs/testing/web'
 
 import { use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }} } from 'src/hooks/gql/{{ inputs.gqlType }}/{{ inputs.file | pascal }}'
 
+import { success, failure } from './index.mock'
+
 describe('{{ inputs.gqlType }}/{{ inputs.file | pascal }}', () => {
   it('Success', async () => {
-    mockGraphQLMutation('{{ inputs.gqlName | pascal }}', _ => {
-      return {
-        createMemberUser: {
-          user: {
-            userId: 'userId',
-          },
-          shopUserBelonging: {
-            shopId: 'shopId',
-          },
-        },
-      }
-    })
+    success()
     const { result } = renderHook(() => use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }}())
     expect(result.current.isError).toBeFalsy()
     expect(result.current.isSuccess).toBeFalsy()
@@ -47,12 +38,7 @@ describe('{{ inputs.gqlType }}/{{ inputs.file | pascal }}', () => {
     })
   })
   it('Failure', async () => {
-    mockGraphQLMutation(
-      '{{ inputs.gqlName | pascal }}',
-      (_, { ctx }) => {
-        ctx.errors([{ message: 'Error' }])
-      }
-    )
+    failure()
     const { result } = renderHook(() => use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }}())
     expect(result.current.isSuccess).toBeFalsy()
     await act(async () => {

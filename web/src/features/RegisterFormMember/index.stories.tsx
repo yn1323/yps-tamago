@@ -17,5 +17,5 @@ const args: ComponentProps = {
 
 export const Basic: StoryObj = {
   args: { ...args },
-  parameters: { chromatic: { viewports: [1080] } },
+  parameters: { chromatic: { viewports: [414, 1080] } },
 }

@@ -14,8 +14,14 @@ type PropTypes = {
   userName?: string
 }
 
-export const RegisterFormMember: FC<PropTypes> = ({ shopId, userName = '' }) => {
-  const { methods, isLoading, register } = useRegisterFormMember({ shopId, userName })
+export const RegisterFormMember: FC<PropTypes> = ({
+  shopId,
+  userName = '',
+}) => {
+  const { methods, isLoading, register } = useRegisterFormMember({
+    shopId,
+    userName,
+  })
 
   return (
     <FormProvider {...methods}>

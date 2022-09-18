@@ -23,3 +23,9 @@ questions:
 ```tsx
 {{ 'web/gql/index.test.ts' | read }}
 ```
+
+
+# `{{ inputs.gqlType }}/{{ inputs.file | pascal }}/indext.mock.ts`
+```tsx
+{{ 'web/gql/index.mock.ts' | read }}
+```
