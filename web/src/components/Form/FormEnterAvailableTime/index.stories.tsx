@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Button } from '@chakra-ui/react'
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 
 import { FormProvider, useForm } from '@redwoodjs/forms'
 
@@ -47,5 +48,32 @@ export const Disabled: StoryObj = {
         <FormEnterAvailableTime {...args} />
       </FormProvider>
     )
+  },
+}
+
+export const Error: StoryObj = {
+  args: { ...args },
+  parameters: { chromatic: { viewports: [1080] } },
+  render: () => {
+    const methods = useForm()
+
+    return (
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit(formData => console.log(formData))}
+        >
+          <FormEnterAvailableTime {...args} />
+          <Button type="submit" data-testid="submit">
+            登録
+          </Button>
+        </form>
+      </FormProvider>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.type(canvas.getByTestId('startTime'), '12:10')
+    await userEvent.type(canvas.getByTestId('endTime'), '11:10')
+    await userEvent.click(canvas.getByTestId('submit'))
   },
 }

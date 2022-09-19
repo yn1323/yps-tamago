@@ -28,8 +28,7 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
 
   const startTimeShouldBeforeEndTime = () => {
     const isOK = isTimeBefore(getValues().startTime, getValues().endTime)
-    console.log(isOK)
-    return isOK || '終了時間は開始時間より後にしてください'
+    return isOK || '終了時間は開始時間より後に設定してください'
   }
 
   const message = useMemo(() => {
@@ -63,7 +62,6 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
               })}
             />
           </InputGroup>
-
           <FormHelperText color="crimson">{message}</FormHelperText>
         </FormControl>
         <Box px={4} />

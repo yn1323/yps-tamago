@@ -17,16 +17,19 @@ describe('コンポーネント', () => {
       }).not.toThrow()
     })
   })
-  it('input', () => {
+  it('Basic', () => {
     render(<Basic />)
     const textboxes = screen.queryAllByRole('textbox')
     expect(textboxes).toHaveLength(2)
 
     expect(screen.getByLabelText('入力時間(開始)')).toBeInTheDocument()
     expect(screen.getByLabelText('入力時間(終了)')).toBeInTheDocument()
+    expect(
+      screen.queryByText('終了時間は開始時間より後に設定してください')
+    ).not.toBeInTheDocument()
   })
 
-  it('input > disabled', () => {
+  it('Disabled', () => {
     render(<Disabled />)
     const textboxes = screen.queryAllByRole('textbox')
 
