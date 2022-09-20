@@ -43,7 +43,7 @@ export const useRegisterMutations = () => {
   }, [isSuccess, toast])
 
   const register = async ({ shopId, userName }) => {
-    await createUser({
+    return await createUser({
       variables: {
         input: {
           userInput: {

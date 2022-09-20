@@ -1,4 +1,5 @@
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 
 import { RegisterFormMember } from '.'
 
@@ -18,4 +19,11 @@ const args: ComponentProps = {
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [414, 1080] } },
+}
+export const OnClick: StoryObj = {
+  args: { ...args },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByText('登録する'))
+  },
 }
