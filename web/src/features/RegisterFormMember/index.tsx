@@ -3,7 +3,6 @@ import { FC } from 'react'
 import { Button, VStack } from '@chakra-ui/react'
 
 import { FormProvider } from '@redwoodjs/forms'
-import { routes } from '@redwoodjs/router'
 
 import { FormShopId } from 'src/components/Form/FormShopId'
 import { FormUserName } from 'src/components/Form/FormUserName'

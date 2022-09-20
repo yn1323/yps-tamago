@@ -4,11 +4,11 @@ import { renderHook } from '@redwoodjs/testing/web'
 
 import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
 
-import { success, failure } from './index.mock'
+import { CreateMemberRegisterMutationMock } from './index.mock'
 
 describe('CreateMemberRegisterMutation', () => {
   it('Success', async () => {
-    success()
+    CreateMemberRegisterMutationMock.success()
     const { result } = renderHook(() => useCreateUserMutation())
     expect(result.current.isError).toBeFalsy()
     expect(result.current.isSuccess).toBeFalsy()
@@ -38,7 +38,7 @@ describe('CreateMemberRegisterMutation', () => {
     })
   })
   it('Failure', async () => {
-    failure()
+    CreateMemberRegisterMutationMock.failure()
     const { result } = renderHook(() => useCreateUserMutation())
     expect(result.current.isSuccess).toBeFalsy()
     await act(async () => {

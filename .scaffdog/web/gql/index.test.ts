@@ -4,11 +4,11 @@ import { renderHook } from '@redwoodjs/testing/web'
 
 import { use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }} } from 'src/hooks/gql/{{ inputs.gqlType }}/{{ inputs.file | pascal }}'
 
-import { success, failure } from './index.mock'
+import { {{ inputs.gqlName | pascal }}Mock } from './index.mock'
 
 describe('{{ inputs.gqlType }}/{{ inputs.file | pascal }}', () => {
   it('Success', async () => {
-    success()
+    {{ inputs.gqlName | pascal }}Mock.success()
     const { result } = renderHook(() => use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }}())
     expect(result.current.isError).toBeFalsy()
     expect(result.current.isSuccess).toBeFalsy()
@@ -38,7 +38,7 @@ describe('{{ inputs.gqlType }}/{{ inputs.file | pascal }}', () => {
     })
   })
   it('Failure', async () => {
-    failure()
+    {{ inputs.gqlName | pascal }}Mock.failure()
     const { result } = renderHook(() => use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }}())
     expect(result.current.isSuccess).toBeFalsy()
     await act(async () => {
