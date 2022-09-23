@@ -2264,27 +2264,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/icon@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@chakra-ui/icon@npm:3.0.9"
+"@chakra-ui/icon@npm:3.0.10":
+  version: 3.0.10
+  resolution: "@chakra-ui/icon@npm:3.0.10"
   dependencies:
     "@chakra-ui/shared-utils": 2.0.1
   peerDependencies:
     "@chakra-ui/system": ">=2.0.0"
     react: ">=18"
-  checksum: 3944a836c3c7136da108f8f4fe40db1a31652df1b7dab193c6a50776a8e7ef326af1a159754cf08cdec1503e81579c6bfe518ce7d002a0393faaa774a7f35c43
+  checksum: ce6866b5ef6587a0985065332adb70ec7a3c871941314ec75a8e25e8581a119b3fb080bc04eb72fb90b4020c23357ea10f4be549a82aed4c0d86b0b2aa2b75a3
   languageName: node
   linkType: hard
 
-"@chakra-ui/icons@npm:2.0.9":
-  version: 2.0.9
-  resolution: "@chakra-ui/icons@npm:2.0.9"
+"@chakra-ui/icons@npm:2.0.10":
+  version: 2.0.10
+  resolution: "@chakra-ui/icons@npm:2.0.10"
   dependencies:
-    "@chakra-ui/icon": 3.0.9
+    "@chakra-ui/icon": 3.0.10
   peerDependencies:
     "@chakra-ui/system": ">=2.0.0"
     react: ">=18"
-  checksum: 778b239a3a3ba595320043db6ab89f52a5c44eec3292ea74aacc9012c0104e341f725c47c325f4262d441ffdafe133c7ad5b5870f7b4d0ea45db9cccb92ada3f
+  checksum: b540dcd5a631b4301e05843b1e986c6c06972aba2e46392b947ffcdf85013ae4c424b13b3aa54767357cd6ce08e6af63aaf88ef7cc65dd1d731fd2b72550e2c5
   languageName: node
   linkType: hard
 
@@ -2679,11 +2679,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/storybook-addon@npm:4.0.10":
-  version: 4.0.10
-  resolution: "@chakra-ui/storybook-addon@npm:4.0.10"
+"@chakra-ui/storybook-addon@npm:4.0.11":
+  version: 4.0.11
+  resolution: "@chakra-ui/storybook-addon@npm:4.0.11"
   dependencies:
-    "@chakra-ui/icons": 2.0.9
+    "@chakra-ui/icons": 2.0.10
   peerDependencies:
     "@chakra-ui/react": ">=2.0.0"
     "@storybook/addons": ">=6.4"
@@ -2695,7 +2695,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 81be8e4c22031ac46426f1cf985bc5716a878c47d23934b1ba19fd3fc295bbdf3dc4ab232fddf04cc2ca7e719060de5d149f7175e9dac6ba16a77c5bfa5ae134
+  checksum: 8a76c7d62b079b6e90bc9e51e3fb11411b4c8d30f40ae164f07661bcbfc7f90365cca038a5bd8259bf49ab98bdeca6c0d4f1c3f782ceb9f4a928dccb329e067f
   languageName: node
   linkType: hard
 
@@ -27016,7 +27016,7 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@chakra-ui/react": 1.8.8
-    "@chakra-ui/storybook-addon": 4.0.10
+    "@chakra-ui/storybook-addon": 4.0.11
     "@emotion/react": 11.10.0
     "@emotion/styled": 11.10.0
     "@redwoodjs/forms": 2.2.4
