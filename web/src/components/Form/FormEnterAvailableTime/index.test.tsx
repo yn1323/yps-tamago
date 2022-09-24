@@ -33,10 +33,10 @@ describe('コンポーネント', () => {
     render(<Disabled />)
     const textboxes = screen.queryAllByRole('textbox')
 
-    const startTime = textboxes.find(elem => elem.id === 'startTime')
-    const endTime = textboxes.find(elem => elem.id === 'endTime')
-    expect(startTime).toBeDisabled()
-    expect(endTime).toBeDisabled()
+    const openTime = textboxes.find(elem => elem.id === 'openTime')
+    const closeTime = textboxes.find(elem => elem.id === 'closeTime')
+    expect(openTime).toBeDisabled()
+    expect(closeTime).toBeDisabled()
     expect(
       screen.queryByText('終了時間は開始時間より後に設定してください')
     ).not.toBeInTheDocument()

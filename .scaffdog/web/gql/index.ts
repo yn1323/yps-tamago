@@ -7,9 +7,11 @@ import {
 
 import { use{{ inputs.gqlType | pascal }} } from '@redwoodjs/web'
 
-const {{ inputs.file | constant }} = gql`
-  mutation {{ inputs.gqlName | pascal }}($input: __GQL_INPUT!) {
-    _GQL_NAME(input: $input) {
+// NOTE: Variableでエラーとなるときは、一度該当箇所を消して型を手動で作成すること
+
+const {{ inputs.gqlName | constant }} = gql`
+  mutation {{ inputs.gqlName | pascal }}($input: {{ inputs.gqlName | pascal }}Input!) {
+    {{ inputs.gqlName | camel }}(input: $input) {
       user {
         userId
       }
@@ -20,11 +22,11 @@ const {{ inputs.file | constant }} = gql`
   }
 `
 
-export const use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }} = () => {
-  const [{{ inputs.file | camel }}, { loading, error, data }] = use{{ inputs.gqlType | pascal }}<
+export const use{{ inputs.gqlName | pascal }}{{ inputs.gqlType | pascal }} = () => {
+  const [{{ inputs.gqlName | camel }}, { loading, error, data }] = use{{ inputs.gqlType | pascal }}<
     {{ inputs.gqlName | pascal }},
     {{ inputs.gqlName | pascal }}Variables
-  >({{ inputs.file | constant }})
+  >({{ inputs.gqlName | constant }})
 
   const isError = useMemo(() => {
     if (loading) return false
@@ -42,7 +44,7 @@ export const use{{ inputs.file | pascal }}{{ inputs.gqlType | pascal }} = () => 
   }, [loading, data])
 
   return {
-    {{ inputs.file | camel }},
+    {{ inputs.gqlName | camel }},
     loading,
     isError,
     errorMessage,

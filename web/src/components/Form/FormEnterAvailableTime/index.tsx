@@ -26,17 +26,17 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
     // getValues,
   } = useFormContext()
 
-  const startTimeShouldBeforeEndTime = () => {
-    // const isOK = isTimeBefore(getValues().startTime, getValues().endTime)
+  const openTimeShouldBeforeCloseTime = () => {
+    // const isOK = isTimeBefore(getValues().openTime, getValues().closeTime)
     const isOK = true
     return isOK || '終了時間は開始時間より後に設定してください'
   }
 
   const message = useMemo(() => {
-    if (errors.startTime) {
-      return errors.startTime.message as string
-    } else if (errors.endTime) {
-      return errors.endTime.message as string
+    if (errors.openTime) {
+      return errors.openTime.message as string
+    } else if (errors.closeTime) {
+      return errors.closeTime.message as string
     } else {
       return ''
     }
@@ -45,7 +45,7 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
   return (
     <Box w="100%" maxW={500}>
       <HStack alignItems="flex-start">
-        <FormControl id="startTime">
+        <FormControl id="openTime">
           <FormLabel>入力時間(開始)</FormLabel>
           <InputGroup>
             <InputLeftElement color="gray.300" pointerEvents="none">
@@ -55,11 +55,11 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
               type="time"
               disabled={disabled}
               maxW={500}
-              data-testid="startTime"
+              data-testid="openTime"
               role="textbox"
               required
-              {...register('startTime', {
-                validate: { startTimeShouldBeforeEndTime },
+              {...register('openTime', {
+                validate: { openTimeShouldBeforeCloseTime },
               })}
             />
           </InputGroup>
@@ -67,7 +67,7 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
         </FormControl>
         <Box px={4} />
 
-        <FormControl id="endTime">
+        <FormControl id="closeTime">
           <FormLabel>入力時間(終了)</FormLabel>
           <InputGroup>
             <InputLeftElement color="gray.300" pointerEvents="none">
@@ -77,11 +77,11 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
               type="time"
               disabled={disabled}
               maxW={500}
-              data-testid="endTime"
+              data-testid="closeTime"
               role="textbox"
               required
-              {...register('endTime', {
-                validate: startTimeShouldBeforeEndTime,
+              {...register('closeTime', {
+                validate: openTimeShouldBeforeCloseTime,
               })}
             />
           </InputGroup>

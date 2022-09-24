@@ -2,19 +2,19 @@ import { act } from 'react-dom/test-utils'
 
 import { renderHook } from '@redwoodjs/testing/web'
 
-import { use{{ inputs.gqlName | pascal }}{{ inputs.gqlType | pascal }} } from 'src/hooks/gql/{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}'
-import { {{ inputs.gqlName | pascal }}Mock } from 'src/hooks/gql/{{ inputs.gqlType | came; }}/{{ inputs.gqlName | pascal }}/index.mock'
+import { useCreateAdminUserAndShopMutation } from 'src/hooks/gql/mutation/CreateAdminUserAndShop'
+import { CreateAdminUserAndShopMock } from 'src/hooks/gql/mutation/CreateAdminUserAndShop/index.mock'
 
-describe('{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}', () => {
+describe('mutation/CreateAdminUserAndShop', () => {
   it('Success', async () => {
-    {{ inputs.gqlName | pascal }}Mock.success()
-    const { result } = renderHook(() => use{{ inputs.gqlName | pascal }}{{ inputs.gqlType | pascal }}())
+    CreateAdminUserAndShopMock.success()
+    const { result } = renderHook(() => useCreateAdminUserAndShopMutation())
     expect(result.current.isError).toBeFalsy()
     expect(result.current.isSuccess).toBeFalsy()
     expect(result.current.errorMessage).toEqual('')
     expect(result.current.loading).toBeFalsy()
     await act(async () => {
-      await result.current.{{ inputs.gqlName | camel }}({
+      await result.current.createAdminUserAndShop({
         variables: {
           input: {
             userInput: {
@@ -25,9 +25,14 @@ describe('{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}', () => {
               userName: '',
               isDeleted: false,
             },
-            shopUserBelongingInput: {
-              shopId: 'shopId',
-              userId: 'userId',
+            shopInput: {
+              shopName: 'shopName',
+              openTime: '10:00',
+              closeTime: '20:00',
+              timeUnit: 30,
+              submitFrequency: '2w',
+              avatar: '',
+              useTimeCard: false,
               isDeleted: false,
             },
           },
@@ -37,11 +42,11 @@ describe('{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}', () => {
     })
   })
   it('Failure', async () => {
-    {{ inputs.gqlName | pascal }}Mock.failure()
-    const { result } = renderHook(() => use{{ inputs.gqlName | pascal }}{{ inputs.gqlType | pascal }}())
+    CreateAdminUserAndShopMock.failure()
+    const { result } = renderHook(() => useCreateAdminUserAndShopMutation())
     expect(result.current.isSuccess).toBeFalsy()
     await act(async () => {
-      await result.current.{{ inputs.gqlName | camel }}().catch(() => {
+      await result.current.createAdminUserAndShop().catch(() => {
         expect(result.current.errorMessage).toBe('Error')
         expect(result.current.isError).toBeTruthy()
         expect(result.current.isSuccess).toBeFalsy()

@@ -72,8 +72,8 @@ export const Error: StoryObj = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    await userEvent.type(canvas.getByTestId('startTime'), '12:10')
-    await userEvent.type(canvas.getByTestId('endTime'), '11:10')
+    await userEvent.type(canvas.getByTestId('openTime'), '12:10')
+    await userEvent.type(canvas.getByTestId('closeTime'), '11:10')
     await userEvent.click(canvas.getByTestId('submit'))
     // await screen.findByText('終了時間は開始時間より後に設定してください')
   },

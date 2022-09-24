@@ -14,8 +14,8 @@ import { useRegisterFormAdmin } from 'src/features/RegisterFormAdmin/script'
 type PropTypes = {
   userName?: string
   shopName?: string
-  startTime?: string
-  endTime?: string
+  openTime?: string
+  closeTime?: string
   submitFrequency?: string
   timeCardAuth?: boolean
 }
@@ -23,16 +23,16 @@ type PropTypes = {
 export const RegisterFormAdmin: FC<PropTypes> = ({
   userName = '',
   shopName = '',
-  startTime = '12:00',
-  endTime = '16:30',
+  openTime = '12:00',
+  closeTime = '16:30',
   submitFrequency = '2w',
   timeCardAuth = false,
 }) => {
   const { methods, isLoading, register } = useRegisterFormAdmin({
     userName,
     shopName,
-    startTime,
-    endTime,
+    openTime,
+    closeTime,
     submitFrequency,
     timeCardAuth,
   })

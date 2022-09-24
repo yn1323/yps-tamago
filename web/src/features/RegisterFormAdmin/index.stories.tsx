@@ -22,8 +22,8 @@ export default {
 const args: ComponentProps = {
   userName: 'userName',
   shopName: 'shopName',
-  startTime: '12:30',
-  endTime: '15:50',
+  openTime: '12:30',
+  closeTime: '15:50',
   submitFrequency: SUBMIT_FREQUENCY[2].value,
   timeCardAuth: false,
 }

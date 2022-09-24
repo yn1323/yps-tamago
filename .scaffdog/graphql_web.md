@@ -10,22 +10,21 @@ questions:
       - 'query'
       - 'mutation'
       - 'subscription'
-  file: 'What is file name??(PascalCase)'
-  gqlName: 'What is Query (or Mutation) name?(please add Query or Mutation at last)'
+  gqlName: 'What is Query (or Mutation) name?(DO NOT ADD Query or Mutation at last)'
 ---
 
-# `{{ inputs.gqlType }}/{{ inputs.file | pascal }}/index.ts`
+# `{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}/index.ts`
 ```tsx
 {{ 'web/gql/index.ts' | read }}
 ```
 
-# `{{ inputs.gqlType }}/{{ inputs.file | pascal }}/indext.test.ts`
+# `{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}/indext.test.ts`
 ```tsx
 {{ 'web/gql/index.test.ts' | read }}
 ```
 
 
-# `{{ inputs.gqlType }}/{{ inputs.file | pascal }}/indext.mock.ts`
+# `{{ inputs.gqlType }}/{{ inputs.gqlName | pascal }}/indext.mock.ts`
 ```tsx
 {{ 'web/gql/index.mock.ts' | read }}
 ```
