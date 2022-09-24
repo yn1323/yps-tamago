@@ -3,27 +3,20 @@ import { Button } from '@chakra-ui/react'
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
 import { FormProvider, useForm } from '@redwoodjs/forms'
+// import { userEvent, within, screen } from '@storybook/testing-library'
 
-import { SUBMIT_FREQUENCY } from 'src/constants/ui/submitFrequency'
+import { FormTimeCardAuth } from '.'
 
-import { FormSubmitFrequency } from '.'
-
-type StoryObj = ComponentStoryObj<typeof FormSubmitFrequency>
-type ComponentProps = Required<typeof FormSubmitFrequency.defaultProps>
+type StoryObj = ComponentStoryObj<typeof FormTimeCardAuth>
+type ComponentProps = Required<typeof FormTimeCardAuth.defaultProps>
 
 export default {
-  title: 'components/Form/FormSubmitFrequency',
-  component: FormSubmitFrequency,
-  argTypes: {
-    defaultValue: {
-      options: SUBMIT_FREQUENCY.map(({ value }) => value),
-      control: { type: 'select' },
-    },
-  },
-} as ComponentMeta<typeof FormSubmitFrequency>
+  title: 'components/Form/FormTimeCardAuth',
+  component: FormTimeCardAuth,
+} as ComponentMeta<typeof FormTimeCardAuth>
 
 const args: ComponentProps = {
-  defaultValue: '',
+  defaultChecked: false,
 }
 
 export const Basic: StoryObj = {
@@ -36,7 +29,7 @@ export const Basic: StoryObj = {
         <form
           onSubmit={methods.handleSubmit(formData => console.log(formData))}
         >
-          <FormSubmitFrequency {...args} />
+          <FormTimeCardAuth {...args} />
           <Button type="submit">登録する</Button>
         </form>
       </FormProvider>
