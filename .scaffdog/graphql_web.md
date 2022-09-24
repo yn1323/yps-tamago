@@ -9,7 +9,7 @@ questions:
     choices:
       - 'query'
       - 'mutation'
-      - 'description'
+      - 'subscription'
   file: 'What is file name??(PascalCase)'
   gqlName: 'What is Query (or Mutation) name?(please add Query or Mutation at last)'
 ---
