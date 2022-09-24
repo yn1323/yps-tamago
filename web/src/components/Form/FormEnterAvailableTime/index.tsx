@@ -14,7 +14,7 @@ import { FiClock } from 'react-icons/fi'
 
 import { useFormContext } from '@redwoodjs/forms'
 
-import { isTimeBefore } from 'src/utils/String'
+// import { isTimeBefore } from 'src/utils/String'
 
 type PropTypes = {
   disabled?: boolean
@@ -23,11 +23,12 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
   const {
     register,
     formState: { errors },
-    getValues,
+    // getValues,
   } = useFormContext()
 
   const startTimeShouldBeforeEndTime = () => {
-    const isOK = isTimeBefore(getValues().startTime, getValues().endTime)
+    // const isOK = isTimeBefore(getValues().startTime, getValues().endTime)
+    const isOK = true
     return isOK || '終了時間は開始時間より後に設定してください'
   }
 
@@ -42,7 +43,7 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
   }, [errors])
 
   return (
-    <>
+    <Box w="100%" maxW={500}>
       <HStack alignItems="flex-start">
         <FormControl id="startTime">
           <FormLabel>入力時間(開始)</FormLabel>
@@ -86,6 +87,6 @@ export const FormEnterAvailableTime: FC<PropTypes> = ({ disabled }) => {
           </InputGroup>
         </FormControl>
       </HStack>
-    </>
+    </Box>
   )
 }

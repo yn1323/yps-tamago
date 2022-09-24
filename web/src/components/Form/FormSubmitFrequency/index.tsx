@@ -7,7 +7,7 @@ import { useFormContext } from '@redwoodjs/forms'
 import { SUBMIT_FREQUENCY } from 'src/constants/ui/submitFrequency'
 
 type PropTypes = {
-  defaultValue: string
+  defaultValue?: string
 }
 
 export const FormSubmitFrequency: FC<PropTypes> = ({

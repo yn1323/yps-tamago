@@ -10,15 +10,7 @@ import { RegisterFormAdmin } from 'src/features/RegisterFormAdmin'
 import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
-type FormValues = Required<typeof RegisterFormAdmin.defaultProps> & {
-  userName: string
-  shopName: string
-  openTime: string
-  closeTime: string
-  submitFrequency: string
-  useTimeCard: boolean
-}
-
+type FormValues = Required<typeof RegisterFormAdmin.defaultProps>
 export const useRegisterMutations = () => {
   const {
     id: userId,
@@ -73,10 +65,10 @@ export const useRegisterMutations = () => {
   return { isLoading: loading, register, errorMessage, isSuccess }
 }
 
-export const useRegisterFormAdmin = ({ userName }) => {
+export const useRegisterFormAdmin = (defaultValues: FormValues) => {
   const { register, isLoading } = useRegisterMutations()
   const methods = useForm<FormValues>({
-    defaultValues: { userName },
+    defaultValues,
   })
 
   return {

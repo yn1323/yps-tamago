@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-// import { userEvent, within, screen } from '@storybook/testing-library'
 
 import { RegisterFormAdmin } from '.'
 
@@ -14,18 +13,14 @@ export default {
 
 const args: ComponentProps = {
   userName: 'userName',
+  shopName: 'shopName',
+  startTime: '12:30',
+  endTime: '15:50',
+  submitFrequency: '2w',
+  timeCardAuth: false,
 }
 
 export const Basic: StoryObj = {
   args: { ...args },
   parameters: { chromatic: { viewports: [414, 1080] } },
 }
-
-// export const Test: StoryObj = {
-//   args: { ...args },
-// play: async ({ canvasElement }) => {
-//   const canvas = within(canvasElement)
-//   await userEvent.click(canvas.getByTestId('close'))
-//   await screen.findByText('マイページ')
-// },
-// }

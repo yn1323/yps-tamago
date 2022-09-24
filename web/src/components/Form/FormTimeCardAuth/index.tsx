@@ -5,14 +5,14 @@ import { FormControl, FormLabel, Switch } from '@chakra-ui/react'
 import { useFormContext } from '@redwoodjs/forms'
 
 type PropTypes = {
-  defaultChecked: boolean
+  defaultChecked?: boolean
 }
 
 export const FormTimeCardAuth: FC<PropTypes> = ({ defaultChecked = false }) => {
   const { register } = useFormContext()
   return (
-    <FormControl id="timeCardAuth" display="flex">
-      <FormLabel>一般ユーザーもタイムカードを利用できるようにする</FormLabel>
+    <FormControl id="timeCardAuth" display="flex" maxW={500}>
+      <FormLabel>一般ユーザーのタイムカード利用を許可</FormLabel>
       <Switch {...register('timeCardAuth')} defaultChecked={defaultChecked} />
     </FormControl>
   )
