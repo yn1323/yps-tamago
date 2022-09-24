@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Box, Button, Divider, Spacer, VStack } from '@chakra-ui/react'
+import { Button, Spacer, VStack } from '@chakra-ui/react'
 
 import { FormProvider } from '@redwoodjs/forms'
 
@@ -50,13 +50,10 @@ export const RegisterFormAdmin: FC<PropTypes> = ({
         <FormEnterAvailableTime />
         <FormSubmitFrequency />
         <Spacer />
-        <Divider maxW={500} />
         <FormTimeCardAuth />
-        <Box>
-          <Button type="submit" colorScheme="primary" isLoading={false}>
-            登録する
-          </Button>
-        </Box>
+        <Button type="submit" colorScheme="primary" isLoading={false}>
+          登録する
+        </Button>
       </VStack>
     </FormProvider>
   )
