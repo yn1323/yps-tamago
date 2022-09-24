@@ -26,12 +26,14 @@ export const TemplateUnauth: FC<PropTypes> = ({
   showLogoutButton = false,
 }) => {
   const { shopId } = useParams()
-  if (showLoginButton && showLogoutButton) {
-    throw 'ログインボタンとログアウトボタンは同時に使用できません'
-  }
   const { isPC } = useScreenSize()
   const { breakpoints } = useTheme()
   // useOnAuthStateChanged()
+
+  if (showLoginButton && showLogoutButton) {
+    console.error('ログインボタンとログアウトボタンは同時に使用できません')
+    return null
+  }
 
   const styles = {
     header: {

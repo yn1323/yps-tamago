@@ -52,8 +52,10 @@ describe('TemplateUnauth > ログアウトボタン表示', () => {
 
 describe('TemplateUnauth > props指定異常', () => {
   it('コンポーネントが描画されない', async () => {
-    expect(() => {
-      render(<LoginButtonShow showLoginButton showLogoutButton />)
-    }).toThrow()
+    await waitFor(() => {
+      expect(() => {
+        render(<LoginButtonShow showLoginButton showLogoutButton />)
+      }).not.toThrow()
+    })
   })
 })
