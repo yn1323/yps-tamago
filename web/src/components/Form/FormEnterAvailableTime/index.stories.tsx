@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Button } from '@chakra-ui/react'
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { screen, userEvent, within } from '@storybook/testing-library'
 
 import { FormProvider, useForm } from '@redwoodjs/forms'
 
@@ -75,5 +75,6 @@ export const Error: StoryObj = {
     await userEvent.type(canvas.getByTestId('startTime'), '12:10')
     await userEvent.type(canvas.getByTestId('endTime'), '11:10')
     await userEvent.click(canvas.getByTestId('submit'))
+    await screen.findByText('終了時間は開始時間より後に設定してください')
   },
 }

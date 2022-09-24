@@ -7,7 +7,7 @@ import { render } from 'src/config/jest-utils'
 
 import * as stories from './index.stories'
 
-const { Basic, Disabled } = composeStories(stories)
+const { Basic, Disabled, Error } = composeStories(stories)
 
 describe('コンポーネント', () => {
   it('コンポーネントを正常に描画', async () => {
@@ -29,7 +29,7 @@ describe('コンポーネント', () => {
     ).not.toBeInTheDocument()
   })
 
-  it('Disabled', () => {
+  it('Disabled', async () => {
     render(<Disabled />)
     const textboxes = screen.queryAllByRole('textbox')
 
@@ -37,5 +37,15 @@ describe('コンポーネント', () => {
     const endTime = textboxes.find(elem => elem.id === 'endTime')
     expect(startTime).toBeDisabled()
     expect(endTime).toBeDisabled()
+    expect(
+      screen.queryByText('終了時間は開始時間より後に設定してください')
+    ).not.toBeInTheDocument()
+  })
+  it('Error', async () => {
+    const { container } = render(<Error />)
+    await Error.play({ canvasElement: container })
+    expect(
+      screen.getByText('終了時間は開始時間より後に設定してください')
+    ).toBeInTheDocument()
   })
 })
