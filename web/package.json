@@ -27,7 +27,7 @@
     "react-icons": "4.4.0"
   },
   "devDependencies": {
-    "@chakra-ui/storybook-addon": "4.0.11",
+    "@chakra-ui/storybook-addon": "4.0.12",
     "@storybook/addon-interactions": "6.5.12",
     "@storybook/jest": "0.0.10",
     "@storybook/test-runner": "0.5.0",
