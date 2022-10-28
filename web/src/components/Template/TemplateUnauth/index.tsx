@@ -31,7 +31,6 @@ export const TemplateUnauth: FC<PropTypes> = ({
   // useOnAuthStateChanged()
 
   if (showLoginButton && showLogoutButton) {
-    console.error('ログインボタンとログアウトボタンは同時に使用できません')
     return null
   }
 
