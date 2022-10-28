@@ -29,7 +29,7 @@ export const createAdminUserAndShop: MutationResolvers['createAdminUserAndShop']
           throw new ServiceValidationError(e)
         })
 
-        await Promise.all([
+        const [createdUser, ..._] = await Promise.all([
           await db.user.create({ data: userInput }),
           await db.shopUserBelonging.create({
             data: {
@@ -48,7 +48,7 @@ export const createAdminUserAndShop: MutationResolvers['createAdminUserAndShop']
         ])
 
         return {
-          userInfo,
+          userInfo: createdUser,
           shopInfo,
           organizationInfo,
         }
