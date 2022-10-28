@@ -2,14 +2,16 @@ export const CreateAdminUserAndShopMock = {
   success: () =>
     mockGraphQLMutation('CreateAdminUserAndShop', () => {
       return {
-        createMemberUser: {
+        createAdminUserAndShop: {
           user: {
             userId: 'userId',
           },
           shop: {
+            id: 'shopId',
             shopName: 'shopName',
           },
           organization: {
+            id: 'organizationId',
             organizationName: 'groupName',
           },
         },
