@@ -15,17 +15,19 @@ import { Top } from 'src/pages/Top'
 const Routes = () => {
   return (
     <Router>
-      <RouteWrapper>
-        <TemplateUnauth>
+      <TemplateUnauth>
+        <RouteWrapper>
           <Route path="/" page={Top} name="top" />
           <Route path="/login" page={Login} name="login" />
           <Route path="/login/register" page={LoginRegister} name="loginRegister" />
           <Route path="/login/reset" page={LoginReset} name="loginReset" />
           <Route path="/login/setPassword" page={SetPassword} name="setPassword" />
           <Route path="/logout" page={Logout} name="logout" />
-        </TemplateUnauth>
+        </RouteWrapper>
+      </TemplateUnauth>
 
-        <Private unauthenticated="login">
+      <Private unauthenticated="login">
+        <RouteWrapper>
           <TemplateUnauth showLoginButton={false}>
             <Route path="/new" page={New} name="new" />
           </TemplateUnauth>
@@ -33,10 +35,10 @@ const Routes = () => {
           <TemplateAuth>
             <Route path="/dashboard" page={Dashboard} name="dashboard" />
           </TemplateAuth>
-        </Private>
+        </RouteWrapper>
+      </Private>
 
-        {/* <Route notfound page={NotFoundPage} /> */}
-      </RouteWrapper>
+      {/* <Route notfound page={NotFoundPage} /> */}
     </Router>
   )
 }
