@@ -42,8 +42,8 @@ model Organization {
 model Shop {
   id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   shopName String
-  openTime DateTime
-  closeTime DateTime
+  openTime String
+  closeTime String
   timeUnit Int
   submitFrequency String
   avatar String

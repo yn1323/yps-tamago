@@ -17,7 +17,7 @@ type PropTypes = {
   openTime?: string
   closeTime?: string
   submitFrequency?: string
-  timeCardAuth?: boolean
+  useTimeCard?: boolean
 }
 
 export const RegisterFormAdmin: FC<PropTypes> = ({
@@ -26,7 +26,7 @@ export const RegisterFormAdmin: FC<PropTypes> = ({
   openTime = '12:00',
   closeTime = '16:30',
   submitFrequency = '2w',
-  timeCardAuth = false,
+  useTimeCard = false,
 }) => {
   const { methods, isLoading, register } = useRegisterFormAdmin({
     userName,
@@ -34,13 +34,13 @@ export const RegisterFormAdmin: FC<PropTypes> = ({
     openTime,
     closeTime,
     submitFrequency,
-    timeCardAuth,
+    useTimeCard,
   })
   return (
     <FormProvider {...methods}>
       <VStack
         as="form"
-        onSubmit={methods.handleSubmit(formData => console.log(formData))}
+        onSubmit={methods.handleSubmit(formData => register(formData))}
         spacing={4}
         alignItems="center"
         justifyContent="center"
@@ -51,7 +51,7 @@ export const RegisterFormAdmin: FC<PropTypes> = ({
         <FormSubmitFrequency />
         <Spacer />
         <FormTimeCardAuth />
-        <Button type="submit" colorScheme="primary" isLoading={false}>
+        <Button type="submit" colorScheme="primary" isLoading={isLoading}>
           登録する
         </Button>
       </VStack>

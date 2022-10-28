@@ -3,7 +3,6 @@ import type { MutationResolvers } from 'types/graphql'
 import { ServiceValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
-import { createMemberUser } from 'src/services/Create/User/createMemberUser'
 import { user } from 'src/services/users/users'
 
 export const createAdminUserAndShop: MutationResolvers['createAdminUserAndShop'] =
@@ -31,14 +30,12 @@ export const createAdminUserAndShop: MutationResolvers['createAdminUserAndShop']
         })
 
         await Promise.all([
-          await createMemberUser({
-            input: {
-              userInput,
-              shopUserBelongingInput: {
-                shopId: shopInfo.id,
-                userId: userInfo.userId,
-                isDeleted: false,
-              },
+          await db.user.create({ data: userInput }),
+          await db.shopUserBelonging.create({
+            data: {
+              shopId: shopInfo.id,
+              userId: userInput.userId,
+              isDeleted: false,
             },
           }),
           await db.organizationShopBelonging.create({

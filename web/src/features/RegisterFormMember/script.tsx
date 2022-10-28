@@ -32,7 +32,6 @@ export const useRegisterMutations = () => {
     })
   }, [errorMessage, toast])
   useEffect(() => {
-    // TODO: 画面遷移に変更する
     if (!isSuccess) return
     toast({
       ...TOAST_PROPS,

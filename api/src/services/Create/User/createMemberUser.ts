@@ -18,6 +18,8 @@ export const createMemberUser: MutationResolvers['createMemberUser'] = async ({
       if (userInfo) {
         throw new ServiceValidationError('User Already Exists')
       }
+      console.log('shopUserBelongingInput', shopUserBelongingInput)
+
       const shopInfo = await shop({
         id: shopUserBelongingInput.shopId,
       })

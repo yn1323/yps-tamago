@@ -1,9 +1,10 @@
 import { FC } from 'react'
 
 import { useAuth } from '@redwoodjs/auth'
-import { navigate, routes, useParams } from '@redwoodjs/router'
+import { useParams } from '@redwoodjs/router'
 
 import { Animation } from 'src/components/Template/Animation'
+import { RegisterFormAdmin } from 'src/features/RegisterFormAdmin'
 import { RegisterFormMember } from 'src/features/RegisterFormMember'
 
 export const New: FC = () => {
@@ -18,8 +19,9 @@ export const New: FC = () => {
       {shopId ? (
         <RegisterFormMember shopId={shopId} userName={userName} />
       ) : (
-        <button onClick={() => navigate(routes.dashboard())}>aa</button>
-        // <FormRegisterAdmin />
+        <>
+          <RegisterFormAdmin userName={userName} />
+        </>
       )}
     </Animation>
   )

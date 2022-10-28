@@ -2,8 +2,8 @@ export const schema = gql`
   type Shop {
     id: String!
     shopName: String!
-    openTime: DateTime!
-    closeTime: DateTime!
+    openTime: String!
+    closeTime: String!
     timeUnit: Int!
     submitFrequency: String!
     avatar: String!
@@ -28,8 +28,8 @@ export const schema = gql`
 
   input CreateShopInput {
     shopName: String!
-    openTime: DateTime!
-    closeTime: DateTime!
+    openTime: String!
+    closeTime: String!
     timeUnit: Int!
     submitFrequency: String!
     avatar: String!
@@ -39,8 +39,8 @@ export const schema = gql`
 
   input UpdateShopInput {
     shopName: String
-    openTime: DateTime
-    closeTime: DateTime
+    openTime: String
+    closeTime: String
     timeUnit: Int
     submitFrequency: String
     avatar: String

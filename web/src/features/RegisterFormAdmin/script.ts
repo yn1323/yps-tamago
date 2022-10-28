@@ -7,7 +7,7 @@ import { navigate, routes } from '@redwoodjs/router'
 
 import { TOAST_PROPS } from 'src/constants/ui/toast'
 import { RegisterFormAdmin } from 'src/features/RegisterFormAdmin'
-import { useCreateUserMutation } from 'src/hooks/gql/mutation/CreateUser'
+import { useCreateAdminUserAndShopMutation } from 'src/hooks/gql/mutation/CreateAdminUserAndShop'
 import { useAuthMeta } from 'src/hooks/useAuthMeta'
 
 type FormValues = Required<typeof RegisterFormAdmin.defaultProps>
@@ -18,19 +18,18 @@ export const useRegisterMutations = () => {
   } = useAuthMeta()
   const toast = useToast()
 
-  const { createUser, loading, errorMessage, isSuccess } =
-    useCreateUserMutation()
+  const { createAdminUserAndShop, loading, errorMessage, isSuccess } =
+    useCreateAdminUserAndShopMutation()
 
   useEffect(() => {
     if (!errorMessage) return
     toast({
       ...TOAST_PROPS,
-      description: '店舗IDが誤っているか、ユーザーが既に登録されています。',
+      description: '登録できませんでした。入力内容を確認してください。',
       status: 'error',
     })
   }, [errorMessage, toast])
   useEffect(() => {
-    // TODO: 画面遷移に変更する
     if (!isSuccess) return
     toast({
       ...TOAST_PROPS,
@@ -40,21 +39,33 @@ export const useRegisterMutations = () => {
     navigate(routes.dashboard())
   }, [isSuccess, toast])
 
-  const register = async ({ shopId, userName }) => {
-    await createUser({
+  const register = async ({
+    userName,
+    shopName,
+    openTime,
+    closeTime,
+    submitFrequency,
+    useTimeCard,
+  }) => {
+    await createAdminUserAndShop({
       variables: {
         input: {
           userInput: {
             userId,
             avatar: avatarUrl ?? '',
             email: email ?? '',
-            role: 'member',
             userName: userName,
+            role: 'admin',
             isDeleted: false,
           },
-          shopUserBelongingInput: {
-            shopId,
-            userId,
+          shopInput: {
+            shopName,
+            openTime,
+            closeTime,
+            timeUnit: 30,
+            submitFrequency,
+            avatar: '',
+            useTimeCard,
             isDeleted: false,
           },
         },
