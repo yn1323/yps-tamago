@@ -35,11 +35,10 @@ describe('TemplateUnauth > ログインボタン表示', () => {
 
 describe('TemplateUnauth > ログアウトボタン表示', () => {
   it('コンポーネントを正常に描画', async () => {
-    const a = await waitFor(() => {
+    await waitFor(() => {
       expect(() => {
         render(<LogoutButtonShow />)
       }).not.toThrow()
-      console.log(a)
     })
   })
 

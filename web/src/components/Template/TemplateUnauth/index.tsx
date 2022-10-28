@@ -61,7 +61,7 @@ export const TemplateUnauth: FC<PropTypes> = ({
           </Box>
           <Spacer />
           <Box>
-            {showLoginButton && (
+            {/* {showLoginButton && (
               <Button
                 variant="outline"
                 colorScheme="primary"
@@ -71,7 +71,7 @@ export const TemplateUnauth: FC<PropTypes> = ({
               >
                 ログイン
               </Button>
-            )}
+            )} */}
             {showLogoutButton && (
               <Button
                 variant="outline"
