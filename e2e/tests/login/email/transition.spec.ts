@@ -12,9 +12,7 @@ test('test', async ({ page }) => {
 
   // Click text=新規登録
   await page.locator('text=新規登録').click()
-  await expect(page).toHaveURL(
-    'http://localhost:8910/login/register?shopId=hoge'
-  )
+  await expect(page).toHaveURL('http://localhost:8910/login/register')
 
   // Click text=ログイン画面に戻る
   await page.locator('text=ログイン画面に戻る').click()
@@ -28,6 +26,27 @@ test('test', async ({ page }) => {
   await page.locator('text=ログイン画面に戻る').click()
   await expect(page).toHaveURL('http://localhost:8910/login')
 
-  // Go to http://localhost:8910/login/setPassword
-  await page.goto('http://localhost:8910/login/setPassword')
+  await page.goto('http://localhost:8910?shopId=shop')
+
+  // Click text=ログイン
+  await page.locator('text=ログイン').click()
+  await expect(page).toHaveURL('http://localhost:8910/login?shopId=shop')
+
+  // Click text=新規登録
+  await page.locator('text=新規登録').click()
+  await expect(page).toHaveURL(
+    'http://localhost:8910/login/register?shopId=shop'
+  )
+
+  // Click text=ログイン画面に戻る
+  await page.locator('text=ログイン画面に戻る').click()
+  await expect(page).toHaveURL('http://localhost:8910/login?shopId=shop')
+
+  // Click text=パスワードを忘れた方
+  await page.locator('text=パスワードを忘れた方').click()
+  await expect(page).toHaveURL('http://localhost:8910/login/reset?shopId=shop')
+
+  // Click text=ログイン画面に戻る
+  await page.locator('text=ログイン画面に戻る').click()
+  await expect(page).toHaveURL('http://localhost:8910/login?shopId=shop')
 })

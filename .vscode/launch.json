@@ -14,7 +14,7 @@
       "type": "node-terminal"
     },
     {
-      "command": "yarn rw test --coverage",
+      "command": "yarn rw test --coverage --watchAll",
       "name": "Jest",
       "request": "launch",
       "type": "node-terminal"

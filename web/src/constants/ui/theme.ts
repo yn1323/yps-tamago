@@ -66,7 +66,7 @@ const breakpoints = {
   '2xl': '96em',
 }
 
-const disabledBoxShadowComponents = ['Button', 'Popover', 'Input']
+const disabledBoxShadowComponents = ['Button', 'Popover', 'Input', 'Tab']
 const componentObj = disabledBoxShadowComponents.reduce((acc, cur) => {
   return {
     ...acc,

@@ -10,9 +10,7 @@ test('test', async ({ page }) => {
 
   // Click text=新規登録
   await page.locator('text=新規登録').click()
-  await expect(page).toHaveURL(
-    'http://localhost:8910/login/register?shopId=hoge'
-  )
+  await expect(page).toHaveURL('http://localhost:8910/login/register')
 
   // Click [data-testid="email"]
   await page.locator('[data-testid="email"]').click()
@@ -29,7 +27,7 @@ test('test', async ({ page }) => {
   // Fill [data-testid="email"]
   await page
     .locator('[data-testid="email"]')
-    .fill(`aaaa@aaaa.com${Math.random().toString().substring(0, 8)}`)
+    .fill(`zzzz@aaaa.com${Math.random().toString().substring(0, 8)}`)
 
   // Click text=登録する
   await page.locator('text=登録する').click()

@@ -6,20 +6,161 @@ datasource db {
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = "native"
+  previewFeatures = ["interactiveTransactions"]
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model ShopUserBelonging{
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  userId String @unique
+  shop Shop @relation(fields: [shopId], references: [id])
+  user User @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
 }
 
-model Contact {
-  id        Int      @id @default(autoincrement())
-  name      String
-  message   String
+model OrganizationShopBelonging{
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationId String @db.Uuid
+  shopId String @db.Uuid
+  shop Shop @relation(fields: [shopId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Organization {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationName String
+  shop OrganizationShopBelonging[]
+  temporaryClosed TemporaryClosed[]
+  announce Announce[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Shop {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopName String
+  openTime String
+  closeTime String
+  timeUnit Int
+  submitFrequency String
+  avatar String
+  useTimeCard Boolean
+  organization OrganizationShopBelonging[]
+  user ShopUserBelonging[]
+  operation Operation[]
+  stableShift StableShift[]
+  unstableShift UnstableShift[]
+  request Request[]
+  timeCard TimeCard[]
+  temporaryClosed TemporaryClosed[]
+  announce Announce[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId String @unique
+  userName String
+  avatar String
+  role String
+  email String
+  shop ShopUserBelonging[]
+  stableShift StableShift[]
+  unstableShift UnstableShift[]
+  request Request[]
+  timeCard TimeCard[]
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Operation {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  operationName String
+  icon String
+  color String
+  shop Shop  @relation(fields: [shopId], references: [id])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model StableShift {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  userId String @unique
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model UnstableShift {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  userId String @unique
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Request{
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  userId String @unique
+  dateFrom DateTime
+  dateTo DateTime
+  done Boolean
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model TimeCard{
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shopId String @db.Uuid
+  userId String @unique
+  workFrom DateTime
+  workTo DateTime
+  breakFrom DateTime
+  breakTo DateTime
+  shop Shop  @relation(fields: [shopId], references: [id])
+  user User  @relation(fields: [userId], references: [userId])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model TemporaryClosed {
+  id String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationId String @db.Uuid
+  shopId String @db.Uuid
+  date DateTime
+  organization Organization @relation(fields: [organizationId], references: [id])
+  shop Shop @relation(fields: [shopId], references: [id])
+  isDeleted Boolean
+  createdAt DateTime @default(now())
+}
+
+model Announce {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationId String @db.Uuid
+  shopId String @db.Uuid
+  message String
+  organization Organization @relation(fields: [organizationId], references: [id])
+  shop Shop @relation(fields: [shopId], references: [id])
+  isDeleted Boolean
   createdAt DateTime @default(now())
 }
