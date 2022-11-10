@@ -23,7 +23,7 @@ test('test', async ({ page }) => {
   // Fill [data-testid="email"]
   await page
     .locator('[data-testid="email"]')
-    .fill(`aaaa@aaaa.com${Math.random().toString().substring(0, 8)}`)
+    .fill(`zzzz@aaaa.com${Math.random().toString().substring(0, 8)}`)
 
   // Click text=メールアドレスでログイン
   await page.locator('text=メールアドレスでログイン').click()

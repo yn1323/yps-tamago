@@ -27,8 +27,8 @@
     },
     {
       "type": "shell",
-      "command": "yarn rw g sdl ${input:sdlName} ${input:noCrud}",
-      "label": "Redwood SDL作成",
+      "command": "yarn rw g sdl ${input:sdlName} ${input:noCrud} --force",
+      "label": "Redwood SDL作成・更新",
       "detail": "yarn rw g sdl ${input:sdlName} ${input:noCrud}"
     },
     {

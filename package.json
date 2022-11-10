@@ -8,11 +8,11 @@
     ]
   },
   "devDependencies": {
-    "@playwright/test": "1.25.0",
-    "@redwoodjs/core": "2.2.0",
-    "chromatic": "6.7.3",
-    "playwright": "1.25.0",
-    "scaffdog": "1.5.0"
+    "@playwright/test": "1.25.1",
+    "@redwoodjs/core": "^3.2.1",
+    "chromatic": "6.8.0",
+    "playwright": "1.25.1",
+    "scaffdog": "2.2.0"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -25,7 +25,7 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@3.2.3",
   "msw": {
     "workerDirectory": "web/public"
   }

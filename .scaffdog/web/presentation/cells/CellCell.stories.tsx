@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Loading, Empty, Failure, Success } from '.'
 import { standard } from './index.mocks'
 

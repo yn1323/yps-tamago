@@ -1,19 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { useToast, UseToastOptions } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
 import { Session, User, ApiError, Provider } from '@supabase/supabase-js'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
+import { navigate, routes, useParams } from '@redwoodjs/router'
 
 import { supabase } from 'src/config/supabase'
+import { TOAST_PROPS } from 'src/constants/ui/toast'
 import { MailForm } from 'src/features/LoginForm/MailForm'
-
-const toastProps: UseToastOptions = {
-  duration: 5000,
-  isClosable: true,
-  variant: 'left-accent',
-  position: 'top-right',
-}
 
 type FormInput = {
   email: string
@@ -28,18 +23,15 @@ type SignUpResult = {
 export const useSignUp = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [signUpResult, setSignUpResult] = useState<SignUpResult>({})
+  const { signUp: supabaseSignUp } = useAuth()
 
   const signUp = async ({ email, password }: FormInput) => {
     setIsLoading(true)
-    const info = await supabase.auth.signUp(
-      {
-        email,
-        password,
-      },
-      {
-        redirectTo: `${window.location.host}/login`,
-      }
-    )
+    const info = await supabaseSignUp({
+      email,
+      password,
+      redirectTo: `${window.location.host}/login`,
+    })
     setSignUpResult(info)
     setIsLoading(false)
   }
@@ -77,12 +69,17 @@ type SignInResult = {
 export const useSignIn = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [signInResult, setSignInResult] = useState<SignInResult>({})
+  const { logIn: supabaseSignIn } = useAuth()
+  const { shopId } = useParams()
 
   const signIn = async ({ email, password }: FormInput) => {
     setIsLoading(true)
-    const info = await supabase.auth.signIn({
+    const info = await supabaseSignIn({
       email,
       password,
+      redirectTo: `${window.location.host}/dashboard${
+        shopId ? `?shopId=${shopId}` : ''
+      }`,
     })
     setSignInResult(info)
     setIsLoading(false)
@@ -299,7 +296,7 @@ export const useSubmit = () => {
   useEffect(() => {
     if (!errorMessage) return
     toast({
-      ...toastProps,
+      ...TOAST_PROPS,
       description: errorMessage,
       status: 'error',
     })
@@ -308,7 +305,7 @@ export const useSubmit = () => {
   useEffect(() => {
     if (!succeedMessage) return
     toast({
-      ...toastProps,
+      ...TOAST_PROPS,
       description: succeedMessage,
       status: 'success',
     })
