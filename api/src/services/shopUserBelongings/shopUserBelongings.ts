@@ -1,13 +1,28 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  ShopUserBelongingResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
+
+import { validateWith } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
-export const shopUserBelongings: QueryResolvers['shopUserBelongings'] = () => {
-  return db.shopUserBelonging.findMany()
+export const shopUserBelongings = ({
+  userId,
+  shopId,
+}: {
+  userId?: string
+  shopId?: string
+}) => {
+  validateWith(() => {
+    if (!userId && !shopId) {
+      throw new Error('User Id or Shop Id is required')
+    }
+  })
+  return db.shopUserBelonging.findMany({
+    include: {
+      shop: true,
+      user: false,
+    },
+    where: userId ? { userId } : { shopId },
+  })
 }
 
 export const shopUserBelonging: QueryResolvers['shopUserBelonging'] = ({
@@ -39,10 +54,3 @@ export const deleteShopUserBelonging: MutationResolvers['deleteShopUserBelonging
       where: { id },
     })
   }
-
-export const ShopUserBelonging: ShopUserBelongingResolvers = {
-  shop: (_obj, { root }) =>
-    db.shopUserBelonging.findUnique({ where: { id: root.id } }).shop(),
-  user: (_obj, { root }) =>
-    db.shopUserBelonging.findUnique({ where: { id: root.id } }).user(),
-}

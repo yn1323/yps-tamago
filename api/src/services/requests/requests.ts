@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  RequestResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -38,11 +34,4 @@ export const deleteRequest: MutationResolvers['deleteRequest'] = ({ id }) => {
   return db.request.delete({
     where: { id },
   })
-}
-
-export const Request: RequestResolvers = {
-  shop: (_obj, { root }) =>
-    db.request.findUnique({ where: { id: root.id } }).shop(),
-  user: (_obj, { root }) =>
-    db.request.findUnique({ where: { id: root.id } }).user(),
 }

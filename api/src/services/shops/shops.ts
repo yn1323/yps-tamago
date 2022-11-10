@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  ShopResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { validate } from '@redwoodjs/api'
 
@@ -41,25 +37,4 @@ export const deleteShop: MutationResolvers['deleteShop'] = ({ id }) => {
   return db.shop.delete({
     where: { id },
   })
-}
-
-export const Shop: ShopResolvers = {
-  organization: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).organization(),
-  user: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).user(),
-  operation: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).operation(),
-  stableShift: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).stableShift(),
-  unstableShift: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).unstableShift(),
-  request: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).request(),
-  timeCard: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).timeCard(),
-  temporaryClosed: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).temporaryClosed(),
-  announce: (_obj, { root }) =>
-    db.shop.findUnique({ where: { id: root.id } }).announce(),
 }

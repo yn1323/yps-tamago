@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  TemporaryClosedResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -37,10 +33,3 @@ export const deleteTemporaryClosed: MutationResolvers['deleteTemporaryClosed'] =
       where: { id },
     })
   }
-
-export const TemporaryClosed: TemporaryClosedResolvers = {
-  organization: (_obj, { root }) =>
-    db.temporaryClosed.findUnique({ where: { id: root.id } }).organization(),
-  shop: (_obj, { root }) =>
-    db.temporaryClosed.findUnique({ where: { id: root.id } }).shop(),
-}

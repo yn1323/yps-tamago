@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  OperationResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -40,9 +36,4 @@ export const deleteOperation: MutationResolvers['deleteOperation'] = ({
   return db.operation.delete({
     where: { id },
   })
-}
-
-export const Operation: OperationResolvers = {
-  shop: (_obj, { root }) =>
-    db.operation.findUnique({ where: { id: root.id } }).shop(),
 }

@@ -12,8 +12,6 @@ export const New: FC = () => {
   const { shopId } = useParams()
   const userName = userMetadata?.user_metadata.full_name ?? ''
 
-  // TODO: ユーザーが存在する場合、/dashboardにリダイレクト
-
   return (
     <Animation>
       {shopId ? (

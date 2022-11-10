@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  UnstableShiftResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -40,11 +36,4 @@ export const deleteUnstableShift: MutationResolvers['deleteUnstableShift'] = ({
   return db.unstableShift.delete({
     where: { id },
   })
-}
-
-export const UnstableShift: UnstableShiftResolvers = {
-  shop: (_obj, { root }) =>
-    db.unstableShift.findUnique({ where: { id: root.id } }).shop(),
-  user: (_obj, { root }) =>
-    db.unstableShift.findUnique({ where: { id: root.id } }).user(),
 }

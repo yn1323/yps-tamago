@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  OrganizationShopBelongingResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -39,12 +35,3 @@ export const deleteOrganizationShopBelonging: MutationResolvers['deleteOrganizat
       where: { id },
     })
   }
-
-export const OrganizationShopBelonging: OrganizationShopBelongingResolvers = {
-  shop: (_obj, { root }) =>
-    db.organizationShopBelonging.findUnique({ where: { id: root.id } }).shop(),
-  organization: (_obj, { root }) =>
-    db.organizationShopBelonging
-      .findUnique({ where: { id: root.id } })
-      .organization(),
-}

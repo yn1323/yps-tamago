@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  TimeCardResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -38,11 +34,4 @@ export const deleteTimeCard: MutationResolvers['deleteTimeCard'] = ({ id }) => {
   return db.timeCard.delete({
     where: { id },
   })
-}
-
-export const TimeCard: TimeCardResolvers = {
-  shop: (_obj, { root }) =>
-    db.timeCard.findUnique({ where: { id: root.id } }).shop(),
-  user: (_obj, { root }) =>
-    db.timeCard.findUnique({ where: { id: root.id } }).user(),
 }
