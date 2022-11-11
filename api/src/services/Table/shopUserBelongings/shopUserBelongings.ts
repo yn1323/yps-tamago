@@ -1,6 +1,6 @@
 import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
-import { validateWith } from '@redwoodjs/api'
+import { ServiceValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
@@ -8,11 +8,9 @@ export const shopUserBelongings: QueryResolvers['shopUserBelongings'] = ({
   userId,
   shopId,
 }) => {
-  validateWith(() => {
-    if (!userId && !shopId) {
-      throw new Error('User Id or Shop Id is required')
-    }
-  })
+  if (!userId && !shopId) {
+    throw new ServiceValidationError('User Id or Shop Id is required')
+  }
   return db.shopUserBelonging.findMany({
     include: {
       shop: true,

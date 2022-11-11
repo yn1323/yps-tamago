@@ -3,8 +3,8 @@ import type { {{ inputs.gqlType | pascal }}Resolvers } from 'types/graphql'
 import { ServiceValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
-import { shop } from 'src/services/shops/shops'
-import { user } from 'src/services/users/users'
+import { shop } from 'src/services/Table/shops/shops'
+import { user } from 'src/services/Table/users/users'
 
 export const {{ inputs.gqlName | camel }}: {{ inputs.gqlType | pascal }}Resolvers['{{ inputs.gqlName | camel }}'] = async ({
   input,

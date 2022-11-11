@@ -2,7 +2,7 @@
   "version": "0.3.0",
   "configurations": [
     {
-      "command": "yarn redwood dev --apiDebugPort 18911",
+      "command": "yarn rw dev --apiDebugPort 18911",
       "name": "RedwoodJS",
       "request": "launch",
       "type": "node-terminal"

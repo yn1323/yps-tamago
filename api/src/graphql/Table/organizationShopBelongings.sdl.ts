@@ -10,7 +10,9 @@ export const schema = gql`
   }
 
   type Query {
-    organizationShopBelongings: [OrganizationShopBelonging!]! @requireAuth
+    organizationShopBelongings(
+      shopIds: [String!]!
+    ): [OrganizationShopBelonging!]! @requireAuth
     organizationShopBelonging(id: String!): OrganizationShopBelonging
       @requireAuth
   }
