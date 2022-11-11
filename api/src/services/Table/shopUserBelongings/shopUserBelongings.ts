@@ -19,7 +19,7 @@ export const shopUserBelongings = ({
   return db.shopUserBelonging.findMany({
     include: {
       shop: true,
-      user: false,
+      user: true,
     },
     where: userId ? { userId } : { shopId },
   })

@@ -4,7 +4,8 @@ export const schema = gql`
   }
 
   type FindShopsFromUserId {
-    shop: [Shop!]!
+    shops: [Shop!]!
+    user: User
   }
 
   type Query {

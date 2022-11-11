@@ -5,6 +5,16 @@ import { shopUserBelongings } from 'src/services/Table/shopUserBelongings/shopUs
 export const findShopsFromUserId: QueryResolvers['findShopsFromUserId'] =
   async ({ input: { userId } }) => {
     const shopUserBelongingsInfo = await shopUserBelongings({ userId })
-    const shop = shopUserBelongingsInfo.map(({ shop }) => shop)
-    return { shop }
+    const shops = shopUserBelongingsInfo.map(({ shop }) => shop)
+    const user = shopUserBelongingsInfo.length
+      ? shopUserBelongingsInfo[0].user
+      : {}
+    console.log({
+      shops,
+      user,
+    })
+    return {
+      shops,
+      user,
+    }
   }
