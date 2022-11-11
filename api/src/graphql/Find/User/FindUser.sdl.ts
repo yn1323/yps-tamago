@@ -3,12 +3,14 @@ export const schema = gql`
     userId: String!
   }
 
+  type ShopInfo {
+    shop: Shop!
+    organization: Organization!
+  }
+
   type FindUser {
     user: User!
-    shopUserBelonging: ShopUserBelonging!
-    shop: Shop!
-    organizationShopbelonging: OrganizationShopBelonging!
-    organization: Organization!
+    belongs: [ShopInfo!]!
   }
 
   type Query {
