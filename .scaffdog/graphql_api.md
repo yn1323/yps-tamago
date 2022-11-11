@@ -19,7 +19,7 @@ questions:
 {{ 'api/gql/sdl.ts' | read }}
 ```
 
-# `services/{{ inputs.path }}/{{ inputs.gqlName | camel }}.sdl.ts`
+# `services/{{ inputs.path }}/{{ inputs.gqlName | camel }}.ts`
 ```ts
 {{ 'api/gql/service.ts' | read }}
 ```
