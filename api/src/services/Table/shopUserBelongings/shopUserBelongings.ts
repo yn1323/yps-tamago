@@ -4,12 +4,9 @@ import { validateWith } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
-export const shopUserBelongings = ({
+export const shopUserBelongings: QueryResolvers['shopUserBelongings'] = ({
   userId,
   shopId,
-}: {
-  userId?: string
-  shopId?: string
 }) => {
   validateWith(() => {
     if (!userId && !shopId) {
