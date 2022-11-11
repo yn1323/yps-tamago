@@ -1,8 +1,4 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  AnnounceResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -38,11 +34,4 @@ export const deleteAnnounce: MutationResolvers['deleteAnnounce'] = ({ id }) => {
   return db.announce.delete({
     where: { id },
   })
-}
-
-export const Announce: AnnounceResolvers = {
-  organization: (_obj, { root }) =>
-    db.announce.findUnique({ where: { id: root.id } }).organization(),
-  shop: (_obj, { root }) =>
-    db.announce.findUnique({ where: { id: root.id } }).shop(),
 }

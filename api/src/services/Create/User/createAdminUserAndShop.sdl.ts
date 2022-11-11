@@ -3,7 +3,7 @@ import type { MutationResolvers } from 'types/graphql'
 import { ServiceValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
-import { user } from 'src/services/users/users'
+import { user } from 'src/services/Table/users/users'
 
 export const createAdminUserAndShop: MutationResolvers['createAdminUserAndShop'] =
   async ({ input }) => {

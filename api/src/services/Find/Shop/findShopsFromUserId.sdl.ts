@@ -1,6 +1,6 @@
 import type { QueryResolvers } from 'types/graphql'
 
-import { shopUserBelongings } from 'src/services/shopUserBelongings/shopUserBelongings'
+import { shopUserBelongings } from 'src/services/Table/shopUserBelongings/shopUserBelongings'
 
 export const findShopsFromUserId: QueryResolvers['findShopsFromUserId'] =
   async ({ input: { userId } }) => {

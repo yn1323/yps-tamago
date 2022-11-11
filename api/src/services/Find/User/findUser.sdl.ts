@@ -3,7 +3,7 @@ import type { QueryResolvers } from 'types/graphql'
 import { ServiceValidationError } from '@redwoodjs/api'
 
 import { findShopsFromUserId } from 'src/services/Find/Shop/findShopsFromUserId.sdl'
-import { user } from 'src/services/users/users'
+import { user } from 'src/services/Table/users/users'
 
 export const findUser: QueryResolvers['findUser'] = async ({ input }) => {
   const { userId } = input
