@@ -5,6 +5,7 @@ output: []
 ignore: []
 questions:
   component: 'What is cell name??'
+  query: 'What is gql query name??'
   path: 'What is path??(i.e. features/Timeline)'
 ---
 
@@ -18,7 +19,7 @@ questions:
 {{ 'web/presentation/cells/CellCell.stories.tsx' | read }}
 ```
 
-# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/index.tsx`
+# `{{ inputs.path }}/{{ inputs.component | pascal }}Cell/{{ inputs.component | pascal }}Cell.tsx`
 ```tsx
 {{ 'web/presentation/cells/CellCell.tsx' | read }}
 ```

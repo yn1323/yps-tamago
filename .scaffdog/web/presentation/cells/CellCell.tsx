@@ -1,11 +1,17 @@
 import { Box } from '@chakra-ui/react'
-import type { Find{{ inputs.component | pascal }}Query, Find{{ inputs.component | pascal }}QueryVariables } from 'types/graphql'
+import type { {{ inputs.query | pascal }}, {{ inputs.query | pascal }}Variables } from 'types/graphql'
 
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+export const beforeQuery = ({ word }: { word: string }) => {
+  return {
+    variables: { magicWord: word }
+   }
+}
+
 export const QUERY = gql`
-  query Find{{ inputs.component | pascal }}Query($id: Int!) {
-    {{ inputs.component | camel }}: {{ inputs.component | camel }}(id: $id) {
+  query {{ inputs.query | pascal }}($input: {{ inputs.query | pascal }}Input!) {
+    {{ inputs.query | camel }}(input: $input) {
       id
     }
   }
@@ -17,12 +23,12 @@ export const Empty = () => <div>Empty</div>
 
 export const Failure = ({
   error,
-}: CellFailureProps<Find{{ inputs.component | pascal }}QueryVariables>) => (
+}: CellFailureProps<{{ inputs.component | pascal }}Variables>) => (
   <Box>Error: {error.message}</Box>
 )
 
 export const Success = ({
-  {{ inputs.component | camel }},
-}: CellSuccessProps<Find{{ inputs.component | pascal }}Query, Find{{ inputs.component | pascal }}QueryVariables>) => {
-  return <Box>{JSON.stringify({{ inputs.component | camel }})}</Box>
+  {{ inputs.query | camel }},
+}: CellSuccessProps<{{ inputs.query | pascal }}, {{ inputs.query | pascal }}Variables>) => {
+  return <Box>{JSON.stringify({{ inputs.query | camel }})}</Box>
 }
