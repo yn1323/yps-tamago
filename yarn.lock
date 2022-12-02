@@ -5529,60 +5529,63 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scaffdog/config@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@scaffdog/config@npm:2.2.0"
+"@scaffdog/config@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@scaffdog/config@npm:2.4.0"
   dependencies:
-    "@scaffdog/types": 2.2.0
+    "@scaffdog/types": 2.4.0
     jiti: ^1.14.0
     zod: ^3.11.6
-  checksum: 02a2239c34254974f0a2f509bf63ce9b6a09f968ab06580f4fd85356ba6b12931beae11269faed0179082422d9d33338f8a6e1e355da622c2862982822a31178
+  checksum: 403f1bf8659a39dbf4ff1cc294cc505df48b7d804d14d5e6864f1a1a4ac73c98bec57a88279e711630fbebdaa64aa0cf68526f146b7d047de103ae08690cf6a2
   languageName: node
   linkType: hard
 
-"@scaffdog/core@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@scaffdog/core@npm:2.2.0"
+"@scaffdog/core@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@scaffdog/core@npm:2.4.0"
   dependencies:
-    "@scaffdog/engine": 2.2.0
-    "@scaffdog/types": 2.2.0
+    "@scaffdog/engine": 2.4.0
+    "@scaffdog/types": 2.4.0
     mdast-util-to-string: ^2.0.0
     remark-parse: ^9.0.0
     unified: ^9.2.1
     unist-util-visit-parents: ^3.1.1
-  checksum: 845cc4f21c3585c9379731abc866a53ae4a1a68ebe9985e6c762c03580a70c4bb1929d5e40ad424b2a17f3347dd11167df770b1aa1e2c9f00141fded9dc2fa62
+  checksum: 0b3f09a12dc49d875c5e5bd94ac9bf46f4f4c62d11ef59bdf3cf406a95c9c18e40702b28e77633d867bfaec6c7670f42a922d7f1ed7175cf8a3103de6c149bd1
   languageName: node
   linkType: hard
 
-"@scaffdog/engine@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@scaffdog/engine@npm:2.2.0"
+"@scaffdog/engine@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@scaffdog/engine@npm:2.4.0"
   dependencies:
-    "@scaffdog/error": 2.2.0
-    "@scaffdog/types": 2.2.0
+    "@scaffdog/error": 2.4.0
+    "@scaffdog/types": 2.4.0
     change-case: ^4.1.2
     dayjs: ^1.10.4
     is-plain-object: ^5.0.0
+    plur: 4.0.0
     safe-eval: ^0.4.1
-  checksum: 71f2855bbd472abce77bb9633e14c9bdbfb63660b7a43df3b460337e661113332a0fa7b9485a71d1d927a00bf1fb992bc0d71fe7d0a07ae0aeba96032bcabfba
+  checksum: f62cf522200f53dc6d6d1d8c30882a5bf9db661a94cd58d8f7aa995f59cd50fb2694a051d63a5dcb0bff9b4a34f00399e7fabdef45eb4d39c77e055e72ec0e0f
   languageName: node
   linkType: hard
 
-"@scaffdog/error@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@scaffdog/error@npm:2.2.0"
+"@scaffdog/error@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@scaffdog/error@npm:2.4.0"
   dependencies:
-    "@scaffdog/types": 2.2.0
+    "@scaffdog/types": 2.4.0
     chalk: ^4.1.0
     string-length: 4.0.2
-  checksum: b457a5658388c0dd22b320eedbfc0ee3578e315f9adc1731d9939ca4c1f8ddc6670d8d1a359007c93e47888a44753a5d33169a798de4284b2a54d979630491b6
+  checksum: c938fc80209829b0de4e9f306d63486d68270f09147ca9a7cc99aa68a6ecb20aafc88e4f6feb9db6be2993d0236267f53f4501781b233ed51fb5b19ec7e33f3f
   languageName: node
   linkType: hard
 
-"@scaffdog/types@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@scaffdog/types@npm:2.2.0"
-  checksum: 449d1c15411620e42707cb298aa084ac3ff93d301ea51b5ff836678df4b4a299fcf01af308189e20f8024ec445f0dbd4fc575742df6134af1be5ab8686b15abe
+"@scaffdog/types@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@scaffdog/types@npm:2.4.0"
+  dependencies:
+    type-fest: 2.19.0
+  checksum: 4f25add72ebfd0707838bf18a3c342a819e3873f81691bc50cc4c291ae00b57aba8b3a4456d526e39828c7a09bc989fdda8b36e14d16ac88790647f9aab475dc
   languageName: node
   linkType: hard
 
@@ -9199,7 +9202,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-regex@npm:^5.0.1":
+"ansi-regex@npm:^5.0.0, ansi-regex@npm:^5.0.1":
   version: 5.0.1
   resolution: "ansi-regex@npm:5.0.1"
   checksum: 9a64bb8627b434ba9327b60c027742e5d17ac69277960d041898596271d992d4d52ba7267a63ca10232e29f6107fc8a835f6ce8d719b88c5f8493f8254813737
@@ -21731,7 +21734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plur@npm:^4.0.0":
+"plur@npm:4.0.0, plur@npm:^4.0.0":
   version: 4.0.0
   resolution: "plur@npm:4.0.0"
   dependencies:
@@ -23739,7 +23742,7 @@ __metadata:
     "@redwoodjs/core": ^3.2.1
     chromatic: 6.11.4
     playwright: 1.25.1
-    scaffdog: 2.2.0
+    scaffdog: 2.4.0
   languageName: unknown
   linkType: soft
 
@@ -23895,19 +23898,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scaffdog@npm:2.2.0":
-  version: 2.2.0
-  resolution: "scaffdog@npm:2.2.0"
+"scaffdog@npm:2.4.0":
+  version: 2.4.0
+  resolution: "scaffdog@npm:2.4.0"
   dependencies:
-    "@scaffdog/config": 2.2.0
-    "@scaffdog/core": 2.2.0
-    "@scaffdog/engine": 2.2.0
-    "@scaffdog/error": 2.2.0
-    "@scaffdog/types": 2.2.0
+    "@scaffdog/config": 2.4.0
+    "@scaffdog/core": 2.4.0
+    "@scaffdog/engine": 2.4.0
+    "@scaffdog/error": 2.4.0
+    "@scaffdog/types": 2.4.0
     ansi-escapes: ^4.3.2
     chalk: ^4.1.0
     cli-truncate: ^2.1.0
     consola: ^2.15.3
+    deepmerge: ^4.2.2
     figures: ^3.2.0
     front-matter: ^4.0.2
     fuse.js: ^6.4.6
@@ -23920,6 +23924,7 @@ __metadata:
     micromatch: ^4.0.4
     node-emoji: ^1.10.0
     plur: ^4.0.0
+    strip-ansi: 6.0.0
     term-size: ^2.2.1
     update-notifier: ^5.1.0
     valid-filename: ^3.1.0
@@ -23927,8 +23932,8 @@ __metadata:
     yargs: ^17.0.0
     zod: ^3.11.6
   bin:
-    scaffdog: lib/bin.cjs
-  checksum: 48a46802aea6ba7f0e22115e5ba2725db80a9fa6179b1b9aa21375bdcf11a766ec8903e5e9ed3e57907c039bcaf0ff0acf65bb91acceba679a404855abe4dc03
+    scaffdog: dist/bin.cjs
+  checksum: 044abccd3810d3a6cd38dd23607d7c3003bc300529ced52363c4fb2c3084f822d3f8e0d91377b09a8a0e41edb8d7a339a0e8249e3fd67036f69a640310de6199
   languageName: node
   linkType: hard
 
@@ -24978,6 +24983,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strip-ansi@npm:6.0.0":
+  version: 6.0.0
+  resolution: "strip-ansi@npm:6.0.0"
+  dependencies:
+    ansi-regex: ^5.0.0
+  checksum: 85257c80250541cc0e65088c7dc768563bdbd1bf7120471d6d3a73cdc60e8149a50038c12a6fd4a30b674587f306ae42e2cc73ac3095daf193633daa0bd8f928
+  languageName: node
+  linkType: hard
+
 "strip-ansi@npm:6.0.1, strip-ansi@npm:^6.0.0, strip-ansi@npm:^6.0.1":
   version: 6.0.1
   resolution: "strip-ansi@npm:6.0.1"
@@ -25946,6 +25960,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:2.19.0, type-fest@npm:^2.19.0":
+  version: 2.19.0
+  resolution: "type-fest@npm:2.19.0"
+  checksum: a5a7ecf2e654251613218c215c7493574594951c08e52ab9881c9df6a6da0aeca7528c213c622bc374b4e0cb5c443aa3ab758da4e3c959783ce884c3194e12cb
+  languageName: node
+  linkType: hard
+
 "type-fest@npm:^0.16.0":
   version: 0.16.0
   resolution: "type-fest@npm:0.16.0"
@@ -25985,13 +26006,6 @@ __metadata:
   version: 1.4.0
   resolution: "type-fest@npm:1.4.0"
   checksum: a3c0f4ee28ff6ddf800d769eafafcdeab32efa38763c1a1b8daeae681920f6e345d7920bf277245235561d8117dab765cb5f829c76b713b4c9de0998a5397141
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^2.19.0":
-  version: 2.19.0
-  resolution: "type-fest@npm:2.19.0"
-  checksum: a5a7ecf2e654251613218c215c7493574594951c08e52ab9881c9df6a6da0aeca7528c213c622bc374b4e0cb5c443aa3ab758da4e3c959783ce884c3194e12cb
   languageName: node
   linkType: hard
 
