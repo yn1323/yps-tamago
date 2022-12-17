@@ -11445,9 +11445,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:6.11.4":
-  version: 6.11.4
-  resolution: "chromatic@npm:6.11.4"
+"chromatic@npm:6.13.1":
+  version: 6.13.1
+  resolution: "chromatic@npm:6.13.1"
   dependencies:
     "@discoveryjs/json-ext": ^0.5.7
     "@types/webpack-env": ^1.17.0
@@ -11455,7 +11455,7 @@ __metadata:
     chroma: bin/main.cjs
     chromatic: bin/main.cjs
     chromatic-cli: bin/main.cjs
-  checksum: 403544ebe647013c5d5db2188c07426094febe6e3254fc782f8218410792f25e20fabb16d9746f3d8864f255589e90fc620f1902f66a5796713ca665a40e5b96
+  checksum: ecf405b215df24ac48f94916701356c9c64ed4ca0a1f6efd515ef9bae6027c3ab2fa142ec107fd22f88913a6a0df1809e5ea5d2881450b2d3abfb5bc7366bea4
   languageName: node
   linkType: hard
 
@@ -24067,7 +24067,7 @@ __metadata:
   dependencies:
     "@playwright/test": 1.28.1
     "@redwoodjs/core": ^3.2.1
-    chromatic: 6.11.4
+    chromatic: 6.13.1
     playwright: 1.28.1
     scaffdog: 2.4.0
   languageName: unknown
