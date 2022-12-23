@@ -33,7 +33,7 @@
     "@storybook/test-runner": "0.9.1",
     "@storybook/testing-library": "0.0.13",
     "@storybook/testing-react": "1.3.0",
-    "jest-html-reporters": "3.0.10"
+    "jest-html-reporters": "3.0.11"
   },
   "scripts": {
     "test-storybook": "test-storybook --url http://127.0.0.1:7910 --config-dir config",
