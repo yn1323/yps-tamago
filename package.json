@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.29.1",
-    "@redwoodjs/core": "^3.2.1",
+    "@redwoodjs/core": "^6.0.0",
     "chromatic": "6.14.0",
     "playwright": "1.29.1",
     "scaffdog": "2.4.0"
