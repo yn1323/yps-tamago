@@ -2744,11 +2744,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/storybook-addon@npm:4.0.16":
-  version: 4.0.16
-  resolution: "@chakra-ui/storybook-addon@npm:4.0.16"
+"@chakra-ui/storybook-addon@npm:4.0.17":
+  version: 4.0.17
+  resolution: "@chakra-ui/storybook-addon@npm:4.0.17"
   peerDependencies:
-    "@chakra-ui/react": ">=2.0.0"
+    "@chakra-ui/react": 0.0.0-dev-20230112160451
     "@storybook/addons": ">=6.4"
     "@storybook/api": ">=6.4"
     "@storybook/components": ">=6.4"
@@ -2758,7 +2758,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: fb83c0d6796e6cd711de6a2ef9e30c4dc552f43fb152c783d51993943b4ab07555005ebfac1a7f1e7996e03a1cd60ae5495f05dbc3ec481947d73d2590cb9298
+  checksum: 6a5979029eb5375718c0cf0dd3ffdf80bead31a35d2a89cddd91101a9c4e91ddd18887391cba0b8fa6c3e1ba988d84a830d1283c86df4b9a26e62b0c03ef3e75
   languageName: node
   linkType: hard
 
@@ -27926,7 +27926,7 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@chakra-ui/react": 1.8.8
-    "@chakra-ui/storybook-addon": 4.0.16
+    "@chakra-ui/storybook-addon": 4.0.17
     "@emotion/react": 11.10.0
     "@emotion/styled": 11.10.0
     "@redwoodjs/forms": ^3.2.1
