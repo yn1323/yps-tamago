@@ -12,6 +12,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@adobe/css-tools@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "@adobe/css-tools@npm:4.3.1"
+  checksum: 05672719b544cc0c21ae3ed0eb6349bf458e9d09457578eeeb07cf0f696469ac6417e9c9be1b129e5d6a18098a061c1db55b2275591760ef30a79822436fcbfa
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -7134,15 +7141,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/jest@npm:0.0.10":
-  version: 0.0.10
-  resolution: "@storybook/jest@npm:0.0.10"
+"@storybook/jest@npm:0.2.3":
+  version: 0.2.3
+  resolution: "@storybook/jest@npm:0.2.3"
   dependencies:
     "@storybook/expect": storybook-jest
-    "@storybook/instrumenter": ^6.4.0
-    "@testing-library/jest-dom": ^5.16.2
+    "@testing-library/jest-dom": ^6.1.2
+    "@types/jest": 28.1.3
     jest-mock: ^27.3.0
-  checksum: f27be53e528adc39718654d6144328ff853bae22fd183a20ed03262ed39ce89fc57715dab91bad62ae663c36899bbb4d9dd2fbc9d5249f1f7cde52b11172e672
+  checksum: a2c367649ae53d9385b16f49bd73d5a928a2c3b9e64c2efcc1bbfc081b3b75972293bbe0e1828b67c94f0c2ed96341e0fae0ad5e30484a0ed4715724bbbf2c76
   languageName: node
   linkType: hard
 
@@ -7762,7 +7769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:5.16.5, @testing-library/jest-dom@npm:^5.16.2":
+"@testing-library/jest-dom@npm:5.16.5":
   version: 5.16.5
   resolution: "@testing-library/jest-dom@npm:5.16.5"
   dependencies:
@@ -7776,6 +7783,36 @@ __metadata:
     lodash: ^4.17.15
     redent: ^3.0.0
   checksum: 0925fda78096cca355d164d5358b84b9371c4fb6ba60ce60c2263446ac6d9c6aaca75e2792cdb42699fe78c379924c53db672a3510361b577ebb89a0c6e1c629
+  languageName: node
+  linkType: hard
+
+"@testing-library/jest-dom@npm:^6.1.2":
+  version: 6.1.4
+  resolution: "@testing-library/jest-dom@npm:6.1.4"
+  dependencies:
+    "@adobe/css-tools": ^4.3.1
+    "@babel/runtime": ^7.9.2
+    aria-query: ^5.0.0
+    chalk: ^3.0.0
+    css.escape: ^1.5.1
+    dom-accessibility-api: ^0.5.6
+    lodash: ^4.17.15
+    redent: ^3.0.0
+  peerDependencies:
+    "@jest/globals": ">= 28"
+    "@types/jest": ">= 28"
+    jest: ">= 28"
+    vitest: ">= 0.32"
+  peerDependenciesMeta:
+    "@jest/globals":
+      optional: true
+    "@types/jest":
+      optional: true
+    jest:
+      optional: true
+    vitest:
+      optional: true
+  checksum: 2e23f120613fd8ae6d5169bbc94f1a2e4c82b07182057dc94db8ec54ebf32555833442e6c43a187e59715d83704ffb5df49ba88a71f6f32d2683f3d95ba721c7
   languageName: node
   linkType: hard
 
@@ -8249,6 +8286,16 @@ __metadata:
     expect: ^29.0.0
     pretty-format: ^29.0.0
   checksum: 2b7e492704f5df42209427edd5ee51fda2b86e4ccd0d692742984c871595d94012432467baf363e481ebda68d5dac532cbb831edf8a6cbf7010e30648283aadf
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:28.1.3":
+  version: 28.1.3
+  resolution: "@types/jest@npm:28.1.3"
+  dependencies:
+    jest-matcher-utils: ^28.0.0
+    pretty-format: ^28.0.0
+  checksum: d295db8680b5c230698345d6caae621ea9fa8720309027e2306fabfd8769679b4bd7474b4f6e03788905c934eff62105bc0a3e3f1e174feee51b4551d49ac42a
   languageName: node
   linkType: hard
 
@@ -18614,7 +18661,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-matcher-utils@npm:^28.1.3":
+"jest-matcher-utils@npm:^28.0.0, jest-matcher-utils@npm:^28.1.3":
   version: 28.1.3
   resolution: "jest-matcher-utils@npm:28.1.3"
   dependencies:
@@ -23181,7 +23228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^28.1.3":
+"pretty-format@npm:^28.0.0, pretty-format@npm:^28.1.3":
   version: 28.1.3
   resolution: "pretty-format@npm:28.1.3"
   dependencies:
@@ -27933,7 +27980,7 @@ __metadata:
     "@redwoodjs/router": ^3.2.1
     "@redwoodjs/web": ^3.2.1
     "@storybook/addon-interactions": 6.5.15
-    "@storybook/jest": 0.0.10
+    "@storybook/jest": 0.2.3
     "@storybook/test-runner": 0.9.2
     "@storybook/testing-library": 0.0.13
     "@storybook/testing-react": 1.3.0
